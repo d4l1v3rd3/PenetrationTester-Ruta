@@ -94,6 +94,94 @@ Con este escaneo tardariamos muchisimo pero es algo normal.
 
 # DNS RECORDS
 
+Ahora vamos a entender como funciona el DNS y porque aveces nos queremos conectar a una página pero no llegamos a nada, simplemente es porque en el directorio /etc/hosts no esta el DNS como publico para el servidor que nos queremos conectar.
+
+# SUB-DOMAIN FUZZING
+En esta sección aprederemos los subdominio (*.website.com)
+
+## SUB-DOMAINS
+Un sub-dominio es una página por debajo del dominio principal como "https://photos.google.com" de "google.com"
+En este simple caso deberiamos checkear si esta en un DNS público.
+En el repositorio SecLists hay bastantes especificaciones de estos como "/opt/useful/SeclLists/Discovery/DNS" y ficheros como "subdomains"
+```
+ffuf -w /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u https://FUZZ.inlanefreight.com/
+```
+Ahora intentemos con "academy.htb" 
+```
+ffuf -w /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://FUZZ.academy.htb/
+```
+Si no nos da nada simplemente no tiene subdominios. O que no son publicos.
+
+# VHOST FUZZING
+En la anteiorr sección aprendimos sobre el DNS, sobre los subdominios,cuando el DNS no es publico deberemos buscar y aprender sobre los Vhost Fuzzing.
+
+## VHOST VS SUBDOMAINS
+La gran diferencia ente esos dos esque el subdominio pertenece a la misma IP y el Vhost puede tener diferente o pertenecer a otra.
+
+!!! LOS VHOST NO TIENEN PORQUE TNEER UN DNS PUBLICO !!!
+En muchos casos los subdominios no son publicos, pero no podriamos visitarlos con el navegador y deberiamos identificarlo, la difercia esque si hicieramos un scaneo de vhost y podremos identificar los publicos y no publicos.
+
+## VHOSTS FUZZING
+Para escanear Vhost sin necesidad de añadirlos a /etc/hsots, podemos añadir los HTTP headers y especificar el "Host:" usando el argumento "-H" 
+```
+ffuf -w /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb'
+```
+En caso de que pudiera ser otro puerto "http://academy.htb:port"
+
+# FILTRAR RESULTADOS
+Los resultados se filtran automaticamente por HTTP, siendo los códigos conocidos como 404 o 200.
+
+## FILTROS
+Gracias a ello tenemos la opcion de poder filtrarlos, por tamaño, palabras, codigo, etc.
+En este caso imaginamos que queremos solo filtrar por tamaño y sabemos 900 entonces sería añadir el argumento "-fs 900"
+```
+ffuf -w /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-5000.txt:FUZZ -u http://academy.htb:PORT/ -H 'Host: FUZZ.academy.htb' -fs 900
+```
+No nos olvidemos de añadir al DNS
+
+## PARAMETRO GET EN FUZZING
+Si nosotros hacemos un ffuf recursivo a una página encontraremos por ejemplo un admin.php y puede que no tengamos acceso por identificacion.
+En caso de nosotros necesitar logearnos podemos utilizar el argumento "GET"
+
+### GET REQUEST
+Similar con los otros apartador , deberemos aprender este metodo en una URL usualmente utilizamos el simbolo "?"
+```
+http://admin.academy.htb:PORT/admin/admin.php?param1=key.
+```
+La diferencia sería remplazar el "param1" a "FUZZ" y empezar el escaneo normalmente dicha ruta esta en "opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt."
+
+```
+ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php?FUZZ=key -fs xxx
+```
+Sabiendo esto nos iremos a la URL y probaremos
+
+## PARAMETRO POST EN FUZZING
+La diferencia entre estos dos parametros, esque con el POST no lo podremos meter en la URL y necesitaremos campos como "data" 
+Para añadir datos a ffuf utilizaremos el argumento "-d" y añadir "-X POST"
+```
+ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
+```
+```
+curl http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=key' -H 'Content-Type: application/x-www-form-urlencoded'
+```
+## VALUE FUZZING
+Después de entender los dos parametros, necesitaremos leer lo que nos dice.
+## CUSTOM WORDLIST
+Si nosotros no queremos utilizar una wordlist ya creada predefinidamente, podemos nosotros agregar o quitar valores.
+```
+for i in $(seq 1 1000); do echo $i >> ids.txt; done
+```
+```
+ffuf -w ids.txt:FUZZ -u http://admin.academy.htb:PORT/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs xxx
+```
+Esto lo utilizariamos para logearnos a una cuenta por ejemplo.
+
+posteriormente deberemos hacer un curl
+
+
+
+
+
 
 
 
