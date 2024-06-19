@@ -140,6 +140,7 @@ search ms17_010
 ## USAR MODULO
 Cuando ya lo tenemos encontrado, podremos interactuar con el adaptandose a nosotros
 ```
+use windows/smb/exploit
 show options
 ```
 ```
