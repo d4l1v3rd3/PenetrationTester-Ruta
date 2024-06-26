@@ -168,6 +168,132 @@ run
 
 Los targets son identificadores únicos del sistema operativo tomados de las versiones de esos sistemas operativos específicos.
 
+```
+show targets
+```
+Gracias a este comando podemos ver los sistemas operativos vulnerables y detalles del exploit.
+En caso de querer ver el modulo de exploit
+```
+options
+```
+
+### SELECCIONAR UN TARGET
+
+Podemos observar que hay generalmente un tipo de target y un tipo de exploit. Si nosotros cambiamos el moudolo estaremos especificando aun mas.
+```
+MS12-063 Microsoft Internet Explorer execCommand Use-After-Free Vulnerability.
+```
+En caso de querer saber mas información del modulo
+```
+info
+```
+Gracias a ello tenemos una idea de que hace dicho modulo y para que esta enfocado.
+
+Podemos tener opciones de versiones, que sea automatico, etc..
+
+```
+show targets
+```
+### TIPOS DE TARGETS
+
+Hay una gran variadedad de targets, Cada uno tendra su servicio, su sistema operativo, etc...
+
+# PAYLOAD
+
+Normalmente nos referimos dentro del modulo y tipicamente ofrece una shell al atacante.
+
+Los payloads se envian en el miismo mommento que un exploit, y normalmente te da una conexión reversa de la máquian victima.
+
+Hay diferentes tipos de payload dentro de MSF, solos, por stages, etc.. 
+
+Los payloads se representan con / 
+```
+windows/shell_bind_tcp
+```
+## SINGLES
+
+Normalmente se utiliza para una sola tarea y te da una shellcode y se hace para uuna tarea en concreto, normalmente son mas rentables y son todo en uno.
+
+## STAGERS 
+
+Funciona con un "stage payload" y también para una tarea en concreto, normalmente a la espera de la máquina atacante, preparado para entablar una conexión con la máquina victima.
+
+## STAGES
+
+Normalmente se utiliza descargando modulos, como meterpreter o una injección.
+
+## STAGED PAYLOADS 
+
+Simplemente es el proceso de explotación, es modular funciona por fases y tiene bloques de código, todos en uno para cumplir un objetivo o una tarea, normalmente se usa para pasar un antivirus o un firewall, 
+
+Normalmente funciona por pasos, para no alarmar o para pasar estos baches, por ejemplo sería utilizar el STAGE0 para iniciar contacto con la máquina y el STAGE1 para hacer la shell reversa.
+
+## METERPRETER PAYLOAD
+
+Es un payload especifíco enfocado en DLL injection, para asegurar que la conexión con la máquina victima va a ser estable, dificil de detectar y sin problema al cambio, normalmente solo pertenece en la memoria volatil y no utiliza la memoria del disco duro para que no guarde nada.
+
+Cuando se ejecuta el meterpreter se crea una sesión, similar a msfconsole, pero utilizas los comandos igual que si estuvieras en tu propia máquina. 
+
+## BUSCAR PAYLOADS
+
+Para elegir el payload primeramente necesitaremos saber cual es que necesitamos para la máquina víctima, grcaias a eso tenemos bastante flexibilidad.
+```
+show payloads
+```
+Tenemos tambíen la disponibilidad de poder crear payloads con "msfvenom" 
+También en caso de querer filtrar también podemos usar "grep" en msfconsole.
+
+```
+grep meterpreter show payloads
+```
+o
+```
+grep meterpreter grep reverse_tcp show payloads
+```
+### SELECCIONAR UN PAYLOAD
+
+```
+ set payload <no.>
+show options
+show payloads
+```
+## USAR PAYLOAD
+
+Es el momento de configurar los parámetros para que todo funcione.
+
+RHOSTS = IP máquina victima
+RPORT = puerto máquina victima
+LHOST = Ip máquina atacante
+LPORT = puerto máquina atacante
+
+
+en caso de querer ver nuestra ip
+```
+ipconfig
+ip a
+```
+```
+run
+```
+En caso de entrar a un SO que no conocemos cmandos podemos hacer un 
+```
+help
+```
+Payload	Description
+generic/custom	Generic listener, multi-use
+generic/shell_bind_tcp	Generic listener, multi-use, normal shell, TCP connection binding
+generic/shell_reverse_tcp	Generic listener, multi-use, normal shell, reverse TCP connection
+windows/x64/exec	Executes an arbitrary command (Windows x64)
+windows/x64/loadlibrary	Loads an arbitrary x64 library path
+windows/x64/messagebox	Spawns a dialog via MessageBox using a customizable title, text & icon
+windows/x64/shell_reverse_tcp	Normal shell, single payload, reverse TCP connection
+windows/x64/shell/reverse_tcp	Normal shell, stager + stage, reverse TCP connection
+windows/x64/shell/bind_ipv6_tcp	Normal shell, stager + stage, IPv6 Bind TCP stager
+windows/x64/meterpreter/$	Meterpreter payload + varieties above
+windows/x64/powershell/$	Interactive PowerShell sessions + varieties above
+windows/x64/vncinject/$	VNC Server (Reflective Injection) + varieties above
+
+
 
 
 
