@@ -164,4 +164,10 @@ Simplemente
 run
 ```
 
+## TARGETS
+
+Los targets son identificadores únicos del sistema operativo tomados de las versiones de esos sistemas operativos específicos.
+
+
+
 
