@@ -587,6 +587,27 @@ para ver los procesos
 steal_token 1836
 getuid
 ```
+# ESCRIBIR Y IMPORTAR MODULOS
 
+Para instalar cualquier modulo de metasploit tenemos que estar portado por otro usuario o usuarios, una opcion es actaulizar la msfconsole del terminal y vendran los nuevos exploits, auxiliares y features etc.
 
+Sin embargo si queremos un modulo especifico, nosotros podemos descargarlo del modulo y instalarlo manualmente. Nosotros nos centramos en buscar ExploitDB para leer modulos de Metasploit que podamos utilizar, y lo importamos localmente a la msfconsole.
+
+ExploitDB es un gran lugar para buscar exploit customs, Nosotros usamos tags para buscar diferentes escenarios de explotación. Uno de los tags es MSF se selecciona y se displayea solo los scripts modulos validos de metasploit. Todos se descargar directamente de ExploitDB y instalamos a nuestra maquina loca dentro del directorio de Metasploit Framework.
+
+Imaginemos que queremos el exploit "nagios3" que es un command injection, este modulo dentro de msfconsole no tenemos el que necesitamos
+```
+search nagios
+```
+sin embargo dentro de las entradas de ExploitDB, alternativamente podemos busacr ahi.
+```
+searchsploit nagios3
+```
+Nota si termina en .rb es ruby script y son especialmente creados apra msfconsole y ponemos ese filtro nos saldran solo esos 
+```
+searchsploit -t Nagios3 --exclude=".py"
+```
+Nosotros deberemos descargar .rb El directorio cuando necesitamos el modulo, scripts o plugins y la msfconsole tiene aqui la ruta /usr/share/metasploit-framework los archivos criticos estan en el directorio oculto /msf4/ 
+
+Nosotros podemos copiar apropiadamente el directorio despues de descargar el exploit. En caso deberemos crear una carpeta para los apropiados archivos que queramos meter.
 
