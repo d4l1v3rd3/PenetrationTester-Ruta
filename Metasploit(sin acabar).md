@@ -344,6 +344,46 @@ Como vemos no hay una evasión de antivirus, hay muchos productos que selecciona
 ```
 msf-virustotal -k <API key> -f TeamViewerInstall.exe
 ```
+# BASES DE DATOS
+
+Las bases de datos en msfconsole se usan para hacer un trackeo de los resultados. No es un misterio que cada vez es mas complejo y mas entre redes, piensa que es como un pequeños directorios con busquedas de resultados, entradas, detecciones, fallos, credeciales, etc..
+
+Suporteada por "PostgreSQL" un acceso para escanear resultados que añaden abilidad al importar y exportar resultados en conjuncion de terceras partes de herramientas. 
+
+## INICIAR LA BASE DE DATOS
+
+Primero de todos deberemos iniciar y comprobar el postgres sql en nuestra máquina.
+
+```
+sudo service postgresql status
+sudo systemctl stat postgresql
+sudo msfdb init
+```
+Aveces puede dar error por fecha. en caso de eso siempre un "apt update"
+
+```
+sudo msfdb status
+sudo msfdb init
+```
+Una vez que la base de datos esta inicializada, podemos iniciar la "msfconsole" y conectar y crear una base de datos simultaneamente.
+
+```
+sudo msfdb run
+msfdb reinit
+cp /usr/share/metasploit-framework/config/database.yml ~/.msf4/
+sudo service postgresql restart
+msfconsole -q
+db_status
+```
+Ya dentro de la base de datos si queremos interactuar con ella
+```
+help database
+```
+### USAR LA BASE DE DATOS
+
+Con la ayuda de la base de datos, nosotros podemos configurar diferentes categorias y host que nosotros podemos analizar, la información sobre la que podemos interactuar con Metasploit. Las bases de datos se exportar y importan. Esto es expecialmente util para tener listas de host, loots, notas, y vulnerabilidades guardadas. Después de que todo funcione correctamente nos vamos a los espacios de trabajo.
+
+### WORKSPACES
 
 
 
