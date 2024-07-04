@@ -279,21 +279,6 @@ En caso de entrar a un SO que no conocemos cmandos podemos hacer un
 ```
 help
 ```
-Payload	Description
-generic/custom	Generic listener, multi-use
-generic/shell_bind_tcp	Generic listener, multi-use, normal shell, TCP connection binding
-generic/shell_reverse_tcp	Generic listener, multi-use, normal shell, reverse TCP connection
-windows/x64/exec	Executes an arbitrary command (Windows x64)
-windows/x64/loadlibrary	Loads an arbitrary x64 library path
-windows/x64/messagebox	Spawns a dialog via MessageBox using a customizable title, text & icon
-windows/x64/shell_reverse_tcp	Normal shell, single payload, reverse TCP connection
-windows/x64/shell/reverse_tcp	Normal shell, stager + stage, reverse TCP connection
-windows/x64/shell/bind_ipv6_tcp	Normal shell, stager + stage, IPv6 Bind TCP stager
-windows/x64/meterpreter/$	Meterpreter payload + varieties above
-windows/x64/powershell/$	Interactive PowerShell sessions + varieties above
-windows/x64/vncinject/$	VNC Server (Reflective Injection) + varieties above
-
-
 ## ENCODERS
 
 Los encoders tienen la asintencia con la compatibilidad de los payloads con diferente proceso de arquitectura mientras ayuda a una evasion de antivirus. Tienen el rol de cambiar el payload y ejecutarlo en diferentes sistemas operativos y arquitecturas. Como:
