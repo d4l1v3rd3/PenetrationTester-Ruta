@@ -490,4 +490,44 @@ Lista de los plugins más utilizados
 
 El metasploit Framework esta escrito en Ruby, un programa orientado a objetos. Esto es uan gran parde de msfconsole de excelente uso, cuando lo implementamos, ofrece una larga cantidad de flexibilidad.
 
+# SESIONES
+
+MSFconsole tiene la capacidad de manejar multiples modulos en el mismo tiempo. Esto es una de las razones que un usuario pruede tener y dar flexibilidad, esto ya esta desfadaso con el uso de sesiones, puedes crear y dedicarte con interfaces. 
+
+Una vez que la sesion esta creada, nosotros podemos cambiar entre ellas con un link en diferentes modulos, podemos tener diferentes sesiones de trabajo. Una vez que se cambia sigue funcionando y la noexion persiste.
+
+## USAR SESIONES
+
+Mientras corres cualquier exploit disponible o modulo auxiliar en msfconsole, nosotros tenemos una sesion por detras que se comunica por canales hasta nuestra máquina. Podemos salirnos con
+```
+control + z
+```
+La combinacion hace que salgas y vuelvas al msfconsole
+```
+sessions
+```
+## INTERACUTAR CON LAS SESIONES
+Podemos usar sesiones y especificar
+```
+sessions -i 1
+```
+Esto es util cuando queremos correr modulos adiciones.
+
+Podemos tener sesiones por debajo, y que funciene el primer exploit, y buscar otro modulo o otro vecotr por el que atacar.
+
+Usualmente estos modulos se buscan en la categoria "post" 
+
+# TRABAJOS
+
+Por ejemplo, nosotros queremos activar un exploit activo bajo un puerto especifico de un modulo diferentes, nosotros simplemente terminamos la sesion con [CTRL] + [C]. 
+```
+jobs -h 
+exploit -h help
+exploit -j run
+exploit -l list
+```
+
+
+
+
 
