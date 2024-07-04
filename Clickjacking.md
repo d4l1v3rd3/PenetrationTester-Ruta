@@ -36,3 +36,13 @@ Hay 3 valores permitidos en el header:
 ![image](https://github.com/pons-rgb/vuln/assets/174595469/827b760a-ead0-4080-82a6-b186d67a3e8f)
 
 ### FRAME KILLING
+
+En navegadores antiguos, la forma mas común de proteger a los usuarios contra clickjacking era incluir un "frame-killing" javascript en las paginas para prevenir que se puedan incluir iframes.
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/ccc85ae7-6948-41f8-b169-ff9e1517c64e)
+
+Esto sería un ejemplo de "frame-killing" cuando la gente carga, este codigo checkea que el dominio de la pagina junte el dominio con el navegador, cuando es cierto la pagina se incrustada en el iframe.
+
+Muchos sitios no necesitas ser incrustados en iframes, algunos "frame-killing" son bastantes fáciles de implementar.
+
+
+
