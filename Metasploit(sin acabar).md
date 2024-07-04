@@ -444,3 +444,50 @@ loot -h
 ```
 # PLUGINS
 
+Es un software que se puede leer creado por terceras partes y que los creadores han aprobado, metasploit integra ese software dentro del framewokr. Representa los productos comericales que tienes con "community edition" gratis y pagando
+
+El uso de plugins hace que la vida del pentester sea mas facil, brindando funcionalidad del software dentro de msfconsole o metasploit pro environments, antes, nosotros necesitamos un ceiclo entre direntes software para importar y exportar resultados, ajustar opciones y paramentros una y otra vez, ahora casi todo y gracias a los plugins es automatico y documentado por msfconsole dentro de su propia base de datos usando los hosts.
+Estos plugins trabajan directamente con la API y se usa para manipular un framework. Hace automatizacion de tareas repetitivas y añade nuevos comandos a msfconsole.
+
+## USAR PLUGINS
+
+Para empezar a usar un plugin, nosotros necesitaremos saber exactamente donde tenemos instalado todo "/ust/share/metasploit-framework/plugins" normalmente es el directorio por defecto.
+
+```
+ls /usr/share/metasploit-framework/plugins
+```
+Si el plugin se encuentra aqui, nosotros podemos meterlo dentro
+```
+load nessus
+nessus_help
+```
+Obviamente si no esta bien pues no funcionara.
+
+## INSTALAR NUEVOS PLUGINS
+
+Nuevos, populares y en cada actualización salen más, distribuciones etc, para instalar un nuevo plugin necesitaremos actualziar nuestra ditro y coger la del market place irnos a la ruta e instalarlo ahi dentro /plugins y con formato (.rb)
+
+```
+git clone https://github.com/darkoperator/Metasploit-Plugins
+ls Metasploit-plugins
+```
+### COPIAR UN PLUGIN A MSF
+```
+sudo cp ./Metasploit-Plugins/pentest.rb /usr/share/metasploit-framework/plugins/pentest.rb
+```
+## EJECUTAR UN PLUGIN
+
+```
+msfconsole -q
+load pentest
+help
+```
+Lista de los plugins más utilizados
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1d1a0ea0-1093-483e-94a3-a71367a9e1f5)
+
+## MIXINS
+
+El metasploit Framework esta escrito en Ruby, un programa orientado a objetos. Esto es uan gran parde de msfconsole de excelente uso, cuando lo implementamos, ofrece una larga cantidad de flexibilidad.
+
+
