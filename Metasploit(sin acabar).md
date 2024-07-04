@@ -385,5 +385,62 @@ Con la ayuda de la base de datos, nosotros podemos configurar diferentes categor
 
 ### WORKSPACES
 
+Podemos pensar que los espacios de trabajo son como ficheros en un projecto. Podemos segregar diferentes escaneos de resultados, hosts y extraer informacion de IP, subnet, network o dominio.
+```
+workspace
+```
+El nombre normal se llama "default" detrás con un "*" los tipos son "workspace [name]" 
+```
+worskpace -a Target_1
+worskpace -h
+```
+### IMPORTAR RESULTADOS DE ESCANEO
 
+Imagina que queremos importar un escaneo de "Nmap" a la base de datos de nuestro espacio de trabajo. Podemos usar "db_import" y despues que se complete checkear que la información de la base de datos y todo funciona. Los formatos predefinidos son ".xml"
+
+```
+db_import Target.xml
+```
+### USAR NMAP DENTRO DE MSFCONSOLE
+
+Otra alternativa es esta
+```
+db_nmap -sV -sS ip
+host
+services
+```
+### COPIA DE SEGURIDAD DE LOS DATOS
+
+Después de terminar la sesión, deberemos hacer una copia de seguridad
+```
+db_export -f xml backup.xl
+```
+## HOSTS
+
+Los hosts nos dicen la base de datos automaticamente populares por nuestras ips de hosts, hostnamess y otra información que nosotros podemos saber sobre otros escaners o interaciones, por ejemplo msfconsole escanea unos pluggins de un OS, esta información automaticamente aparece en al tabla, como Nessus, NexPose o Nmap nos ayudara en estos casos.
+
+```
+host -h
+```
+## SERVICIOS
+
+Los servicios su funcion es la que anteiormente, contiene las tablas de las descripciones y información de los servicios que escanea y las interacciones.
+```
+services -h
+```
+## CREDENCIALES
+
+Visualiza las credenciales durantes las interaciones con la máquina victima. Podemos añadir credenciales manualmente, especificando puestos y añadiendo descripciones.
+```
+creds -h
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/b763c53a-109d-447f-bfd0-dfd88cafd082)
+
+## BOTÍN
+Este comando se utiliza para conjuntar otros servicios o usuarios, se reifere a los hasehs de diferentes sistemas.
+
+```
+loot -h
+```
+# PLUGINS
 
