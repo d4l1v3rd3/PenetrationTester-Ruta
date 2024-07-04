@@ -512,7 +512,21 @@ exploit -j run
 exploit -l list
 ```
 
+# METERPRETER
 
+Meterpreter es un payload especifico multi faceta, usa injecciones DLL para asegurar la conexion de la victima con el host sea estable y dificil de detectar usando simples checkeos de configuración para persistir en caso de reinicio o que el sistema cambiar.
+
+Meterpreter reside dentro de la memoria de la máquina victima y no deja trazas en el disco duro, haciendo más dificil su detección y para tecnicas forenses.
+
+Se conoce como la navaja suiza en el pentesting, por una buena razon. El proposito de meterpreter es especificamente para post explotación, ofreciendo un apreton de manos para las herramientas mas importantes enumerando así el target de dentro. Ayudando a escalar privilegios, evasión de antivirus, pivoting , acceso persistente.
+
+## INICIAR METERPRETER
+
+Para iniciarlo lo evremos en "show payloadsa"
+
+Cuando la explotación esta completa, pasa esto:
+
+- La víctima ejecuta el payload. Usualmnte a bind, una reversa, un 
 
 
 
