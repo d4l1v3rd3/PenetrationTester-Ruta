@@ -192,3 +192,118 @@ CREATE TABLE logins (
     );
 ```
 ## DECLARACIONES SQL
+
+Ahora entenderemos como usar mysql apra la utilidad.
+
+## INSERTAR UNA DECLARACION
+
+La declaración "INSERT" da un nuevo valor a la tabla ya creada
+```
+INSERT INTO table_name VALUES (column1_value, column2_value, column3_value, ...);
+```
+La sintaxis son los mimos valores que hariamos creando una y si queremos añadir
+```
+INSERT INTO logins VALUES(1, 'admin', 'p@ssw0rd', '2020-07-02');
+
+```
+
+El ejemplo de como hacer un login esta muy bien pero sin eembargo con valores como id o datos se tienen que especificar losn ombre y los valores que se van a insertar.
+```
+INSERT INTO table_name(column2, column3, ...) VALUES (column2_value, column3_value, ...);
+```
+Si skipeamos las columnas nos saldrá un error
+
+Podriamos hacer lo mismo para una tabla de login
+
+```
+INSERT INTO logins(username, password) VALUES('administrator', 'adm1n_p@ss');
+```
+## SELECCIONAR UNA DECLARACION
+
+Ahora nosotros queremos insertar datos dentro de la tabla y recibir también datos de la tabla "SELECET" es lo que utilizaremos
+
+```
+SELECT * FROM table_name;
+```
+El asterisko (*) hace que seleccione todas las columnas y "FROM" se usa para denotar la tabla que queremos seleccionar.
+
+```
+SELECT column1, column2 FROM table_name;
+```
+La consulta que seleccionaremos para presentar los datos de la columna 1 y 2
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/b7d47941-2ff4-4ce9-9681-94f9aaced753)
+
+## DECLARACION DROP
+
+Podemos usar "DROP" para remover tablas y bases de datos para el servidor.
+
+```
+DROP TABLE logins;
+SHOW TABLES;
+```
+Para borrar importante que borra para siempreee y sin confirmar
+
+## DECLARACION ALTER
+
+podemos usar "ALTER" para cambair el nombre de cualquier tabla o archivo o borrar o añadir columnas o ttablas existenter.
+```
+ALTER TABLE logins ADD newColumn INT;
+```
+Para renombrar una columnar utilizaremos "RENAME COLUMN"
+```
+ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn;
+```
+Podemos cambiar una columna y los datos con "MODIFY"
+```
+ALTER TABLE logins MODIFY oldColumn DATE;
+```
+Y finalmente tambien podemos borrar
+```
+ALTER TABLE logins DROP oldColumn;
+```
+Podemos usar todo lo que queramos gracias a este comando
+
+## DECLARACION UPDATE
+
+La declaración haceq ue actualicemos la tabla especificando campos de ella misma dentro
+```
+UPDATE table_name SET column1=newvalue1, column2=newvalue2, ... WHERE <condition>;
+```
+```
+UPDATE logins SET password = 'change_password' WHERE id > 1;
+```
+
+## RESULTADOS EN LAS CONSULTAS
+
+## ORDENAR RESULTADOR
+
+Podemos ordenar resultados gracias al "ORDER BY" y especificar una columna
+```
+SELECT * FROM logins ORDER BY password;
+```
+Por defecto, ordenar se hace en ascendente, pero nosotros necesitamos Ascendente a descendente.
+```
+SELECT * FROM logins ORDER BY password DESC;
+```
+Tambien es posible por columnas, utilizando un orden difernete que pueda duplicar valores de una columna
+
+```
+SELECT * FROM logins ORDER BY password DESC, id ASC;
+```
+## RESULTADOS LIMITE
+
+En algunos casos nos encontraremos con muchos resultados, podemos limitarlos con "LIMIT"
+```
+SELECT * FROM logins LIMIT 2;
+```
+Si queremos limitar y empezar desde uno
+```
+SELECT * FROM logins LIMIT 1, 2;
+```
+## CLAUSULA WHERE
+
+
+
+
+
