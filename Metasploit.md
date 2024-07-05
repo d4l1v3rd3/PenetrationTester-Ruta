@@ -3,7 +3,7 @@
 
 ## ÍNDICE
 
-[METASPLOIT PRO](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/a3215fd6-917e-4c1f-90d1-6cc66315fcd6)
+[METASPLOIT PRO](https://github.com/D4l1-web/PenetrationTester-Ruta/edit/main/Metasploit.md#metasploit-pro)
 
 El projecto Metasploit esta basado en "Ruby", es una plataforma para pentester o herramienta, en la que podras testear y ejecutar codigo exploit.
 
