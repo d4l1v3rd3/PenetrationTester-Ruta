@@ -96,3 +96,87 @@ Una base de datos no relacional se llama (NoSQL) no usa tablas, ni columnas, ni 
 
 Para que nos entendamos es como un diccionario.
 
+# DENTRO DE MYSQ
+
+## ESTRUCTURA SQL
+
+La utilidad de mysql se usa para autentificar y interactuar con un MySQL/MariaDB base de datos. La extension -u es usada para poner usuario y -p para la contraseña.
+
+```
+mysql -u root -p
+```
+
+Si queremos también tenemos la disponibilidad e poner la contraseña directamente
+```
+mysql -u root -p pass
+```
+Cuando no especifícamos un host sera siempre el localhost por defecto si queremos especificar el host utilizaremos las extension -h y -P
+```
+mysql -u root -h docker.hackthebox.eu -P 3306 -p 
+```
+El puerto por defecto de mysql es (3306)
+
+## CREAR UNA BASE DE DATOS
+
+Una vez que nos metemos dentro de mysql, podemos empezar a mandar consultas y por ejemplo vamos a crear una base de datos
+```
+CREATE DATABASE users;
+```
+Una vez que se ha creado podemos comprobarlo
+```
+SHOW DATABASES;
+```
+## TABLAS
+
+Las DBMS guardan los datos en formas de tabla, una tabla simplemente es un campo en horizontal y vertical, con intersecciones llamado columnas y filas
+
+Los tpos de datos se definen por el valor y eso le ayuda la columna, pueden ser numeros, strings, datos,tiempos y datos binarios. por ejemplo si quisieramos crear una tabla llamada logins
+
+```
+CREATE TABLE logins (
+    id INT,
+    username VARCHAR(100),
+    password VARCHAR(100),
+    date_of_joining DATETIME
+    );
+```
+Como podemos ver CREATE TABLE especifica el nombre de la tabla y luego entre parenteses especifica los nombres que va tener cada columna y los datos que va a contener.
+
+```
+mysql> CREATE TABLE logins (
+    ->     id INT,
+    ->     username VARCHAR(100),
+    ->     password VARCHAR(100),
+    ->     date_of_joining DATETIME
+    ->     );
+Query OK, 0 rows affected (0.03 sec)
+```
+Las consultas SQL a creado una tabla llamada login con 4 columnas, id, usenarme, password y date_of_joining y cada uno con sus datos id con integrales, username con caracteres que no superen los 100 y el ultimo solo con el tiempo.
+
+En caso de querer verlo: 
+```
+SHOW TABLES;
+```
+Nos dice la lista de tablas que tenemos si queremos usar llaves para buscar algo exactamente o algo .
+```
+DESCRIBE logins;
+```
+## PROPIEDADES DE LAS TABLAS
+
+Con el "CREATE TABLE" tenemos una propiedades de cada tabla y columna, por ejemplo id se auto incrementa usando "AUTO_INCREMENT" automaticamente incrementa la id por cada nuevo item que hemos añadido a la tabla
+```
+id INT NOT NULL AUTO_INCREMENT,
+```
+La constante "NOT NULL" se refiere a una columna en particular y que nuna va a requerir archivo, usamo UNIQUE para hacer algo unico, por ejemplo la columna usernmae.
+
+```
+username VARCHAR(100) UNIQUE NOT NULL,
+```
+Otra importante llave es "DEFAULT" se usa para especificar un valor por ejemplo con "date" queremos hacer el valor Now() y que nos devuelva el tiempo
+```
+   date_of_joining DATETIME DEFAULT NOW(),
+```
+Finalmente el más imoprtante es la propiedad de "PRIMARY KEY" se usa para identiciar el record de la tabla refiriendose a todos los datos importantes que se relacionen con otras tablas por ejemplo el elemento id
+```
+PRIMARY KEY (id)
+```
