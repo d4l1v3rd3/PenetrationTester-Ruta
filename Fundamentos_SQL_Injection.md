@@ -35,3 +35,28 @@ Los atacantes intentan leer y escribir ficheros o directorios de la base de dato
 Las SQL Injections casualmente es por mal codigo de la aplicación web o mal códiglo en la base de datos o privilegios. SANITIZATION Y VALIDACIÓN.
 
 ## DENTRO DE LAS BASES DE DATOS
+
+Antes de aprender SQL INjection aprenderemos su estructura, con baes de datos y las consultas necesarias, las aplicaciones web contienen bases de datos con contenido e informacion relevante.
+
+Hay muchos diferentes tipos de bases de datos, Database Management Systems (DBMS)
+
+## DATABASE MANAGEMENT SYSTEMS
+
+Un (DBMS) ayuda a crear, definir, hostear y mantener bases de datos. Varias tipos de DBMS son diseñados fuera de tiempo, basados en archivos, relaciones, NoSQL, grafichos, llaves, etc.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/a1014378-2c15-4bbb-a9af-3144022c758f)
+
+## ARQUITECTURA
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/e7a1ce03-0c78-4eb1-a711-3bc2dcf2522b)
+
+Tier I: Usualmente consiste en el lugar del usuario y las interfaces de los programas. Consisten en alto niveles de interacción como el login.
+TIER II: Donde se llama a las APIS y otras request, es el medio, donde se intercepta los eventos que se van a mandar al DMBS, finalmente la aplciacion especifica una libreria y los drives que se van a utilziar, pudiendo insertar, borrar, recibir, etc.
+
+## TIPOS DE BASES DE DATOS
+
+Las bases de datos generalmente se categorizan entre relaciones y no relacionales. Solo las relacionales utilizan SQL.
+
+### BASES DE DATOS RELACIONALES
+
+Es la base de datos más común, 
