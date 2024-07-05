@@ -303,7 +303,114 @@ SELECT * FROM logins LIMIT 1, 2;
 ```
 ## CLAUSULA WHERE
 
+Para filtrar datos especificos tenemos las condiciones "SELECT" usando la declaracion "WHERE"
+```
+SELECT * FROM table_name WHERE <condition>;
+```
+La consulta puede tener condiciones satisfactorias
+```
+SELECT * FROM logins WHERE id > 1;
 
+```
+
+Por ejemplo se puede seleccionar todos los datos del valor id que sea mas grande que 1 pero skipeara el 1
+```
+SELECT * FROM logins where username = 'admin';
+```
+Esta consulta especifica el usuario admin podemos usar UPDATE para especificar las condiciones
+
+## CLAUSE LIKE
+
+Otra importante para entablar selecciones de datos de algo exacto por ejemplo con admin o parecido a ello
+```
+SELECT * FROM logins WHERE username LIKE 'admin%';
+```
+EL simbolo % hace todos los maches que sean parecidos después de admin y por ejemplo lo hacemos con "___" nos saldran los que tienen 3 digitos .
+
+```
+SELECT * FROM logins WHERE username like '___';
+```
+
+# OPERADORES SQL
+
+## OPERADOR AND
+
+Aveces, no solo necesitamos una simple conficion podemos necesitar operadores logics con multiples condiciones como "AND" "OR" o "NOT"
+
+```
+condition1 AND condicion2
+```
+El resultado de "AND" es true o false
+
+```
+SELECT 1 = 1 AND 'test' = 'test'
+SELECT 1 = 1 AND 'test' = 'abc';
+```
+
+En los terminos de MySQL un no zero se considera true porque devuelve 1 y 0 es considerado falso test=abd falso
+
+## OPERADOR OR
+
+El operador OR coge dos expresiones y devuelve true si una de las dos es verdad
+
+```
+SELECT 1 = 1 OR 'test' = 'abc';
+```
+true
+```
+SELECT 1 = 2 OR 'test' = 'abc';
+```
+false
+
+## OPERADOR NOT
+
+El operador NOT simplemente devuelve true cuando es falso y asi vice versa
+
+```
+SELECT NOT 1 = 1;
+SELECT NOT 1 = 2;
+```
+
+## OPERADORES POR SIMBOLOS
+
+Todos los operadores pueden ser representados
+
+| AND | OR | NOT |
+| ---- | ----- | ------ |
+| && | "||" | ! |
+
+## OPERADORES EN CONSULTAS
+
+Vamos a ver como hacer que los operadores puedan usar las consultas. Lo siguiente es ordenar el usuario que no es john
+
+```
+SELECT * FROM logins WHERE username != 'john';
+```
+ahora quiero una consulta en la que la id empiece por mas que 1 y el usuario no sea john
+
+```
+SELECT * FROM logins WHERE username != 'john' AND id > 1;
+```
+
+## PROCEDENCIA DE MULTIPLES OPERADORES
+
+SQl suportea varios operadores en adicional, divisiones y demas operaciones debemos saber cuales son:
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1412a599-8379-418a-9aa5-49e8db343713)
+
+
+Operaciones :
+```
+SELECT * FROM logins WHERE username != 'tom' AND id > 3 - 2;
+```
+La consulta hace cuatro operadores !=, AND, >, - de la procedencia del operador y la evalcuaion es 3-2=1
+```
+SELECT * FROM logins WHERE username != 'tom' AND id > 1;
+```
+Despues de las dos operadores de ocmapracion podemos hacer los mimos procesos con cualqueira
+```
+select * from logins where username != 'tom' AND id > 3 - 2
+```
 
 
 
