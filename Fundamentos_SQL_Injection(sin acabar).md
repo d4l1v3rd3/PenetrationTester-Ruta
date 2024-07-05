@@ -59,4 +59,40 @@ Las bases de datos generalmente se categorizan entre relaciones y no relacionale
 
 ### BASES DE DATOS RELACIONALES
 
-Es la base de datos más común, 
+Es la base de datos más común,  usa un esquema, un tema, dedicada a estructurar los datos de la base de datos. Por ejemplo, nosotros podemos imaginar una compañia que vende productos para los consumidores y tenemos que saber que too el conocimiento de los productos, cantidad, etc. En el back-end por ejemplo la primera tabla enseñaria información básica del consumidor, la segunda los productos y su coste otra tabla para los datos de pago, etc..
+
+Normalmente estas tablas estan asociadas con llaves que dan acceso a especificos datos columnas, o campos de la base de datos. Estas tablas, se llaman entidades, y se correlacionan entre ellas, por ejemplo la informacion de un consumidos como el ID puede sen un indicador para luego saber la dirección el nombre la información etc.
+
+Sin embargo, cuando este proceso se integra en la base de datos, un concepto que se require es linkear las tablas con llaves, esto se llama (RDBMS) uchas compañias usan conceptos diferentes de las mismas.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/a883a691-68c3-4b9c-986b-9a634349e5cd)
+
+Tenemos el id de user_id en el post y nos devuelve los detalles que queremos gracias a que se correlacionan.
+
+La relacion se llama esquema.
+
+### BASES DE DATOS NO RELACIONALES
+
+Una base de datos no relacional se llama (NoSQL) no usa tablas, ni columnas, ni keys etc, ni relaciones. Todo depende de los datos que se quieran guardar, se define una estructura de base de datos debe ser muy escalable y flexible.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/aa3595b3-ab64-4ab8-9170-eef35e1b57a1)
+
+```
+{
+  "100001": {
+    "date": "01-01-2021",
+    "content": "Welcome to this web application."
+  },
+  "100002": {
+    "date": "02-01-2021",
+    "content": "This is the first post on this web app."
+  },
+  "100003": {
+    "date": "02-01-2021",
+    "content": "Reminder: Tomorrow is the ..."
+  }
+}
+```
+
+Para que nos entendamos es como un diccionario.
+
