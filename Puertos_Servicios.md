@@ -4,7 +4,7 @@
 En este repositorio encontraras los servicios que corren predefinidamente en los puertos respectivos
 ## Índice
 
-[Puertos TCP](https://github.com/D4l1-web/PenetrationTester-Ruta/main/Puertos_Servicios.md#puertos-tcp)
+[Puertos TCP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Puertos_Servicios.md#puertos-tcp)
 
 [Puertos UDP](https://github.com/D4l1-web/PenetrationTester-Ruta/main/Puertos_Servicios.md#puertos-udp)
 
