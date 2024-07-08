@@ -24,6 +24,8 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 [METASPLOIT](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md)
 
+[FFUF](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md)
+
 # Puertos y Servicios
 
 [Puertos-Servicios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Puertos_Servicios.md)
