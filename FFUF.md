@@ -1,4 +1,4 @@
-![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1bed9526-e7e2-4132-bd47-9e3a9e5f74fc)
+<img align="center" src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1bed9526-e7e2-4132-bd47-9e3a9e5f74fc">
 
 <h1 align="center"> FFUF </h1>
 
