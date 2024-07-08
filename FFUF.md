@@ -6,6 +6,25 @@
 
 [Inicio](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#inicio)
 
+[Fuzzing de directorios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#fuzzing-de-directorios)
+
+[DIRECTORY FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#directory-fuzzing)
+
+[PAGE FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#page-fuzzing-1)
+
+[RECURSIVE SCANNING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#recursive-scanning)
+
+[SUB-DOMAIN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#recursive-scanning)
+
+[VHOST FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#vhost-fuzzing)
+
+[FILTRAR RESULTADOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#filtrar-resultados)
+
+[GET REQUEST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#get-request)
+
+[PARAMETRO POST EN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#parametro-post-en-fuzzing)
+
+[CUSTOM WORDLIST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#custom-wordlist)
 
 
 # INICIO
