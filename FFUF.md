@@ -1,3 +1,8 @@
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1bed9526-e7e2-4132-bd47-9e3a9e5f74fc)
+
+<h1 align="center"> FFUF </h1>
+## ÍNDICE
+
 # INICIO
 En este apartado estudiaremos la herramienta "ffuf" con la que podremos escanear directorios, extensiones, vhosts, php, valores, etc.
 
