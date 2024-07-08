@@ -20,6 +20,8 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 [SQL INJECTION FUNDAMENTALS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection.md)
 
+[FILE INCLUSION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FILE%20INCLUSION(sin%20acabar).md)
+
 # HERRAMIENTAS
 
 [METASPLOIT](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md)
