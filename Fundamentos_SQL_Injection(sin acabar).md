@@ -476,6 +476,16 @@ Para tener una injección satisfactoria, deberemos crear una nueva consulta que 
 
 ![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/464162f3-9ff7-4d7e-aec8-0c8c896d4eb8)
 
+En los casos simples, el output del objetico como de la nueva consulta debe ser escrita bien en el front end, y es lo que nosottros literalmente nosotros leemos aqui metemos dos nuevos tipos, "Union Based" y "Error Based".
+
+Con "Union Based" expecificamos una localización exacta, "columna" que nosotros podemos leer, la consulta directamente lo printea y un "ERROR BASED" se usa para conseguir errores de "PHP" o "SQL" en el front end para ver como funciona.
+
+En muchos casos, no veremos la respuesta y a eso se le llama "Blind" en el que hay dos tipos "Boolean Based" y "Time Based"
+
+Con la "Boolean Based" podemos utilizar condicionales para ver lo que la consulta original nos daria si un condicional nos devuelven "true" y en "Time Based" usamos condiciones si nos devuelven "true" usando "Sleep()" 
+
+Finalmente, necesitamos directamente el acceso, para hacer un output en una localizacion "DNS" y que nos devuelva datos.
+
 
 
 
