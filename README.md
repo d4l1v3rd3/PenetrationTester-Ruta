@@ -12,8 +12,19 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 [Clickjacking](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Clickjacking.md)
 
+[COMMAND EXECUTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Command_Execution.md)
+
+[Cross-site scripting (XSS)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Cross-Site%20Scripting.md)
+
+[TRANSFERENCIA DE FICHEROS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer(sin%20acabar).md)
+
+[SQL INJECTION FUNDAMENTALS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md)
 
 # HERRAMIENTAS
 
+[METASPLOIT](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md)
+
 # Puertos y Servicios
+
+[Puertos-Servicios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Puertos_Servicios.md)
 
