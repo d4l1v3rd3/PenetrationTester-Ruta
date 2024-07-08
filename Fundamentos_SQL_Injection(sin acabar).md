@@ -411,6 +411,72 @@ Despues de las dos operadores de ocmapracion podemos hacer los mimos procesos co
 ```
 select * from logins where username != 'tom' AND id > 3 - 2
 ```
+## DENTRO DE SQL INJECTION
+
+Ahora que tenemos una idea de como funciona MySQL pasaremso a SQL injection.
+
+### USAR SQL EN LAS APLICACIONES WEB
+
+Primero de todo ya sabemos que todas las aplicaciones web usan bases ded atos MySQL, en este caso para guardar y recibir datos. 
+
+Por ejemplo podemos utilizar PHP para conectar con nuestra base de datos y emperaz usando MySQL para la sintaxis.
+
+Código PHP
+```
+$conn = new mysqli("localhost", "root", "password", "users");
+$query = "select * from logins";
+$result = $conn->query($query);
+```
+Entonces cuando la se manda la consulta sabemos que la variable $result contiene la consulta.
+
+Debajo del codigo php podemos printear quen os devuelvan los resultados de SQL en nuevas lineas.
+
+```
+while($row = $result->fetch_assoc() ){
+	echo $row["name"]."<br>";
+}
+```
+La aplicacion web normalmente usa inputs del usuario para recibir daots. Por ejemplo, cuando usuario utiliza la funciona de buscar esta preguntando a la base de datos.
+
+```
+$searchInput =  $_POST['findUser'];
+$query = "select * from logins where username like '%$searchInput'";
+$result = $conn->query($query);
+```
+
+Si nosotros usamos user-input con SQL, y nuestro código no es seugor, en muchos casos será mun fallo y una vulnerabilidad a Injecciones SQL.
+
+En el anterior código vemos un código que no esta sanitizado, en los casos tipicos el "searchinput" completa la consulta devolviendo lo que esperamos, cualquier cosa que escribamos va a esa consulta
+
+```
+select * from logins where username like '%$searchInput'
+```
+Entonces si nosotros inputemos "admin" tal qque '%admin' en este caso nosotros estamos escribiendo SQL, esto se considera buscar un termino. Por ejemplo si nosotros inputeamos "SHOW DATABASES" se ejecutara '%SHOW DATABASES' la aplicacion buscara usuarios similares, pero sin sanitizacion podemos añadir un "'" para escribir más código tal que 1'; DROP TABLE users;
+
+```
+'%1'; DROP TABLE users;'
+```
+Añadimos una sola ' despues del 1 para escapar de la consulta inicial.
+
+```
+select * from logins where username like '%1'; DROP TABLE users;'
+```
+## ERRORES DE SINTAXIS
+
+Con el anterior comando es posible que nos de error
+```
+Error: near line 1: near "'": syntax error
+select * from logins where username like '%1'; DROP TABLE users;'
+```
+En este caso es por "'" que se encuentra en el final de la consulta.
+
+Para tener una injección satisfactoria, deberemos crear una nueva consulta que no tenga errores de sintaxis, en muchos casos no tenemos acceso al codigo pero que no hemos hecho uan buena consulta.
+
+### TIPOS DE SQL INJECTIONS
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/464162f3-9ff7-4d7e-aec8-0c8c896d4eb8)
+
+
 
 
 
