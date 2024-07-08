@@ -554,5 +554,57 @@ Para que esto funcione debe ser siempre un true entonces lo pondremos en la cont
 
 La condicion OR devuelve true, donde devuelve toda la tabla y el primero en logear te devuelve ese usuario.
 
+## USAR COMENTARIOS
+
+Esta sección es para aprender a usar la lógica avanzada de comentarios
+
+## COMENTARIOS
+
+Es como otro lenguaje usa comentarios como "--" "#" o /**/ 
+```
+SELECT username FROM logins; -- Selects usernames from the logins table 
+```
+
+En SQL usando dos -- ya empieza un comentario, esto hace un espacio despues de esto para empezar aescribir.
+
+```
+SELECT * FROM logins WHERE username = 'admin'; # You can place anything here AND password = 'something'
+```
+Si has inputeado un payload con URL y con browser usualmente (#) se consideera como un tag y no pasa de la URL podemos usar "%23"
+
+
+El servidor borra la parte de "AND PASSWORD = "smoe"
+
+## AUTH BYPASS CON COMENTARIOS
+
+Volvemos al ejemplo anteriors conde injectamos admin'--
+```
+SELECT * FROM logins WHERE username='admin'-- ' AND password = 'something';
+```
+Por la sintaxis sabemos que el suuario es "admin" pero ahora ignoramos la contraseña.
+
+### OTRO EJEMPLO
+
+SQL deja utilizar () si la aplicacion lo necesita. Las expresiones con esto se evaluan primero veamos un escenario
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/2c161323-df43-47c0-b08e-4db7355b7682)
+
+La consulta de arriba garantiza que el id del usuario sea siempre mayor que1, lo que impedirá que cualquiera puedai niciar como admin. Adicionalmente, nosotro suamos contraseñas haseadas para utilziarlas en la consulta. Asi se previene el archivo password hasehado
+
+La consulta anteiror siempre dara error porque el usuario admin es 1, probando con tom dejara.
+
+Pero si la diferencia le ponemos un comentario admin'--
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/f6c30e71-ac9a-4876-90df-77f0790f66b7)
+
+nos da una sintaxis mala, apra ejecutar bien deberemos meterlo en () admin')--
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/bb586667-7159-4102-8634-78c4990137b2)
+
+La consulta funciona correctamente, y te logeas como admin.
+
+```
+SELECT * FROM logins where (username='admin')
+```
+
 
 
