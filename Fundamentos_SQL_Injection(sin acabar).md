@@ -652,4 +652,6 @@ Si queremos mas columnas de la tabla, añadiremos mas numeros por ejemplo.
 UNION SELECT username, 2, 3, 4 from passwords-- '
 ```
 
+# UNION INJECTION
+
 
