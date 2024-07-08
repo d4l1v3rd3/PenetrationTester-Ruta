@@ -606,5 +606,50 @@ La consulta funciona correctamente, y te logeas como admin.
 SELECT * FROM logins where (username='admin')
 ```
 
+## CLAUSULA UNION
+
+anteriormente, manipulamos una consulta original y la convertimos en un bypass, usando el operador OR y comentarios, sin embargo, otro tipo de SQL injection es utilizando causulas SQL Union Injection.
+
+### UNION
+
+Antes de empezar a hacer una injección, deberemos aprender sobre la union, simplemente es una combinación de resultados de multiples condiciones "SELECT". Esto significa que graces a la "UNION" podemos sleccionar datos de la DBMS y multiples datos y bases de datos. 
+
+```
+SELECT * FROM ports;
+SELECT * FROM ships;
+SELECT * FROM ports UNION SELECT * FROM ships;
+```
+Nosotros podemos ver, que la combinación "UNION" con "SELECT" las entradas de puertos y ships combinadas nos da toda la información.
+
+Los datos siempre salen en las mismas posiciones
+
+### INCLUSO COLUMNAS
+
+Tambien podemos hacer lo mismo con las columnas
+```
+SELECT city FROM ports UNION SELECT * FROM ships;
+```
+Aquí nos dara un error porque el primer SELECT devuelve una columna y el segundo 2. Una vez que tenemos 2 consultas con el mismo numero de columnas, en ese caso nos devuelve la informacion de otras tablas.
+
+```
+SELECT * FROM products WHERE product_id = 'user_input'
+SELECT * from products where product_id = '1' UNION SELECT username, password from passwords-- '
+```
+### COLUMNAS DESIGUALES
+
+Cuando no tenemos las mismas columnas y queremos ejecutar, deberemos  seleccionar , podemos colocar datos basura para que las columnas requeridas restantes para que el total sea el mismo.
+
+Por ejemplo queremos hacer una UNION con el string "junk" la consulta "SELECT" "junk" from password, siempre devulenve "junk". Nosotros usamos numeros. Por ejemplo, la consulta "SELECT 1 from passwords" siempre devuelve 1.
+
+Los productos de la tabla tienen dos columnas como ejemplo, si nosotros tenemos dos columnas con UNIOn queremos solo 1 "username", 2 
+```
+SELECT * from products where product_id = '1' UNION SELECT username, 2 from passwords
+```
+
+Si queremos mas columnas de la tabla, añadiremos mas numeros por ejemplo.
+
+```
+UNION SELECT username, 2, 3, 4 from passwords-- '
+```
 
 
