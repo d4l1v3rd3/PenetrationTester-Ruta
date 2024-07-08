@@ -486,7 +486,73 @@ Con la "Boolean Based" podemos utilizar condicionales para ver lo que la consult
 
 Finalmente, necesitamos directamente el acceso, para hacer un output en una localizacion "DNS" y que nos devuelva datos.
 
+## SUBVERTIENDO LA LOGIA DE LAS CONSULTAS
 
+Ahora que sabemos como hacer declaraciones SQL vamosa  empezar con SQL INjection, antes de empezar deberemos a mofificar consultar originales par identificar operadores como "OR" y usar comentarios para cambiar la logica original.
+
+## Bypass de Autenticación
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/ecea93ef-9ae2-46a0-b70e-6cd8a23166c5)
+
+Vamos a poner que te sabes el usuario y contraseña admin / p@ss0rd.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/89a686f8-f303-4987-9595-cb0d112d76f0)
+
+La pagina nos dice la consulta que hemos hecho para entender la lógica, ahora lo que tenemos que hacer es logearnos pero sin saber la contraseña.
+
+```
+SELECT * FROM logins WHERE username='admin' AND password = 'p@ssw0rd';
+```
+
+La pagina coge las credenciales con el operador AND y selecciona que los matches sean correctos. SI las credenciales son validas nos devuelve true y si no pues incorrecto.
+
+## Descubrimiento SQLi 
+
+Antes de empezar a entender la logica de la aplcicacion, deberemos antes entender formas de vulnerar y hacer bypass.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/e0d3dbbd-6411-4dd4-b5c9-99225884becf)
+
+En muchos casos utilziaremos URL encoders para payloads y necesitaremos saber esto.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/2e3a86b5-0d78-4f2e-a218-1054de02db9d)
+
+"login failed"
+
+```
+SELECT * FROM logins WHERE username=''' AND password = 'something';
+```
+
+En la anteiorr seccion, aprendimos las quiotas que podian causar erorres o comentar el resto de la consulta
+
+## INJECCIÓN OR
+
+Necesitaremos una consulta que nos devuelva true, con el usuario y contrasela.
+
+un ejemplo de condicion que nos devolvera siempre true es '1'='1' sin embargo sql no funciona usando numeros dentro de comillas necesita usar ('1'='1') .
+
+```
+admin' or '1'='1
+SELECT * FROM logins WHERE username='admin' or '1'='1' AND password = 'something';
+```
+- Si el usuario es admin o 1=1 es 1 (siempre es 1) y si la contraseña es something
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/827a1d2e-8cba-408c-808d-9d5e022cb9d9)
+
+EL operador AND evalua primero y devuelve falso pero el operador OR evalua y dice si por 1=1 entonces es true.
+
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass
+
+## BYPASS AUTH CON OPERADOR OR
+
+Tenemos que ver esto nos deja entrar porque el usuario "admin" existe.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/d1b43f03-b0a7-4677-84e7-6d456021ce7a)
+
+Para que esto funcione debe ser siempre un true entonces lo pondremos en la contraseña también.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/c223eb91-a5f4-4a5f-8ef7-2fde4a6e49ec)
+
+La condicion OR devuelve true, donde devuelve toda la tabla y el primero en logear te devuelve ese usuario.
 
 
 
