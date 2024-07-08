@@ -39,6 +39,18 @@
 
 [ENUMERACIÓN EN LA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#enumeraci%C3%B3n-en-la-base-de-datos)
 
+[ESQUEMA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#esquema)
+
+[LEER ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#leer-archivos)
+
+[PRIVILEGIOS DE USUARIO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#privilegios-de-usuario)
+
+[EJECUTAR UN FICHERO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#ejecutar-un-fichero)
+
+[ESCRIBIR ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#escribir-archivos)
+
+
+
 ## INTRODUCCIÓN
 
 Las aplicaciones más modernas utilizan bases de datos estructuradas en back-end. Como las bases de datos se usan para almacenar archivos y recoger datos de la aplicación web, del contenido actual y la información de los usuarios. Para hacer la aplicación web dinamica.
