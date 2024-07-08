@@ -5,21 +5,41 @@
 
 ## Índice
 
-[Inicio]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
-[]()
+[Inicio](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#inicio)
 
+[METASPLOIT FRAMEWORK CONSOLE](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#metasploit-framework-console)
+
+[INTRODUCCIÓN A MSFCONSOLE](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#introducción-a-msfconsole)
+
+[BUSCAR MODULOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#buscar-modulos)
+
+[EJECUCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#ejecución)
+
+[PAYLOAD](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#payload)
+
+[ENCODERS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#encoders)
+
+[GENERAR UN PAYLOAD CODIFICADO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#generar-un-payload-codificado)
+
+[BASES DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#bases-de-datos)
+
+[WORKSPACES](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#workspaces)
+
+[IMPORTAR RESULTADOS DE ESCANEO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#importar-resultados-de-escaneo)
+
+[PLUGINS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#plugins-1)
+
+[SESIONES](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#sesiones)
+
+[TRABAJOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#trabajos)
+
+[METERPRETER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#meterpreter)
+
+[ESCRIBIR Y IMPORTAR MODULOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#escribir-y-importar-modulos)
+
+[INTRODUCCIÓN A MSFVENOM](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#introducci%C3%B3n-a-msfvenom)
+
+[VIRUS TOTAL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Metasploit.md#virus-total)
 
 
 # Inicio
