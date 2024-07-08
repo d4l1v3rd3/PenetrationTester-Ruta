@@ -158,7 +158,13 @@ Esto es bastante común, en este caso, no tenemos que escribir la extension cada
 
 Como podemos ver los ataques LFI tienes diferentes formas. Otra común es la de segundo orden. Esto ocurre porque la aplicacion web funciona cogiendo archivos del back end dejando que los usuarios puedan tener parametros de control
 
-Por ejemplo una palciacion web descarga un avatar si nosotros ahcemos un codigo malicioso podriamos cambiar el archivo para que se guarda localmente y se ejecutara lo que nosotros queremoes.
+Por ejemplo una aplicación web descarga un avatar si nosotros hacemos un código malicioso podriamos cambiar el archivo para que se guarda localmente y se ejecutara lo que nosotros queremos.
+
+En el anterior caso te nemter dentro de la base de adtos, y utilizas otro vector para descargar los usuarios.
+
+Aveces los desarrolladores encuentran estas vulnerabilidades, por ejemplo de un ?page, pero hay otros vectores de ataque.
+
+Explotar vulnerablidades usando atacaques de este tipo, es otra variable.
 
 
 
