@@ -1,4 +1,40 @@
+#by d4l1
+
 # SQL INJECTION FUNDAMENTALS
+
+## Índice
+
+[INTRODUCCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#introducci%C3%B3n)
+
+[SQL INJECTION (SQLi)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#sql-injection-sqli)
+
+[ARQUITECTURA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#arquitectura)
+
+[TIPOS DE BASES DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#tipos-de-bases-de-datos)
+
+[DENTRO DE MYSQ](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#dentro-de-mysq)
+
+[CREAR UNA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#crear-una-base-de-datos)
+
+[TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#tablas)
+
+[PROPIEDADES DE LAS TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#propiedades-de-las-tablas)
+
+[DECLARACIONES SQL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#declaraciones-sql)
+
+[RESULTADOS EN LAS CONSULTAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#resultados-en-las-consultas)
+
+[OPERADORES SQL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#operadores-sql)
+
+[DENTRO DE SQL INJECTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#dentro-de-sql-injection)
+
+[ERRORES DE SINTAXIS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#errores-de-sintaxis)
+
+[USAR COMENTARIOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#usar-comentarios)
+
+[UNION INJECTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#union-injection)
+
+[ENUMERACIÓN EN LA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#enumeraci%C3%B3n-en-la-base-de-datos)
 
 ## INTRODUCCIÓN
 
