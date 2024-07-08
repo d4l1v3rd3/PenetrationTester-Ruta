@@ -18,7 +18,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 [TRANSFERENCIA DE FICHEROS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer(sin%20acabar).md)
 
-[SQL INJECTION FUNDAMENTALS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md)
+[SQL INJECTION FUNDAMENTALS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Fundamentos_SQL_Injection.md)
 
 # HERRAMIENTAS
 
