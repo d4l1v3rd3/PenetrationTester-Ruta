@@ -6,7 +6,7 @@ En este repositorio encontraras los servicios que corren predefinidamente en los
 
 [Puertos TCP](https://github.com/D4l1-web/PenetrationTester-Ruta/edit/main/Puertos_Servicios.md#puertos-tcp)
 
-[Puertos UDO](https://github.com/D4l1-web/PenetrationTester-Ruta/edit/main/Puertos_Servicios.md#puertos-udp)
+[Puertos UDP](https://github.com/D4l1-web/PenetrationTester-Ruta/edit/main/Puertos_Servicios.md#puertos-udp)
 
 # PUERTOS TCP
 
