@@ -1,4 +1,14 @@
-# COMMAND EXECUTION
+#by d4l1
+
+<p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/05b77941-9070-4a7f-8cac-c422eedc2991"></p>
+
+<h1 align="center">COMMAND EXECUTION</h1>
+
+# ÍNDICE
+
+- [PELIGROS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Command_Execution.md#peligros)
+- [PROTECCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Command_Execution.md#protecci%C3%B3n)
+- [CODE REVIEWS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Command_Execution.md#code-reviews)
 
 Si un atacante puede ejecutar código arbitrario en los sevidores, tus sistemas obviamente estas o van a ser comprometidos. Necesitamos tener una gran preocupación de como el servidor web interactua con el Sistema Operativo.
 
