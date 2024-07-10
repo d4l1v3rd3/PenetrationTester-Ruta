@@ -612,6 +612,29 @@ Durante un test de pentracion, debes actuar como profesional.
 
 ## ENCRIPTACION EN WINDOWS
 
-Mucos metodos diferentes se usan para encriptar ficheros y informacion de los sistemas Windows. Un metodo simple es con [Invoke-AESEcmoto ]()
+Muchos metodos diferentes se usan para encriptar ficheros y informacion de los sistemas Windows. Un metodo simple es con [Invoke-AESEcmoto](https://www.powershellgallery.com/packages/DRTools/4.0.2.3/Content/Functions%5CInvoke-AESEncryption.ps1) es un script en PowerShell. Provee una encriptación a los archivos
+
+### IMPORTAR MODULO
+
+```
+Import-Module .\Invoke-AESEncryption.ps1
+```
+Después de que el script sea importado, se puden encriptar archivos o ficheros, y veremos ejemplos, con la extension ".aes"
+
+```
+Invoke-AESEncryption -Mode Encrypt -Key "p4ssw0rd" -Path .\scan-results.txt
+```
+Usando contraseñas fuertes y unicas es muy importante. Y más en archivos sensibles y información que no pueda ser desencriptada con una simple contraseña.
+
+## ENCRIPTACIÓN EN LINUX
+
+Usualmente se incluye "OpenSSL" en las distribuciones Linux, con sysadmin se usa para genera certificados, se puede usar "nc style" para mandar ficheros encriptados.
+
+Para encriptar un fichero usando "openssl" selecionaremos el tipo de ciprado por ejemplo "-aes256" una itinerancia "-iter 100000" y la contraseña que usaremos "-pbkdf2" 
+
+```
+openssl enc -aes256 -iter 100000 -pbkdf2 -in /etc/passwd -out passwd.enc
+```
+
 
 
