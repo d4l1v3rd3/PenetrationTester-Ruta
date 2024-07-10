@@ -188,6 +188,36 @@ Esto para nosotros esta bien al igual que puede utilizar "...\"
 
 ### CODIFICAR
 
-Muchas webs utilizan filtros para prevenir este tipo de filtros, como "." o "/" usando rutas traversales, pero sin embargo si lo codificamos en la url y lo inputeamos estos caracteres, 
+Muchas webs utilizan filtros para prevenir este tipo de filtros, como "." o "/" usando rutas traversales, pero sin embargo si lo codificamos en la url y lo inputeamos estos caracteres, podemos bypasearlo.
+
+encodeando por ejemplo como: 
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/fac6e33d-224d-4bd3-b9a6-5895d999b916)
+
+
+Como podriamos ver podriamos hacer un path traversal codificado sin ningún problema.
+
+### RUTAS APROBADAS
+
+Muchas aplicaciones web tienen expresiones regulares para asegurar una ruta especifica. Por ejemplo, la aplicacion web tiene una forma de aceptar las rutas y por debajo el directorio ./languages
+
+```
+if(preg_match('/^\.\/languages\/.+$/', $_GET['language'])) {
+    include($_GET['language']);
+} else {
+    echo 'Illegal path specified!';
+}
+```
+
+Para buscar el path,  nosotros examinamos las peticiones que mandamos de los foros existentes, y vemos la ruta que ellos usaran en una ruta normal. Podemos hacer un fuzz a los directorios web debajo de la misma ruta, y intentamos diferentes formas. Para bypasear podemos hacer un payload y con "../" ir a leer el archivo directamente.
+
+### EXTENSIONES
+
+Muchas aplicaciones tambien funcionan con extensiones como (php) para asegurarse que el archivo incluye una extension. En las versiones mas modernas de PHP, estamos accesibles a hacer bypass y tener restricciones para leer archivos de extension especificos.
+
+Hay muchas tecnicas, ya obsoletas por las nuevas versiones de PHP. Sin embargo, esto nos beneficia, porque si un servidor es viejo sabemos que es vulnerables.
+
+## TRUCO DE RUTA
+
+En las primeras versiones de php, se definian un maximo de 4096 caracteres, con una limitacion de 32bits, simplemente despues de los maximos caracteres ignoraba lo demas,  y podias usar "/." y llamar a la conexion como "/ect/passwd/." pero esta fuera y ahora mismo no lo utilizaremos.
 
 
