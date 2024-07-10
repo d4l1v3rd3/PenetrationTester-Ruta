@@ -1,6 +1,8 @@
 #by d4l1
+<p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/ddd4200f-7299-4f75-af51-cd11bcafaab9"></p>
 
 <h1 align="center">TRANSFERENCIA DE FICHEROS</h1>
+
 
 Tenemos muchos escenarios donde utilizaremos esto y debemos entenderlo.
 
