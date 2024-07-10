@@ -1,4 +1,7 @@
-# TRANSFERENCIA DE FICHEROS
+#by d4l1
+
+<h1 align="center">TRANSFERENCIA DE FICHEROS</h1>
+
 Tenemos muchos escenarios donde utilizaremos esto y debemos entenderlo.
 
 Entenderemos diferentes formas de transferir archivos y como las redes operar y nos pueden ayudar durante nuestro paso.
