@@ -164,8 +164,30 @@ En el anterior caso te nemter dentro de la base de adtos, y utilizas otro vector
 
 Aveces los desarrolladores encuentran estas vulnerabilidades, por ejemplo de un ?page, pero hay otros vectores de ataque.
 
-Explotar vulnerablidades usando atacaques de este tipo, es otra variable.
+Explotar vulnerablidades usando ataques de este tipo, es otra variable.
 
+# BASIC BYPASS
 
+En la anterior sección, nosotros vimos diferentes tipos de ataque en losq ue nosotros podemos usar en una vulnerabilidad LFI. En muchos acsos, una aplicación web debe aplicar varias protección sobre file inclusiom, Normalmente no es un ataque que funcine, si tiene una buena seguridad.
+
+## RUTA NO TRANSVERSAL Y FILTROS
+
+Unos de los filtros más básicos de LFI es buscar y remplazar, simplemente borras las strings "../" y encontes ya quitar el path traversal.
+
+```
+$language = str_replace('../', '', $_GET['language']);
+```
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/d1f43451-1b0e-459c-a9bb-cb0535b90133)
+
+Obivamente si la string "../" esta removida no vas a poder nunca moverte, perrrooo en este caso simplemente sería hacer un "....//" si solo borra ../ entonces volveriamos a lo mismo.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/ec4e38b0-c0b6-495f-ad2b-a945c208dfbd)
+
+Esto para nosotros esta bien al igual que puede utilizar "...\"
+
+### CODIFICAR
+
+Muchas webs utilizan filtros para prevenir este tipo de filtros, como "." o "/" usando rutas traversales, pero sin embargo si lo codificamos en la url y lo inputeamos estos caracteres, 
 
 
