@@ -1,5 +1,16 @@
-# CLICKJACKING
+3by d4l1
 
+<p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/96298b16-fc05-4a39-8fdc-5c7b3dba51ad"></p>
+
+<h1 align="center">CLICKJACKING</h1>
+
+# ÍNDICE
+
+- [Peligros](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Clickjacking.md#peligros)
+- [Seguridad de política](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Clickjacking.md#peligros)
+- [FRAME KILLING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Clickjacking.md#frame-killing)
+
+  
 Clickjacking hace un truco a los usuarios de la web haciendo creer una acción que ellos no hacen, tipicalmente renderizado en una página invisible los elementos de arriba de la acción el usuario piensa que no pasa nada.
 
 Clickjacking no afecta al sitio directamente, si no afecta potencialmente a los usuarios.
