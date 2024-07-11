@@ -220,4 +220,22 @@ Hay muchas tecnicas, ya obsoletas por las nuevas versiones de PHP. Sin embargo, 
 
 En las primeras versiones de php, se definian un maximo de 4096 caracteres, con una limitacion de 32bits, simplemente despues de los maximos caracteres ignoraba lo demas,  y podias usar "/." y llamar a la conexion como "/ect/passwd/." pero esta fuera y ahora mismo no lo utilizaremos.
 
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/4b9dcb11-c43a-432d-9531-d84e5ea6df14)
+
+## FILTROS PHP
+
+Muchas aplicaciones web utilizan PHP, es una forma de customizar la pagina web con diferentes frameworks del mismo como Laravel o Symfony. Si nosotros identificamos una vulnerabilidad en las aplicaciones PHP, entonces nosotros utilizaremos diferentes "PHP Wrappers" para tener disponibilidad para la explotación, y puntualmente una remota ejecución de código.
+
+Los Wrappers de PHP te dan acceso a diferentes I/O, estandares como input/output, descripcions de ficheors, memoria. Hay muchos developers que utilizan PHP, los penetratin tester, nosotros debemos utilziar esos wrapers para la explotación de los ataques para leer el código PHP y ejecutar comandos de sistema. Esto no benefecia con estos ataques, son otros ataques como XXE, que se convierten.
+
+En esta sección, aprendremos filtros básicos de PHP y leer su código, en la siguiente secciónm veremos como diferentes wrappers nos ayudan a ganar codigo remoto y conseguir este tipo de vulnerabilidades.
+
+### FILTROS INPUT
+
+Los filtros de PHP son un tipo de wrappers, cuando nosotros pasamos diferentes tipos de input y tener que hacer un filtro específico. Para usar wrappers de PHP, podemos usar el "php://" esquema, y podemos tener aceceso a filtros como "php://filter"
+
+El filtro del wrapper tiene unos parametros, requere en nuestro ataque que se lea el recurso. El parametro del recurso requere un filtro, nosotros podemos especificar el directo y el filtro que se va a plicar, mientras ser lea el parametro pondremos filtros diferentes, podemos especificar el tipo de filtro que queremos.
+
+Hay cuatro tipos de filtros diferentes que son "String Filters", "conversion Filters", "Compression Filters", "Encryption Filters" podemos leer mas y filtrar con codificacion y con filtros de conversion.
+
 
