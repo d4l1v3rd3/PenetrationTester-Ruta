@@ -34,3 +34,11 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 - [Puertos-Servicios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Puertos_Servicios.md) - Servicios que corren predefinidamente en los puertos respectivos.
 
+# UTILIDADES
+
+- [BusquedaExploits](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/BusquedaExploit) - Como encontrar exploits fácilmente.
+- [Enumeración](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/Enumeracion) - Enumerar servicios.
+- [EscalaPrivilegios Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/EscalaPrivilegiosLinux) - Formas de escalar privilegios en Linux.
+- [Shells](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/Shells) - Formas de upgradear la shell.
+- [Transferencias Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/TransferenciaLinux) - Formas de transferir en linux.
+
