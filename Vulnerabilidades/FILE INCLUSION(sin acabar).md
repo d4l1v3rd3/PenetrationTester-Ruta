@@ -519,4 +519,62 @@ Otra forma de utilizar esta misma tecnica es en sevicios
 - /var/log/mail
 - /var/log/vsftpd.log
 
+## ESCANEO AUTOMÁTICO
+
+Es esencial entender como funciona los ataques de inclusion de archivos y como noostros podemos crear avanzados payloads y usar tecnicas customizadas para ejecutar código remoto. Esto es porque en muchos casos, explotamos la vulnerabilidad, esto requiere un payload especifica para encontrar configuraciones especificas. Además cuando queremos conectarlo por un Waf o un Firewall, tenemos que tener aplicado y entender como funciona un payload especifico bloqueando los intentos de acceso y como funciona.
+
+Si no prestamos atención al exploit en muchos casos. podemos hacer metodos automatizados para identificar este tipo de vulnerabilidades. Podemos utilizar herramientas de fuzzing para testear y hacer listas comunes y como funcionarian dependiendo la vulnerabilidad.
+
+## PARAMETROS CON FUZZING
+
+Los formularios de HTML se usan en las aplicaciones web "front-end" si queremos testear la seguridad. En muchos casos estas paginas estan expuestas, por elo mismo viene muy bien los parametros de fuzz
+
+Por ejemplo podemos añadir "GET/POST" dentro de estos fuzzeos
+
+```
+ffuf -w /opt/useful/SecLists/Discovery/Web-Content/burp-parameter-names.txt:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?FUZZ=value' -fs 2287
+```
+
+Una vez nosotros identificamos el aprametro y las formas que nosotros vamos a testear, podemos utilizar todo lo que hemos aprendido e identificar dichas vulnerabilidades y explotarlas
+
+### WORDLIST EN LFI
+
+Vamos a crafgear una wordlist. Esto es porque queremos utilizar parametros vulnerables comunes de dicha vulnerabilidad.
+
+Hay muchos numeros de [LFI wordlists](https://github.com/danielmiessler/SecLists/tree/master/Fuzzing/LFI) lo podemos usar en el escaneo, una buena dentro de esta lista es "LFI-jhadix.txt" contiene bypases a archivos comunes
+
+```
+ffuf -w /opt/useful/SecLists/Fuzzing/LFI/LFI-Jhaddix.txt:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=FUZZ' -fs 2287
+```
+### FUZZEAR ARCHIVOS DEL SERVIDOR
+
+En adicion a esto, podemos utilizar diferentes formas para explotar esta vulnerabilidad en los servidores, esto nos ayudara a entender archivos como "server webroot path, server connfiguration files" y "server logs"
+
+### SERVER WEBROOT
+
+Necesitamos saber la rua exacta de webroot para explotar. Por ejemplo en muchos acsos esta en "/uploads" o "../../uploads" en muchos casos necesitaremos configurar la ruta o rutas relativas.
+
+Para hacer esto en el "index.php" puede que salga las rutas con wordlist de linux o windows 
+```
+ffuf -w /opt/useful/SecLists/Discovery/Web-Content/default-web-root-directory-linux.txt:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ/index.php' -fs 2287
+```
+
+Como podemos ver identificamos una ruta "/var/www/html"
+
+### SERVER LOGS CONFIGURACION
+
+EN la anterior seccion identificamos los logs del directorio, en esta identificaremos la informacion importante con una wordlist y e llog del servidor y la configuracion necesitamos saber su ruta
+
+```
+ffuf -w ./LFI-WordList-Linux:FUZZ -u 'http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ' -fs 2287
+```
+
+normalmente "/etc/apache2/apache2.conf"
+
+"/var/log/apache2"
+
+### HERRAMIENTAS DE LFI
+
+Finalmente podemos enumerar herarmientas automaticas para esto tenemos mas como "LFISUITE" "LFIFREAK" y "LIFFY" podemos busacrlas en github pero normalmente estan desactualizadas y utilizando "python2"
+
   
