@@ -6,27 +6,27 @@
 
 # ÍNDICE
 
-[Inicio](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#inicio)
+[Inicio](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#inicio)
 
-[Fuzzing de directorios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#fuzzing-de-directorios)
+[Fuzzing de directorios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#fuzzing-de-directorios)
 
-[DIRECTORY FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#directory-fuzzing)
+[DIRECTORY FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#directory-fuzzing)
 
-[PAGE FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#page-fuzzing-1)
+[PAGE FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#page-fuzzing-1)
 
-[RECURSIVE SCANNING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#recursive-scanning)
+[RECURSIVE SCANNING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#recursive-scanning)
 
-[SUB-DOMAIN FUZZING]()
+[SUB-DOMAIN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#sub-domain-fuzzing)
 
-[VHOST FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#vhost-fuzzing)
+[VHOST FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#vhost-fuzzing)
 
-[FILTRAR RESULTADOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#filtrar-resultados)
+[FILTRAR RESULTADOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#filtrar-resultados)
 
-[GET REQUEST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#get-request)
+[GET REQUEST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#get-request)
 
-[PARAMETRO POST EN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#parametro-post-en-fuzzing)
+[PARAMETRO POST EN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#parametro-post-en-fuzzing)
 
-[CUSTOM WORDLIST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#custom-wordlist)
+[CUSTOM WORDLIST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#custom-wordlist)
 
 
 # INICIO
