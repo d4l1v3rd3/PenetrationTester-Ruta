@@ -4,7 +4,21 @@
 
 <h1 align="center">FILE INCLUSION</h1>
 
-## Índice
+# Índice
+
+- [LFI](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#local-file-inclusion-lfi)
+- [Ejemplos de código Vulnerable](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#ejemplos-de-código-vulnerable)
+- [LEER VS EJECUTAR](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#leer-vs-ejecutar)
+- [LFI BÁSICO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#lfi-básico)
+- [PATH REVERSAL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#path-reversal)
+- [ATAQUES DE SEGUNDO ORDER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#ataques-de-segundo-order)
+- [BASIC BYPASS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#basic-bypass)
+- [TRUCO DE RUTA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#truco-de-ruta)
+- [FUZZIND EN ARCHIVOS PHP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#fuzzind-en-archivos-php)
+- [REMOTE CODE EXECUTION CON RFI](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#remote-code-execution-con-rfi)
+- [ENVENENAMIENTO DE LOG](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#envenenamiento-de-log)
+- [ESCANEO AUTOMÁTICO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#escaneo-automático)
+- [PREVENCION EN FI](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md#prevencion-en-fi)
 
 
 # INICIO
