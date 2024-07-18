@@ -3,18 +3,18 @@
 
 <h1 align="center">TRANSFERENCIA DE FICHEROS</h1>
 
-- [INTRODUCCION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#introduccion)
-- [POWERSHELL BASE64 ENCODE & DECODE](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#powershell-base64-encode--decode)
-- [POWERSHELL DESCARGAS DE WEB](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#powershell-descargas-de-web)
-- [DESCARGAR POR SMB](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#descargar-por-smb)
-- [DESCARGAS POR FTP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#descargas-por-ftp)
-- [CONFIGURAR WEBDAV SERVER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#configurar-webdav-server)
-- [METODOS DE TRANFERENCIA DE ARCHIVOS EN LINUX](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#metodos-de-tranferencia-de-archivos-en-linux)
-- [FORMAS ALTERNATIVAS DE TRANSFERIR ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#formas-alternativas-de-transferir-archivos)
-- [TRANSFERIR ARCHIVOS CON CODIGO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#transferir-archivos-con-codigo)
-- [OTRAS FORMAS DE TRANSFERENCIA DE ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#otras-formas-de-transferencia-de-archivos)
-- [PROTECCIÓN EN LA TRASFERENCIA DE FICHEROS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#protecci%C3%B3n-en-la-trasferencia-de-ficheros)
-- [VIVIR DE LA TIERRA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/File-Transfer.md#vivir-de-la-tierra)
+- [INTRODUCCION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#introduccion)
+- [POWERSHELL BASE64 ENCODE & DECODE](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#powershell-base64-encode--decode)
+- [POWERSHELL DESCARGAS DE WEB](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#powershell-descargas-de-web)
+- [DESCARGAR POR SMB](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#descargar-por-smb)
+- [DESCARGAS POR FTP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#descargas-por-ftp)
+- [CONFIGURAR WEBDAV SERVER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#configurar-webdav-server)
+- [METODOS DE TRANFERENCIA DE ARCHIVOS EN LINUX](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#metodos-de-tranferencia-de-archivos-en-linux)
+- [FORMAS ALTERNATIVAS DE TRANSFERIR ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#formas-alternativas-de-transferir-archivos)
+- [TRANSFERIR ARCHIVOS CON CODIGO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#transferir-archivos-con-codigo)
+- [OTRAS FORMAS DE TRANSFERENCIA DE ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#otras-formas-de-transferencia-de-archivos)
+- [PROTECCIÓN EN LA TRASFERENCIA DE FICHEROS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#protecci%C3%B3n-en-la-trasferencia-de-ficheros)
+- [VIVIR DE LA TIERRA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md#vivir-de-la-tierra)
 
 
 Tenemos muchos escenarios donde utilizaremos esto y debemos entenderlo.
