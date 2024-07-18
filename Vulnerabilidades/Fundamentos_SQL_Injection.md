@@ -7,7 +7,7 @@
 
 ## Índice
 
-[INTRODUCCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#introducci%C3%B3n)
+[INTRODUCCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/Vulnerabilidades/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#introducci%C3%B3n)
 
 [SQL INJECTION (SQLi)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#sql-injection-sqli)
 
