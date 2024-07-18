@@ -13,36 +13,21 @@
 - [TIPOS DE BASES DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#tipos-de-bases-de-datos)
 - [DENTRO DE MYSQ](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#dentro-de-mysq)
 - [CREAR UNA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#crear-una-base-de-datos)
-
-[TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#tablas)
-
-[PROPIEDADES DE LAS TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#propiedades-de-las-tablas)
-
-[DECLARACIONES SQL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#declaraciones-sql)
-
-[RESULTADOS EN LAS CONSULTAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#resultados-en-las-consultas)
-
-[OPERADORES SQL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#operadores-sql)
-
-[DENTRO DE SQL INJECTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#dentro-de-sql-injection)
-
-[ERRORES DE SINTAXIS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#errores-de-sintaxis)
-
-[USAR COMENTARIOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#usar-comentarios)
-
-[UNION INJECTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#union-injection)
-
-[ENUMERACIÓN EN LA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#enumeraci%C3%B3n-en-la-base-de-datos)
-
-[ESQUEMA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#esquema)
-
-[LEER ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#leer-archivos)
-
-[PRIVILEGIOS DE USUARIO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#privilegios-de-usuario)
-
-[EJECUTAR UN FICHERO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#ejecutar-un-fichero)
-
-[ESCRIBIR ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#escribir-archivos)
+- [TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#tablas)
+- [PROPIEDADES DE LAS TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#propiedades-de-las-tablas)
+- [DECLARACIONES SQL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#declaraciones-sql)
+- [RESULTADOS EN LAS CONSULTAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#resultados-en-las-consultas)
+- [OPERADORES SQL](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#operadores-sql)
+- [DENTRO DE SQL INJECTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#dentro-de-sql-injection)
+- [ERRORES DE SINTAXIS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#errores-de-sintaxis)
+- [USAR COMENTARIOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#usar-comentarios)
+- [UNION INJECTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#union-injection)
+- [ENUMERACIÓN EN LA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#enumeraci%C3%B3n-en-la-base-de-datos)
+- [ESQUEMA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#esquema)
+- [LEER ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#leer-archivos)
+- [PRIVILEGIOS DE USUARIO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#privilegios-de-usuario)
+- [EJECUTAR UN FICHERO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#ejecutar-un-fichero)
+- [ESCRIBIR ARCHIVOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#escribir-archivos)
 
 
 
