@@ -7,17 +7,12 @@
 
 ## Índice
 
-[INTRODUCCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/Vulnerabilidades/blob/main/Fundamentos_SQL_Injection(sin%20acabar).md#introducci%C3%B3n)
-
-[SQL INJECTION (SQLi)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#sql-injection-sqli)
-
-[ARQUITECTURA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#arquitectura)
-
-[TIPOS DE BASES DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#tipos-de-bases-de-datos)
-
-[DENTRO DE MYSQ](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#dentro-de-mysq)
-
-[CREAR UNA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#crear-una-base-de-datos)
+- [INTRODUCCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#introducción)
+- [SQL INJECTION (SQLi)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#sql-injection-sqli)
+- [ARQUITECTURA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#arquitectura)
+- [TIPOS DE BASES DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#tipos-de-bases-de-datos)
+- [DENTRO DE MYSQ](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#dentro-de-mysq)
+- [CREAR UNA BASE DE DATOS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md#crear-una-base-de-datos)
 
 [TABLAS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection(sin%20acabar).md#tablas)
 
