@@ -16,7 +16,7 @@
 
 [RECURSIVE SCANNING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#recursive-scanning)
 
-[SUB-DOMAIN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#recursive-scanning)
+[SUB-DOMAIN FUZZING]()
 
 [VHOST FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/FFUF.md#vhost-fuzzing)
 
