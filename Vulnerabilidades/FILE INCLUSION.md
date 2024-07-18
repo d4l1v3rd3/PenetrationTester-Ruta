@@ -1,6 +1,11 @@
-# FILE INCLUSION
+#by d4l1
+
+<p align="center"><img src="https://github.com/user-attachments/assets/be06953d-a7ab-46b2-914c-eab110e50e03"></p>
+
+<h1 align="center">FILE INCLUSION</h1>
 
 ## Índice
+
 
 # INICIO
 
