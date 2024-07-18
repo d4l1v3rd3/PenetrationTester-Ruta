@@ -577,4 +577,58 @@ normalmente "/etc/apache2/apache2.conf"
 
 Finalmente podemos enumerar herarmientas automaticas para esto tenemos mas como "LFISUITE" "LFIFREAK" y "LIFFY" podemos busacrlas en github pero normalmente estan desactualizadas y utilizando "python2"
 
-  
+## PREVENCION EN FI
+
+En este apartado aprenderemos a detectar esta vulnerabilidad y arreglala. Entender como funciona y como parchearla
+
+### PREVENCION
+
+La formas mas eficiente para reducir esta vulnerabilidad es quitar el control a lusuario sobre loq ue sube a la página o aplicacion. La pagina debeia ser dinamica y cargarse en el back-end pero sin interacción de los usuarios.
+
+En muchos casos, se requiere cambiar la arquitectura existente de la aplicación web. En muchos casos limitamos la gente que se puede unir, y los archivos que se pueden subir mientras los valores por defecto se dejan igual. Podemos crear una whitelist que contenta todas las rutas que se usan en front-end y utilizarlas para listarlas al usuario.
+
+### PREVENCION EN DIRECTORY TRAVERSAL
+
+Si los ataques tienen el control del directorio, ellos puedes escaparse de la aplicación web y atacar a algo mas faimiliar.
+
+- Pueden leer /etc/passwd y las keys de ssh o usuarios validos con contraseñas
+- Buscar otros servicios que corran en local
+- Descubrir cookies de sesion
+- Cambiar la configuración o el código fuente.
+
+La mejor forma de prevenir esto es usar un lenguaje de programación bueno o framework. Por ejemplo, PHP tiene "basename()" para que esto lea la ruta debe darle una porcion del archivo. Si solo le das e l archivo no te devolvera nada mas que eso. Si le das la ruta entonces si.
+
+Si creas una funcion con tu propio metodo, por ejemplo si en tu bash temrinal, vas al directorio home y haces el comando 
+```
+cat .?/.*/.?/etc/passwd
+```
+Podremos ver que "?" y "*" se usan como "php -a" y pjuedes hacer comandos que se interpreten como un "echo" ç
+```
+file_get_contents('.?/.*/.?/etc/passwd');
+```
+```
+while(substr_count($input, '../', 0)) {
+    $input = str_replace('../', '', $input);
+};
+```
+
+Este codigo remueve todas las substrings "../" si contiene algo d eeso las quita.
+
+## CONFIGURACION DEL SERVIDOR WEB
+
+Las configuraciones se utilizan para reducir el imacto o las vulnerabilidades. Por ejemplo desabilitar los archivos remotos. En el caso de php configuracion "allow_url_fopen" y "allow_url_include" a OFF
+Es posible que las aplicaciones web como el directorio root, se prevean de esto, hoy en dia utilizamos "Docker" sin embargo muchos lenguajes tienen que preveer este tipo de cosas. En php se añaden "open_basedir = /var/WW" en el ini de php para que los modulos se quiten
+
+## WAF O FIREWALL
+
+Lo mas importante de esto es tener falsos positivos y bloquear las respuestar maliciosas. ModSecurity minimiza los falsos positivos ofreciendo un modo permisivo, solo reporta pero no bloquea. 
+
+Finalmente, es importartante recordar que el proposito de recoger informaci´on hace que mejore tu infraestructura. Acordado por reportes.
+
+Es importante identificar que aunque no se pueda buscar información no es que no se pueda hackear.
+
+```
+sudo find / -name php.ini
+```
+
+
