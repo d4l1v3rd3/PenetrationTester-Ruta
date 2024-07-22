@@ -33,7 +33,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 # OTROS
 
 - [Puertos-Servicios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Puertos_Servicios.md) - Servicios que corren predefinidamente en los puertos respectivos.
-- [Comandos-Básicos-Linux]()
+- [Comandos-Básicos-Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Comandos-Básicos-linux) - Comandos básicos de Linux
 
 # UTILIDADES
 
