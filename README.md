@@ -44,4 +44,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 - [EscalaPrivilegios Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/EscalaPrivilegiosLinux) - Formas de escalar privilegios en Linux.
 - [Shells](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/Shells) - Formas de upgradear la shell.
 - [Transferencias Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/TransferenciaLinux) - Formas de transferir en linux.
+- [OSCP-Ruta](https://github.com/CountablyInfinite/oscp_cheatsheet)
+- [Compilación-Recursos-Pentesting](https://github.com/adon90/pentest_compilation)
+- [Otra-Ruta-OSCP](https://johnjhacking.com/blog/oscp-reborn-2023/)
 
