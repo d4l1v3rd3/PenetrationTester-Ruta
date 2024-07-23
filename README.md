@@ -27,6 +27,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 - [FFUF](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md) - Escanear directorios, extensiones, vhosts, php, valores, etc.
 - [NMAP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md) - Escaner de host y servicios en un red o subred.
 - [HYDRA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Hydra.md) - Programa para reventar contraseñas por fuerza bruta.
+- [AUTORECON](https://github.com/Tib3rius/AutoRecon/tree/main) - Herramienta que automatiza el primer paso de una CTF.
 
 # PORTSWIGGER
 
