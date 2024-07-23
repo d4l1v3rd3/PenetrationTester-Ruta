@@ -142,7 +142,112 @@ En el ejemplo, vamos a escanear una red
 ```
 nmap -PE -sn ip/24
 ```
-Esto mandara paquetes ICMP y lo devolveran dando a sí la MAC
+Esto mandara paquetes ICMP y lo devolveran dando a sí la MAC, generalmente hablan entre sí, no te saldrá la MAC a no ser que estemos en la misma subred. 
+
+Podemos hacer el mismo escaneo pero sin que nos salga la mAC
+```
+sudo nmap -PE -sn 10.10.68.220/24
+```
+
+Si tu miras los pquetes con wireshar veras paquetes con protocolo ICP y su respuesta dentro de la subnet
+
+![image](https://github.com/user-attachments/assets/8bc3b0a8-62fa-461f-887b-fbdac270839f)
+
+Porque los paquetes ICMP suelen ser bloqueados, se puede utilizar "-PP" para tardar un tiempo entre pings
+
+![image](https://github.com/user-attachments/assets/8a1da0ff-0a3d-418f-9f97-0cc6ee37d7dc)
+
+```
+nmap -PP -sn ip
+```
+
+Similar a la otra saldran en wireshar paquetes ICMP
+
+Otro tipo seria por mascara de red con "-PM" 
+
+![image](https://github.com/user-attachments/assets/b1b41d5b-6c49-42fa-8488-bafdab574634)
+
+Esto intenta descubrir los hosts con la marca de red, utilizamos
+```
+nmap -PM -sn ip
+```
+nosotros sabemos que el host esta archivo, y  nos dvuelve que no. es necesario aprender que muchos paquetes pueden ser bloqueados y no por ello esta inactivo
+
+pero podemos ver por Whireshark que tenemos respuesta aunque este bloqueado.
+
+## DESCUBRIMIENTO DE HOST USANDO TCP Y UDP
+
+Podemos mandar paquetes SYN (sincronizados) por el puerto TCP, 80 y esperar una respueta. Un puerto abierto suele ser con SYN/ACK y un puerto cerrado RST. EN este caso chekearemos si tenemos una respuesta. ESpecficando el peurto que queremos
+
+![image](https://github.com/user-attachments/assets/8862bd30-2511-44a9-a088-a7b5b38c2844)
+
+Si queremos que namp use TCP SYN ping deberemos utilizar la opción "-PS" siguiente el numero de puerto, rango lista o combinación. Por ejemplo "-PS21" mientras que "-PS21-25" coge todos esos puertos
+También podemos puerto por puerto "PS80,443,8080"
+
+Los usuarios privlegiados pueden andar paquetes y no tienen que completar el handhsake si el puerto esta abierto
+
+![image](https://github.com/user-attachments/assets/3b1e29e9-6b76-40c9-a03f-49d5726549fc)
+
+```
+nmap -PS -sn ip
+```
+
+Por whireshar veremos TCP
+
+![image](https://github.com/user-attachments/assets/0870146f-7d24-440d-98fe-4b6f98f9478d)
+
+### TCP ACK PING
+
+Esto manda un paquete ACK usando los privilegios de nmap y si no es privilegiado lo manda 3 veces
+
+El puerto por defecto es el 80 es igual que el anterior "-PA" 
+
+![image](https://github.com/user-attachments/assets/8a8b455c-bcbe-465b-a720-2ba7dc98cbab)
+
+```
+sudo nmap -PA -sn
+```
+![image](https://github.com/user-attachments/assets/9c27cb45-f074-4444-9385-70315d1ac6d9)
+
+### UDP PING
+
+Lo contrario a TCP es UDP y podemos hacer exactamente lo mismo y mirar target avaliable
+
+![image](https://github.com/user-attachments/assets/23d7c77e-c648-47d4-9b79-4e44fc3b3b14)
+
+La sintaxis es la misma
+```
+sudo nmap -PU -sn ip
+```
+
+![image](https://github.com/user-attachments/assets/77e711e1-f3f2-46e3-a214-effbfa894535)
+
+### MASSCAN
+
+Masscan se usa igual que nmap, sin embargo para abar el escaneo de la red, hay que pararlo masscan es mas agresivo
+
+```
+masscan ip -p443
+mascan ip -p80,443
+masscan ip --top-ports 100
+```
+
+```
+apt install masscan
+```
+
+## USAR REVERSE-DNS
+
+Nmap por defecto siempre hace un DNS reverso. POrque los hostnames revelan mucho y esto puede ayudar. si no queremos hacerlo "-n" 
+
+Por defecto mira los hosts activos y podemos usar "-R" para mandar tambien a los hosts desconectado si queremos usar un dns especifico 
+```
+--dns-servers DNS_server
+```
+
+![image](https://github.com/user-attachments/assets/8a9a9719-f5b6-4c9a-9cd1-10a5f41c9b18)
+
+![image](https://github.com/user-attachments/assets/3d4282f7-3803-4070-8069-5e9a009ce05e)
 
 
 
