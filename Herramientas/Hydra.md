@@ -1,6 +1,14 @@
 #by d4l1
 
+<p align="centeR"><img src="https://github.com/user-attachments/assets/e1478a5c-198d-4d18-878e-5ddbf300f78b"></p>
+
 <h1 align="center">HYDRA</h1>
+
+# ÍNDICE
+
+- [INSTALAR HYDRA]()
+- [COMANDOS]()
+
 
 # INTRODUCCIÓN
 
