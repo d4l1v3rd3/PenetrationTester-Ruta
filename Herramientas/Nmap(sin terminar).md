@@ -142,7 +142,7 @@ En el ejemplo, vamos a escanear una red
 ```
 nmap -PE -sn ip/24
 ```
-Esto mandara paquetes ICP y lo devolveran danddo a sí la MAC
+Esto mandara paquetes ICMP y lo devolveran dando a sí la MAC
 
 
 
