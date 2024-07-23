@@ -25,6 +25,8 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 - [METASPLOIT](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Metasploit.md) - Plataforma para pentester o herramienta, en la que podras testear y ejecutar codigo exploit.
 - [FFUF](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md) - Escanear directorios, extensiones, vhosts, php, valores, etc.
+- [NMAP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md) - Escaner de host y servicios en un red o subred.
+- [HYDRA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Hydra.md) - Programa para reventar contraseñas por fuerza bruta.
 
 # PORTSWIGGER
 
