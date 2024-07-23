@@ -1,14 +1,22 @@
-# Linux-Comandos
+#by d4l1
+
+<p align="center"><img width="200px" height="200px" src="https://github.com/user-attachments/assets/2de4ab10-643c-456f-b95c-49764843fa6d"></p>
+
+<h1 align="center">LINUX COMANDOS</h1>
+
+# ÍNDICE
 
 1. [Comandos básicos](https://github.com/D4l1-web/Linux-Comandos?tab=readme-ov-file#comandos-b%C3%A1sicos-y-fundamentales)
 
-# COMANDOS Y DEFINICIONES
+# INICIO
 
-## ¿QUÉ ES UNA SHELL DE LINUX?
+## COMANDOS Y DEFINICIONES
+
+### ¿QUÉ ES UNA SHELL DE LINUX?
 
 Una shell es una línea de comandos con la capacidad de permitir a los usuarios interactuar con el sistema.
 
-## ¿QUÉ ES UN COMANDO DE LINUX?
+### ¿QUÉ ES UN COMANDO DE LINUX?
 
 Es un programa o utilidad que se ejecuta en la CLI, una consola que interactúa con el sistema a través de textos y procesos.
 
