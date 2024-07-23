@@ -69,5 +69,81 @@ Si queremos chekear la lista de hosts que hemos escaneado, podemos usar "nmap -s
 
 Dando valiosa información al Pentester (SI queremos que no haga esto añadimos -n)
 
+## DESCUBRIR HOSTS ACTIVOS
+
+Vamos a volver a ver las capas TCP/IP empezamos por como usuarlas
+
+- ARCP la capa de enlace
+- ICP de la capa de red
+- TCP de la capa de transporte
+- UDP de la capa de transporte
+
+![image](https://github.com/user-attachments/assets/5c2be6e2-69ed-4397-be28-a12fe886ca15)
+
+Antes de discutir como hacer escaneos debemos detallar, y entender los cuatro protocolos. ARP se usa por un proposito: 
+
+Mandar un parquete a la dirección broadcast en un segmeto de red preguntarndo al rodenador con la dirección ip especifica y el respondiendo con la mAC
+
+ICP tiene muchos tipos. puede usar (echo) o (ECHO reply)
+
+Si queremos hacer un ping en la misma subnet, utilizaremos mejor ARP que ICP
+
+OTra cosa es TCP y UCP los transportes, para propositos de escaneo de red, un escaner puede mandar y crear paquetes especificos de TCP o UDP puertos y checkear como responden los targets. Este metodo es eficiente cuando los paquetes ICMP Echo estan bloqueados.
+
+## DESCUBRIMIENTO DE HOST USANDO ARP
+
+Imagina que queires saber los hosts que hay y que estan funcionando. Lo esencial es utilizar tiempo para escanear y también hosts online y que no esten en uso. Hay varias formas de descubrir estos hosts
+
+1 - Necesitaremos privilegios para escanear en una local network siendo "root" o "sudo"
+2 - Cuando los usuarios priviligeados intentar escanear fuera de la res, Nmap usa ICP, TCP ACk por el puerto 80, TCP SYN para sincronizar por el puerto 443.
+3 - Cuando el usuario no tiene privilegios se intenta escanear fuera de lar ed, utiliza 3 tipos de TCP mandando paquetes SYN del puerto 80 y 443
+
+Nmap por defecto usa ping para escanear los host activos, procede a escanear despues de elo. SI tu quieres descubrir hosts online sin necesidad del puerto, podemos usar 
+```
+nmap -sn target
+```
+
+Los escaneos ARP son posibles si tu estas en la misma subred de los target. por Ethernet o Wifi, necesitamos saber la MAC de los sistemas que queremos comunicarnos. La MAC es necesarioa porque linkea la cabeza, la cabecera contiene la informacion de la MAC de destino.
+
+Para conseguir la MAC es necesario mandar peticion ARP al sistema operativo, solo funciona si estamos en la misma subnet
+
+```
+nmap -PR -sn target
+```
+Donde -pr indica que solo quieres paquetes ARP. 
+
+En este caso por ejemplo una ip "10.10.210.7" usa paquetes ARP para descburir los host de la misma subred. Manda peticiones a los ordeandores, y los devuelve el mismo
+
+![image](https://github.com/user-attachments/assets/ee596508-5496-428e-b323-a531a308af90)
+
+Podemos ver si quremeos ver como los paquetes se generar por "Wireshark" viendo el trafico de red, viendo la MAC inico a la destino.
+
+![image](https://github.com/user-attachments/assets/f358af19-410d-4b68-8ac2-01d98bb0b052)
+
+Hablando de los paqutes ARP podemos mencionar que existen este tipo directamente "arp-scan" esto da muchas funciones
+
+```
+arp-scan --localnet
+arp-scan -l
+sudo arp-scan -I eth0 -l
+```
+
+## DESCUBRIMIENTO DE HOST POR ICMP
+
+Si quisieramos podriamos hacer un ping a cada IP de la red y ver como responde a este ping, simple no?
+
+No siempre es lo mejor, porque muchos firewall bloquean ip
+
+Pra usar ICMP echo y descubrir hosts podemos añadir "-PE" y recordar "-sn" si no queremos un puerto especifico. 
+
+![image](https://github.com/user-attachments/assets/e64f2953-f8f4-4efd-a7e9-dc5631e1e797)
+
+En el ejemplo, vamos a escanear una red
+```
+nmap -PE -sn ip/24
+```
+Esto mandara paquetes ICP y lo devolveran danddo a sí la MAC
+
+
 
 
