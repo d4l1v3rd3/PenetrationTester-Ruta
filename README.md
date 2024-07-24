@@ -4,7 +4,7 @@
 
 <h1 align="center">PenetrationTester-Ruta</h1>
 
-Este repositorio es enfocado para conocer Vulnerabilidades, herramientas, información para un PenetrationTester
+Este repositorio es enfocado para conocer Vulnerabilidades, herramientas, información para un PenetrationTester.
 
 Utilizo herramientas de mi trabajo, herramientas e información de HTB o de otras personas en GitHub.
 
