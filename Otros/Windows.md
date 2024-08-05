@@ -58,4 +58,24 @@ Si ejecutamos Windows, podemos chekear en propiedades que utiliza.
 
 ## CARPETAS DE SYSTEM 32
 
-La carpeta de Windows C:\Windows es tradicionalmente la carpeta que esta el sistema operativoç
+La carpeta de Windows C:\Windows es tradicionalmente la carpeta que esta el sistema operativo.
+
+![image](https://github.com/user-attachments/assets/1290c9ff-0211-4b34-b40f-006b9704bf33)
+
+## CONFIGURACIÓN DE SISTEMA
+
+Para abrir la configuración de sistema "MSConfig" 
+
+- Nombre servicio para listar el sistma interno : PsShutdown
+- Comando para abrir panel de ocntrol : control.exe
+- UAC settings : UserAccountControlSettings.exe
+- Tareas de ordenador : compmgmt.msc
+- Información del sistema : msinfo32.exe
+- Resource Monitor : resmon.exe
+- Ruta total del ipconfig para entenderlo : C:\Windows\System32\cmd.exe /k %windir%\system32\ipconfig.exe
+- Detalle para ver ip : ipconfig /all
+- Editor de registro : regedt32.exe
+
+
+
+
