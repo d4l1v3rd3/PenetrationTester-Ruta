@@ -39,6 +39,9 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 - [Comandos-Básicos-Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Comandos-Básicos-linux.md) - Comandos básicos de Linux
 - [Comandos-CTF](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Comandos_CTF.md) - Comandos que vendran bien para una CTF
 - [ModeloOSI](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md) - Como no te puedes saber el modelo OSI tio.
+- [Introducción_HackingWeb](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md) - Importantisimo para saber como funciona una aplicación web.
+- [Principios-Seguridad](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Principios_Seguridad.md) - Conocer como funciona la seguridad realmente.
+- [Windows](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Windows.md) - Cosas muy básicas de Windows.
 
 # UTILIDADES
 
