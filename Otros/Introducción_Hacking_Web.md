@@ -177,8 +177,31 @@ gobuster dir -uurl http://ip -w ruta
 
 # ENUMERACION DE SUBDOMINIOS
 
+La enumeración de subdominios es el proceso para buscar subdominios validos dentro de un dominio, pero porque se hace esto? Simplemente intentamos agrandar la superficie para buscar vulnerabilidades en otrosp untos.
 
+Exploraremos tres diferentes formas de enumerar: fuerza bruta, OSINT y virtual host
 
+## OSINT - CERTIFICADOS SSL/TLS 
 
+Cuando un SSL/TLS (Secure socket layer/Transport layer security) se crear para un dominio por una entidad de certficiacion (CA).
+
+Hay los publicos creados para un dominio. EL proposito de estos certificados es parar a los malos para que las páginas no seguras no tengan este tipo de certificados.
+
+Nosotros usamos este servicio como ventaja para descubrir subdominios a traves de sitios como "https://crt.sh" o ui.ctsearch son bases de datos que te dicen los certificados y todos los resultados historicos.
+
+[crt](https://crt.sh)
+
+![image](https://github.com/user-attachments/assets/4669d951-2d08-41e7-8c0a-cbb139037328)
+
+## OSINT - MOTORES DE BUSQUEDA
+
+Los motores de búsqueda contienen trillones de links a muchas paginas web, esto es un excelente recurso para buscar nuevos subdominios.
+
+Usar avanzados metodos de busqeuda como en google, con filtros como site:, puede ayudarnos mucho 
+
+```
+site:www.domain.com
+site:*.tryhackme.com
+```
 
 
