@@ -204,4 +204,38 @@ site:www.domain.com
 site:*.tryhackme.com
 ```
 
+## DNS FUERZA BRUTA
+
+Hacer fuerza bruta por DNS es el metodo de enumeracion que intenta, por 100 o por 10000000 diferentes subdominios posibles predefinidos en una lista que se usa para definirlos.
+
+Este metodo necesita muchas consultas, nosotros automatizamos la herramienta para que haga el proceso rapido y sencillo.
+
+## OSINT - Sublist3r
+
+Para aumentar el proceso del descubrimiento del subdominio por OSINT, nostros utilizamos metros que nos ayuda la lista de herramientas como "Sublist3r" 
+
+## VIRTUAL HOSTS
+
+Muchos subdominios no estas hosteados publicamente accesibles a los DNS, muchas versiones de desarrollador de la web o aplicacion o el portal del administrador, el DNS tiene DNS privados que se ponen en el famoso archivo /etc/hosts referiendose a la IP y dominio.
+
+Porque los servidores web tienen multiples webs del servidor que pueden hacer consultas los usuarios, los servidores que quiere el cliente se le llaman los Host header. Nosotros utilizamos esto mismo para monitorear las respuestas y descubrir nuevas websites
+
+Como el DNS de fuerza bruta, automatiza el proceso con una wordlists esto es lo mismo.
+
+```
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP
+```
+
+- El parámetro -w : especifica la wordlist que queremos usar
+- El parámetro -H : añade o edita la cabecera "Host header"
+- FUZZ : es el espacio donde debería ir el subdominio.
+
+```
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://10.10.224.132 -fs {size}
+```
+
+- El parámetro -fs : se usa para ocultar resultados como el tamaño de la página o palabras que contiene.
+
+# BYPASS DE AUTENTICACIÓN
+
 
