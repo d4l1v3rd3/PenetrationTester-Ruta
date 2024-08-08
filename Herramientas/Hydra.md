@@ -1,8 +1,8 @@
-#by d4l1
-
-<p align="centeR"><img src="https://github.com/user-attachments/assets/e1478a5c-198d-4d18-878e-5ddbf300f78b"></p>
-
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 <h1 align="center">HYDRA</h1>
+<p align="centeR"><img height=300px with=300px src="https://github.com/user-attachments/assets/e1478a5c-198d-4d18-878e-5ddbf300f78b"></p>
+
+
 
 # ÍNDICE
 
