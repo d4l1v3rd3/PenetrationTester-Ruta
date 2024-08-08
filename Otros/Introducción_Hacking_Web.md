@@ -1,4 +1,10 @@
-<h1>INTRODUCCIÓN AL HACKING WEB</h1>
+
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
+
+<h1 align="center">INTRODUCCIÓN AL HACKING WEB</h1>
+
+<p align="center"><img height=300px width=500px src="https://github.com/user-attachments/assets/641009fc-5672-4b69-9ca5-351e660c87c7"></p>
+
 
 # ENTEDER UNA APLICACIÓN
 
