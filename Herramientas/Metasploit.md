@@ -1,7 +1,7 @@
-#by d4l1
-
-<p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/a3215fd6-917e-4c1f-90d1-6cc66315fcd6"></p>
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 <h1 align="center"> METASPLOIT </h1>
+<p align="center"><img src="https://github.com/user-attachments/assets/6e79af07-560b-4554-a683-966f297f73c5"></p>
+
 
 ## Índice
 
