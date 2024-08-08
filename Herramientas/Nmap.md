@@ -1,8 +1,18 @@
-#by d4l1
-
-<p align="center"><img src=""></p>
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 
 <h1 align="center">NMAP</h1>
+
+<p align="center"><img src="https://github.com/user-attachments/assets/5e7bad69-1e3e-4057-92db-bdbb3b6aab6f"></p>
+
+# ÍNDICE
+
+- [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#introducción)
+- [SUBREDES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#subredes)
+- [ENUMERAR TARGET](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#enumerar-target)
+- [DESCUBRIR HOST ACTIVOS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#descubrir-hosts-activos)
+- [MASSCAN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#masscan)
+- [REVERSE DNS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#usar-reverse-dns)
+
 
 # INTRODUCCIÓN
 
