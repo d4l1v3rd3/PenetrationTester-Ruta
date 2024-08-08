@@ -5,6 +5,16 @@
 
 <p align="center"><img height=300px width=500px src="https://github.com/user-attachments/assets/641009fc-5672-4b69-9ca5-351e660c87c7"></p>
 
+# ÍNDICE
+
+- [ENTEDER UNA APLICACIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#enteder-una-aplicación)
+- [CÓDIGO FUENTE](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#ver-el-código-de-la-página)
+- [DESCUBRIR CONTENIDO](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#descubrir-contenido)
+- [ENUMERACIÓN SUBDOMINIOS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#enumeracion-de-subdominios)
+- [BYPASS DE AUTENTICACIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#bypass-de-autenticación)
+- [LÓGICA POR DEFECTO](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#lógica-por-defecto)
+- [MANIPULACIÓN DE COOKIES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md#manipulación-de-cookies)
+
 
 # ENTEDER UNA APLICACIÓN
 
