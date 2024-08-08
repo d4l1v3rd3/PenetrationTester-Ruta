@@ -1,4 +1,4 @@
-#byd41
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 
 # CIA TRIAD
 
