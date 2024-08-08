@@ -1,3 +1,5 @@
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
+
 # INTRODUCCIÓN
 
 En este apartado pondre todos los comandos necesarios y buenos para en caso de un CTF te queden en blanco vengas aqui y recuerdes comandos buenos e importantes.
