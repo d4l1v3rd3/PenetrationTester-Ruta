@@ -1,9 +1,19 @@
-#by d4l1
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 
-# MODELO OSI
+<h1 align="center">MODELO OSI</h1>
 
-![image](https://github.com/user-attachments/assets/b1907774-e3a1-41b6-b2a5-74afdc7cf3b5)
+<p  align="center" ><img width=300px height=400px src="https://github.com/user-attachments/assets/0ed81f3c-4c32-4cc2-9321-b7f40434fbf9"></p>
 
+# ÍNDICE
+
+- [¿QUÉ ES EL MODELO OSI?](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#qué-es-el-modelo-osi)
+- [CAPA 7 APLICACIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-7-aplicacion)
+- [CAPA 6 PRESENTACIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-6-presentacion)
+- [CAPA 5 SESIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-5-sesion)
+- [CAPA 4 TRANSPORTE](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-4-transporte)
+- [CAPA 3 RED](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-3-red)
+- [CAPA 2 ENLACE DE DATOS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-2-enlace-de-datos)
+- [CAPA 1 FÍSICA](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md#capa-1-física)
 
 ## ¿Qué es el modelo OSI?
 
