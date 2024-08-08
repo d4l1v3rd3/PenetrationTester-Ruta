@@ -1,7 +1,10 @@
-#by d4l1
+<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
+
 <p align="center">
-<img  src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1bed9526-e7e2-4132-bd47-9e3a9e5f74fc">
+  
+<img height=300px witdh=300px src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/1bed9526-e7e2-4132-bd47-9e3a9e5f74fc">
 </p>
+
 <h1 align="center"> FFUF </h1>
 
 # ÍNDICE
@@ -27,7 +30,6 @@
 [PARAMETRO POST EN FUZZING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#parametro-post-en-fuzzing)
 
 [CUSTOM WORDLIST](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md#custom-wordlist)
-
 
 # INICIO
 En este apartado estudiaremos la herramienta "ffuf" con la que podremos escanear directorios, extensiones, vhosts, php, valores, etc.
