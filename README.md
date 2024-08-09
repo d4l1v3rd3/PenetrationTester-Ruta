@@ -26,6 +26,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 - [FILE TRANSFER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md) - Transferencia de archivos en Windows y Linux.
 - [SQL INJECTION FUNDAMENTALS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md) - Ocurre cuando un atacante malicioso intenta pasar el input y cambiar la consulta final de SQL de la aplicación web.
 - [FILE INCLUSION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md) - Un atacante puede manipular  parametros para ver contenido de archivos locales del servidor.
+- [IDOR](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/IDOR.md) - Inputs inseguros por parte del usuario al servidor.
 
 # HERRAMIENTAS
 
