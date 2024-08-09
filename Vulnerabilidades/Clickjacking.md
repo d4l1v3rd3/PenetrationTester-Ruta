@@ -1,8 +1,11 @@
-#by d4l1
 
-<p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/96298b16-fc05-4a39-8fdc-5c7b3dba51ad"></p>
+<p align="right"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 
 <h1 align="center">CLICKJACKING</h1>
+
+<p align="center"><img width=300px height=300px src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/96298b16-fc05-4a39-8fdc-5c7b3dba51ad"></p>
+
+
 
 # ÍNDICE
 
