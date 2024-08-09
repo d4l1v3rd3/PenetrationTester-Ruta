@@ -6,7 +6,12 @@
 
 # ÍNDICE
 
-- []
+- [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#introducción)
+- [VULNERABILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#vulnerabilidades)
+- [HERRAMIENTAS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#herramientas)
+- [PORTSWIGGER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#portswigger)
+- [OTROS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#otros)
+- [UTILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#utilidades)
 
 # INTRODUCCIÓN
 
