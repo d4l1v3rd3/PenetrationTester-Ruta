@@ -1,8 +1,9 @@
-#by d4l1
+<p align="right"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
+
+<h1 align="center">COMMAND EXECUTION</h1>
 
 <p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/05b77941-9070-4a7f-8cac-c422eedc2991"></p>
 
-<h1 align="center">COMMAND EXECUTION</h1>
 
 # ÍNDICE
 
