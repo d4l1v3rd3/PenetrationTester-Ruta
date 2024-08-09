@@ -58,4 +58,21 @@ Por ejemplo le podrías decir al navegador.
 Listar los scripts que no queremos que se ejecuten.
 ![image](https://github.com/pons-rgb/vuln/assets/174595469/a9f6348a-9083-4639-9ad8-c34fc80818a7)
 
-Esto protejera a los usuarios efectivamente, sin embargo esto no hace que sea 100 por cien seguro. 
+Esto protejera a los usuarios efectivamente, sin embargo esto no hace que sea 100 por cien seguro.
+
+# XSS PAYLOAD
+
+En XSS, los payloados son código JS que se ejecutan en el ordenador víctima. Hay dos partes del payload, la intención y la modificación.
+
+La intención que tenga JS, la modificacion cambia el codigo que necesitamos para ejecutar en diferentes escnarios
+
+### PROOF OF CONCEPT
+
+Estos sin payloads simples que demostran XSS en las aplicaciones web
+```
+<script>alert('XSS');</script>
+```
+
+### ROBO DE SESIÓN
+
+Los detalles de la sesión de usuario, son con logins de tokens, aveces conseguiremos las cookies de la maquina víctima. Debajo del script de JS, base64 docificados esta la cookie para una tranmisión y no pueda un hacker tener el contro. Si el atacante consigue las cookies del usuario puede entrar sin necesidad 
