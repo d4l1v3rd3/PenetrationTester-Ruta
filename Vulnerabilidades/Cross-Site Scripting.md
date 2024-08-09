@@ -1,4 +1,4 @@
-#by d4l1
+<p align="right"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 
 <p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/6f0d0415-0442-48c8-ab8e-f78062b511a3"></p>
 
