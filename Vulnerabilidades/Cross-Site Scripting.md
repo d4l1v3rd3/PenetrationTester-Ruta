@@ -133,6 +133,61 @@ Como el nombre se refiere, este tipo de payload se guarda en la aplicación web 
 
 ### EJEMPLO
 
-En un blog los usuarios pueden mandar post. Desafortunadamente, estos comentarios no se chekean por código JS
+En un blog los usuarios pueden mandar post. Desafortunadamente, estos comentarios no se chekean por código JS o filtrar el codigo malicioso. Si nosotros posteamos un comentario conteniendo JavaSCript, se quedara guardado en la base de datos, cada usuario que visite la web tendra que ejecutar dicho código.
 
+![image](https://github.com/user-attachments/assets/73ee168f-4608-475c-ae69-88fa99aab4fd)
+
+### IMPACTO POTENCIAL
+
+El código maliciosa te puede redireccionar a otra página, robar la session cookie, o hacer acciones de la web que no ahrias.
+
+### COMO TESTEAR 
+
+- Comentar en el blog
+- Información del usuario
+- Listado de páginas web
+
+Aveces los desarrolladores piensan limites de input en el lado vliente para una buena protección, cambiando valores de la web para que no sea tan facil encontrar XSS en el código base, tu manualmente mandas una consulta intentando payloads maliciosos.
+
+# DOM BASED XSS
+
+Document Object Model es una interfaz de programación por HTML y documentos XML. Representa la página y los programas que pueden cambiar la estructura del documento, estilo y contenido. Una página web es un documento, y ese documento puede o no enseñarse en el navegaodr o en el código HTML.
+
+![image](https://github.com/user-attachments/assets/42f14fb3-b316-4600-a9ff-59cb775bc53e)
+
+## EXPLOTAR EL DOM
+
+El XSS basado en DOM es donde un JS se ejecuta directamente en el navegador sin necesidad de nuevas paginas o cargar datos. 
+
+### EJEMPLO
+
+La página web coge los contenidos JS de "window.location.hash" parametro y entonces escribe en la pagina y la sección que estas viendo. El contenido del hash no mira si el contenido es malicioso.
+
+### IMPACTO POTENCIAL
+
+Construir links que se envian a victimas potenciales,  redirigir a otra pagina robar contenido de la pagina de sesion
+
+### COMO TESTEAR
+
+Requiere mucho conocimiento y lectura de JS. Tu necesitas buscar partes del codigo del acceso de las varibales y el atacante coge el control.
+
+# BLIND XSS
+
+Blind XSS es igual al XSS stored, la unica diferencia es que en este caso no vemos.
+
+### EJEMPLO
+
+Una website tiene un contanto donde puede mandar mensajes a los miembros del staff. Estos mensajes no se chekean por codigo malicioso, entonces el atacante introduce eso. Y se convierte n un Tikket que solo puede verlo el STAFF
+
+### IMPACTO POTENCIAL
+
+Usando el payload correcto, el atacante puede cambiar las calls del codigo, revelar la URL del portal del staff, cookies del staff, contenido de la página. 
+
+### COMO TESTEAR
+
+Usualmente por consutlas HTTP, y ver si se ha ejecutado.
+
+Una herramienta importante para esto es "XSS HUNTER EXPRESS"
+
+## EJERCICIO
 
