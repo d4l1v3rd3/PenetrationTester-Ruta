@@ -33,6 +33,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 - [FILE INCLUSION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md) - Un atacante puede manipular  parametros para ver contenido de archivos locales del servidor.
 - [IDOR](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/IDOR.md) - Inputs inseguros por parte del usuario al servidor.
 - [SSRF](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/SSRF.md) - Server-Side Request Forgery
+- [COMMAND INJECTION](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/COMMAND_INJECTION.md) - Posibilidad de injección de comandos dentro de una aplicación.
 
 # HERRAMIENTAS
 
