@@ -2,7 +2,7 @@
 
 <h1 align="center">COMMAND INJECTION</h1>
 
-<p align="center"><img src="https://github.com/user-attachments/assets/eba5e203-f556-4a0b-a161-304e251e310f"></p>
+<p align="center"><img witdh=300px height=300px src="https://github.com/user-attachments/assets/381ee61a-756b-470c-ba52-34141c3c2cb9"></p>
 
 # ÍNDICE
 
