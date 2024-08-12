@@ -1,14 +1,21 @@
 <p align="right"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
+<h1 align="center">Cross-site scripting (XSS)</h1>
 
 <p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/6f0d0415-0442-48c8-ab8e-f78062b511a3"></p>
 
 
-<h1 align="center">Cross-site scripting (XSS)</h1>
+
 
 # ÍNDICE
 
 - [PROTECCIÓN](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Cross-Site%20Scripting.md#protecci%C3%B3n)
 - [IMPLEMENTAR CONTENIDO SEGURO](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Cross-Site%20Scripting.md#implementar-contenido-seguro-de-privacidad)
+- [XSS PAYLOAD](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md#xss-payload)
+- [XSS REFLEJADO](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md#xss-reflejado)
+- [STORED XSS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md#xss-reflejado)
+- [DOM BASED XSS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md#dom-based-xss)
+- [EJERCICIO](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md#ejercicio)
+
 
 
 Cross-site scripting (XSS) es uno de los metodos mas comunes que los hackers utilizan para atacar paginas webs. Permite al usuario malicioso ejecutar codigo arbitrario JavaScript cuando otros usuarios visitan la página.
