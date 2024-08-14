@@ -67,4 +67,5 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 - [OSCP-Ruta](https://github.com/CountablyInfinite/oscp_cheatsheet)
 - [Compilación-Recursos-Pentesting](https://github.com/adon90/pentest_compilation)
 - [Otra-Ruta-OSCP](https://johnjhacking.com/blog/oscp-reborn-2023/)
+- [Comandos-SQL.md](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Utilidades/Comandos_SQL.md) - Comandos básicos de SQL
 
