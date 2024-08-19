@@ -1,4 +1,10 @@
-# BURP SUITE
+<h1 align="center">BURP SUITE</h1>
+
+<p align="center"><img  width=300px heigh=300px src="https://github.com/user-attachments/assets/c97fa100-4a80-4290-a3a8-83f04cb6bb7a"></p>
+
+# ÍNDICE
+
+- [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/edit/main/Herramientas/BurpSuite.md#qué-es-burp-suite)
 
 # ¿QUÉ ES BURP SUITE?
 
