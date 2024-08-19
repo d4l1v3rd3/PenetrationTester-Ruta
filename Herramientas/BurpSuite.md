@@ -7,6 +7,17 @@
 # ÍNDICE
 
 - [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/edit/main/Herramientas/BurpSuite.md#qué-es-burp-suite)
+- [CARACTERÍSTICAS BURP SUITE](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#características-burp-suite)
+- [REPEATER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#burp-suite-repeater)
+- [INSPECTOR](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#inspector)
+- [INTRUDER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#intruder)
+- [TIPOS DE ATAQUE](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#introducción-a-tipos-de-ataque)
+- [DECODER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#decoder-descripción)
+- [COMPARER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#comparer--descripción)
+- [SEQUENCER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#sequencer--descripción)
+- [ORGANIZER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#organizer--overview)
+- [EXTENSIONES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#burp-suite-extensiones)
+- [BAPP STORE](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md#bapp-store)
 
 # ¿QUÉ ES BURP SUITE?
 
