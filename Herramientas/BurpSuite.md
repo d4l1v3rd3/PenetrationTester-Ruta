@@ -397,3 +397,28 @@ Las consultas se guardan en la tabla, con columnas y numeros con index.
 
 # BURP SUITE: EXTENSIONES
 
+## INTERFAZ DE EXTENSIONES
+
+la interfaz que nos da Burp nos deja añadir con esta herramienta.
+
+![image](https://github.com/user-attachments/assets/c34b5723-4aaa-4fba-8bff-bcf0c716c327)
+
+1. Extension List: La caja enseña la lista de extensiones que estan instaladas actualmente
+2. Managing Extensions: En la parte izquierda veremos la interfaz
+ - ADD: podemos usarlo para añdir nuevas extensiones de los archivos que tengamos de nuestro disco o en "BApp store"
+ - Remove: Desistala las extensiones
+ - Up/Down: Controla el orden de como se instalan las extensiones. El orden determina la secuencia en la que se ejecutaran las extensiones al procesar el tráfico. Van de arriba a abajo.
+3. Detalles, Output y Errores:
+ - Dettales: Nos da la información sobre las extensiones
+ - Output: Lo que produce trás su ejecución.
+ - Errors: Durante la ejecución.
+
+## BApp STORE
+
+(Burp App Store) facil de descubrir en la misma lugar de las herramientas de extensión. Escrito en varios lenguajes como Java y Python. Las extensiones de java se introducen automaticamente las de python necesitan un interprete de Java.
+
+![image](https://github.com/user-attachments/assets/9d95789f-52d8-46b7-9185-575d9006650e)
+
+
+
+
