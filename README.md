@@ -1,6 +1,7 @@
+<div>
 <p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
-
 <h1 align="center">PenetrationTester-Ruta</h1>
+</div>
 
 <p align="center"><img src="https://github.com/D4l1-web/PenetrationTester-Ruta/assets/79869523/bd072136-150b-4f3e-a380-2ed891b45e11"></p>
 
