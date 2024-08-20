@@ -1,5 +1,5 @@
 <div>
-<p align="left"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
+<p align="center"><img height=100px width=100px src="https://github.com/user-attachments/assets/28eba669-a8dd-418a-bc8d-cc7c8e147edc"></p>
 <h1 align="center">PenetrationTester-Ruta</h1>
 </div>
 
@@ -26,7 +26,7 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 # VULNERABILIDADES
 
-- [Clickjacking](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Clickjacking.md) - Hace un truco a los usuarios de la web haciendo creer una acción que ellos no hacen.
+- [Clickjacking](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Clickjacking.md) - Engaña al usuario para hacer clic en un elemento de la página web que es invisible o disfrazado. 
 - [COMMAND EXECUTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Command_Execution.md) - Ejecutar código arbitrario en los sevidores.
 - [Cross-site scripting (XSS)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md) - Permite al usuario malicioso ejecutar codigo arbitrario JavaScript.
 - [FILE TRANSFER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md) - Transferencia de archivos en Windows y Linux.
@@ -47,7 +47,8 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 
 # PORTSWIGGER
 
-- [API TESTING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Portswigger/API%20testing.md) - Testeo de aplicaciones.
+ [API TESTING](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Portswigger/API%20testing.md) | Testeo de aplicaciones.
+ ----- | ----
 
 # OTROS
 
