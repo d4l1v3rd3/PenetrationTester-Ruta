@@ -275,6 +275,37 @@ Como un null scan y fin scan, recibe los paquetes RST y mira si el puert oesta c
 ![image](https://github.com/user-attachments/assets/117409d5-e92b-408f-9d08-78d8ea69869a)
 
 
+# SPOOFING Y DECOYS
+
+EN muchas redes, podemos escanear dispositivos usando la ip y spoofearla y igual con la MAC. Un escaneo puede ser beneficioso para garantizar las capturas. Si intentamos escanear un dispositivo random de la red usando el spoofeo de ip,  las chances son que no nos respondera y no tendremos buenos resultados
+```
+nmap -S spoofed_id 10.10.66.241
+```
+Nmap craftea paquetes usando la ip "spofeada" y la target para responde paquetes. Para este escaneo necesitamos monitorizar el escaneo de red para saber si llega
+
+![image](https://github.com/user-attachments/assets/d135ba6f-e4b9-422e-a437-7b791ec0ae90)
+
+1. El atacante manda paquetes con la ip spoofeada (robada) ala ip target
+2. La target devuelve los paquetes a la ip spoofeada
+3. El atacante captura los paquetes enviados a la ip y ve los puertos
+
+4. EN general esperamos para especificar una red "-e" y para quitar el escaneo de ping "-Pn"
+
+```
+nmap -S spoofed_Ip ip
+```
+
+```
+nmap -e Net-interface -Pn -S spoofe_ip ip
+```
+
+Si estas en la misma subnec y quieres especificar algo 
+```
+--spoof-mac spoofed_mac
+```
+![image](https://github.com/user-attachments/assets/aad9620e-91d7-4641-95df-ae677752f2f3)
+
+
 
 ### MASSCAN
 
@@ -315,6 +346,22 @@ nmap -sU ip
 
 ![image](https://github.com/user-attachments/assets/967f11f2-75a5-4189-88ee-336875dfa89e)
 
+# ZOMBIE SCAN
+
+Spoofeando la ip podemos conseguir mucha información. Sin embargo, solo funciona para redes especificas. Requiere que el monitorizar la red, etc. Habiendo limitaciones
+
+El escaneo zombie, requiere conexión a lared. Practicamente buscas un host zombie, que te indice y lo spoofeas. 
+
+```
+nmap -sI zombie_ip ip
+```
+
+![image](https://github.com/user-attachments/assets/4b9492ac-97c1-4448-b6f4-7cab60c3172e)
+
+![image](https://github.com/user-attachments/assets/56ffbe45-2934-4ff9-9e1d-db459f24b1a2)
+
+
+
 # ESPECIFICACIONES
 
 - Listado de puert : -p22,80,443
@@ -331,6 +378,10 @@ nmap -sU ip
 -Control de paquetes : --min-rate=20
 
 ![image](https://github.com/user-attachments/assets/05065722-b6b1-41d4-b11c-e5be555a1546)
+
+Gracias a --reason nos especifica como ha encontrado los puertos 
+
+![image](https://github.com/user-attachments/assets/d83531ec-b5e7-4dbd-9d0f-f1301362b461)
 
 
 
