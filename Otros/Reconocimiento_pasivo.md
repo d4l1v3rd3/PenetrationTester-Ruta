@@ -1,6 +1,6 @@
 <h1 align="center">RECONOCIMIENTO PASIVO</h1>
 
-
+<p align="center"><img src="https://github.com/user-attachments/assets/8925f4b3-2616-4e4e-a75c-a272a03bafeb"></p>
 
 
 # ÍNDICE
@@ -22,7 +22,7 @@ Antes de nada deberemos conocer a nuesro objetivo.
 
 En el reconocimiento pasivo, tenemos que ver todo el conocimiento público que este disponible. Accedemos a recursos publicos o directamente hablamos con el target. 
 
-![image](https://github.com/user-attachments/assets/8925f4b3-2616-4e4e-a75c-a272a03bafeb)
+
 
 
 - Mirar DNS o dominios publicos
