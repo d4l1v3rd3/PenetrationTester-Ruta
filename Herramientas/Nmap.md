@@ -246,6 +246,36 @@ sudo nmap -PU -sn ip
 
 ![image](https://github.com/user-attachments/assets/77e711e1-f3f2-46e3-a214-effbfa894535)
 
+## NULL SCAN
+
+El null scan no envia ninguna flag, "-sN" manda paquetes tcp sin flags a puertos abiertos
+
+![image](https://github.com/user-attachments/assets/c8009824-ce01-49bc-b8af-8b7aedda79fb)
+
+Siembargo si el servidor responde con con RST el puerto esta cerrado. 
+
+![image](https://github.com/user-attachments/assets/735adcfe-0ce3-458f-adf5-2176959199da)
+
+## FIN SCAN
+
+El scaneo FIN manda paquetes TCP con una flag FIN. POdemos elegir con "-sF" similar a un paquete TCP abierto, 
+
+![image](https://github.com/user-attachments/assets/c0a5e57d-2d82-47bf-b62f-d7e6ac509cca)
+
+![image](https://github.com/user-attachments/assets/7d144c0f-bde6-4d18-9315-8af599c27dc1)
+
+## XMAS SCAN
+
+El escaneo Xman, coge las flags FIN, PSH y URG simultaneamente. "-sX"
+
+Como un null scan y fin scan, recibe los paquetes RST y mira si el puert oesta cerrado
+
+![image](https://github.com/user-attachments/assets/ad070e54-8740-4950-9862-0651c765d4fe)
+
+![image](https://github.com/user-attachments/assets/117409d5-e92b-408f-9d08-78d8ea69869a)
+
+
+
 ### MASSCAN
 
 Masscan se usa igual que nmap, sin embargo para abar el escaneo de la red, hay que pararlo masscan es mas agresivo
