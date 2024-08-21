@@ -61,6 +61,20 @@ Una parte de reconocerlo, es descubir la infromación de los hosts sobre la subn
 
 Si tu Network es tipo A, podemos usar solo ARP apra descubrir toda la subnet. Suponiendo que son targets diferentes, todos los paquetes pasar por el router que es el "gateway"
 
+# TCP FLAGS
+
+Nmap soporta diferentes tipos de escaneo TCP. Para entender la diferencia entre otros escaneo de puertos, nosotros necesitamos entender la cabecera TCP. Las cabeceras tienen 24 bytes en el primer segmento. Para seguir esta fgura RFC 793. 
+
+![image](https://github.com/user-attachments/assets/33793e8a-f470-4d54-8c41-542596fe10a6)
+
+- URG : Ugent flag indica el punto de los datos que vienen urgentes, este segmento TCP con la flag URG procesa inmediatamente y envia los datos.
+- ACK : Acknowledgement flag indica en numero significante.
+- PSH : Push flag pregunta al TCP para pasar los datos a la aplicación.
+- RST : Reset flag se usa pra resetear la consexión. Otro dispositivo, como el firewall, vanda conexiones TCP se usa cuando los datos quieren enviarse al host y no hay servicio.
+- WYN: Synchronize flag se inicializa en la fase 3 con un apreton de manos y secuencia de numero con otro host.
+- FIN : No se envia mas datos.
+
+
 ## ENUMERAR TARGET
 
 Antes de empezar a enumerar un target, deberemos especificar como queremos escanear. Generalmente hablando, puedes dar una lista, un rango o una subnet. Especificar el target
