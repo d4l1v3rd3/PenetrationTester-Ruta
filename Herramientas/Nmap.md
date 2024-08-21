@@ -383,5 +383,7 @@ Gracias a --reason nos especifica como ha encontrado los puertos
 
 ![image](https://github.com/user-attachments/assets/d83531ec-b5e7-4dbd-9d0f-f1301362b461)
 
+![image](https://github.com/user-attachments/assets/c2ea0cb9-ecef-4554-9b27-e63abb36acaf)
 
+![image](https://github.com/user-attachments/assets/aa0e76c7-0433-4652-9bbd-524c9cc6f111)
 
