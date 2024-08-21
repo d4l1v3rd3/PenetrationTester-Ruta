@@ -7,12 +7,11 @@
 
 # ÍNDICE
 
-- [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#introducción)
-- [VULNERABILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#vulnerabilidades)
-- [HERRAMIENTAS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#herramientas)
-- [PORTSWIGGER](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#portswigger)
-- [OTROS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#otros)
-- [UTILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#utilidades)
+- [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#accessibility--introducción--accessibility)
+- [VULNERABILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--vulnerabilidades--)
+- [HERRAMIENTAS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--herramientas--)
+- [OTROS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#-atom-otros-atom-)
+- [UTILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--utilidades--)
 
  <h1 align="center">:accessibility:  INTRODUCCIÓN  :accessibility:</h1> 
 
