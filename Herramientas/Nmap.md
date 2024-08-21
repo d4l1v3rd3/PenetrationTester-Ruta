@@ -273,6 +273,34 @@ Por defecto mira los hosts activos y podemos usar "-R" para mandar tambien a los
 
 ![image](https://github.com/user-attachments/assets/3d4282f7-3803-4070-8069-5e9a009ce05e)
 
+# UDP SCAN
+
+EL protocolo UDP, no necesita un handshake para la conexión ganarantizando que no tiene porque responder al estar desactivado para hacer este protocolo utilizaremos
+
+```
+nmap -sU ip
+```
+
+![image](https://github.com/user-attachments/assets/6cd2b8c4-24b5-44c6-8478-cbe4782871ab)
+
+![image](https://github.com/user-attachments/assets/967f11f2-75a5-4189-88ee-336875dfa89e)
+
+# ESPECIFICACIONES
+
+- Listado de puert : -p22,80,443
+- Rango de puertos : -p1-1203
+- Todos los puertos : -p- (65535)
+- Más comunes : -F (100 puertos más comúnes)
+- Tiempo de escaneo : -T<0-5>
+  - paranoid (0)
+  - sneaky (1)
+  - polite (2)
+  - normal (3)
+  - aggresive (4)
+  - insane (5)
+-Control de paquetes : --min-rate=20
+
+![image](https://github.com/user-attachments/assets/05065722-b6b1-41d4-b11c-e5be555a1546)
 
 
 
