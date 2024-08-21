@@ -58,6 +58,7 @@ OTROS | DESCRIPCIÓN
 [Introducción_HackingWeb](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md) | Importantisimo para saber como funciona una aplicación web.
 [Principios-Seguridad](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Principios_Seguridad.md) | Conocer como funciona la seguridad realmente.
 [Windows](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Windows.md) | Cosas muy básicas de Windows.
+[Reconocimiento_Pasivo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_pasivo.md) | Shodan.io - Nslookup - Dig - DNS - Whois
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
 
