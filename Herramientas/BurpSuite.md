@@ -21,7 +21,7 @@
 
 # ¿QUÉ ES BURP SUITE?
 
-Burp SUire es un framework basado en Java diseñado para servir a comprender soluciones de condución aplicaciones web sobre los penetration tester.
+Burp Suite es un framework basado en Java diseñado para servir a comprender soluciones de condución aplicaciones web sobre los penetration tester.
 
 Es un estandár en la industria para todo el mundo en seguridad web, mobil, incluyendo en aplicaciones.
 
@@ -67,13 +67,11 @@ La capacidad de editar y volver a enviar multiples veces hace que repeater sea m
 
 Ahora que conocemos todo de la interfaz vamos a ver como es de efectivo.
 
-Mientras crafteamos una opción deberemos capturar una consulta para enviarla a repeater.
+Mientras crafteamos una opción deberemos capturar una consulta para enviarla a repeater. (utilizaremos el nodo313)
 
-![image](https://github.com/user-attachments/assets/ea3bdf28-8ba8-4694-bd4f-c22a1fcc876c)
+![image](https://github.com/user-attachments/assets/f70fa22d-3790-4375-ac4a-ecfd80333dee)
 
 Cuando pulsamos en send, vemos mas información o lo que veriamos en el navegador.
-
-![image](https://github.com/user-attachments/assets/9bc7561b-c779-4109-a974-ff64bc3131b9)
 
 Si queremos modificar un aspecto de la consulta, simplemente modificamos y pulsamos en Send de nuevo. 
 
@@ -81,9 +79,9 @@ Vamos a actualizar la forma de ver. Alterando la "Connection" para "open"
 
 ![image](https://github.com/user-attachments/assets/61a7f1e8-e112-46ce-b223-b7ed615503b9)
 
-## ANALISIS DE BARRA DE HERRAMIENTSA
+## ANALISIS DE BARRA DE HERRAMIENTAS
 
-El repeater tiene varias pormas de consulta y respuesta dependiendo de las opciones, siendo ragging, hexadecimal o render, etc.
+El repeater tiene varias formas de consulta y respuesta dependiendo de las opciones, siendo ragging, hexadecimal o render, etc.
 
 Para explorar estas opciones, vamos a referirnos a la respuesta y los veremos
 
@@ -98,13 +96,11 @@ Para explorar estas opciones, vamos a referirnos a la respuesta y los veremos
 
 Inspector es una caracteristica del repeater y obtiene una visualizacion organizada de las consultar y respuestas, podemos experimentar como cambiar todo dependiendo de como cambiemos la consulta.
 
-Se uutilizacon el proxy.
+Se uutiliza con el proxy.
 
 ![image](https://github.com/user-attachments/assets/5ab08e7f-268b-4202-b4b7-fdfdeab76e19)
 
 Otros componentes, como las secciones que normalmente modificamos, editamos, podemos borrar items, podemos alterar elementos, su localización, metodo, protocolo, etc.
-
-![image](https://github.com/user-attachments/assets/346a9b8b-b3f8-4976-8c94-95afbdcc5878)
 
 Otras secciones:
 
@@ -114,17 +110,7 @@ Otras secciones:
 4. Request Headers: Esto activa que podamos ver, acceder y modificar cualquier cabecera que envie uan consulta.
 5. Response Headers: Esta seccion esñea las cabeceras que te devuelve el servidor. No se pueden modificar ni tienes control de ellas.
 
-### PRÁCTICA
-
-Vamos a coger la consulta de la ip "http://10.10.112.203/"
-
-Mandaremos la consulta al "Repeater" veremos el codigo de la respuesta, veremos diferentes formas de verlo como "hex"
-
-Usando el Inspector (o manualmente), añadiremos la cabecera "FlagAuthorised" y enviaremos el valor "True" 
-
-![image](https://github.com/user-attachments/assets/81966309-db97-41fe-a30f-0653dc4ec089)
-
-# INTRUDER
+# INTRUDER CON NODO 
 
 Veremos como hacer consultas automatizadas, manipularlas y activarlas gracias a un fuzzing de fuerza bruta. 
 
@@ -134,7 +120,7 @@ Para el servidor, hace como logeo de fuerza bruta sustituyendo username y contra
 
 Sin embargo, es importante saber que en "Burp Community Edition" esta limticada, en comparacion con "Burp Professional" (velocidad).
 
-![image](https://github.com/user-attachments/assets/34523894-34c6-486a-bc4f-a3dc67726597)
+![image](https://github.com/user-attachments/assets/559653ee-81e7-4104-864a-8aa88838a227)
 
 Lo primero que vemos es una simple interfaz en la que podemos seleccionar al target. Este archivo es popular de la consulta que cogeremos del proxy
 
@@ -142,6 +128,11 @@ Lo primero que vemos es una simple interfaz en la que podemos seleccionar al tar
 Ctrl + I
 ```
 Para entrar
+
+![image](https://github.com/user-attachments/assets/f6dbbaeb-41f4-48b5-bf4a-cef7cd892266)
+
+Este ejemplo no va a funcionar, pero como motivo de explicación nos vendrá muy bien, como vemos hemos cogido la consulta del loggeo del nodo, si quisieramos hacer un ataque de fuerza bruta cogeriamos las variables de login - password. Podriamos cambiar la redirección, generar tokens secuenciales. etc.. (estudiar)
+
 
 - Positions: Esta tabla selecciona el tipo de ataque y configuracion que qeuremos para insetar nuestros payloads y el template de la consulta.
 - Payloads: Aqui es donde seelccionamos los valores que queremos insetar en posiciones especificas. Tenemos varias opciones de payloads, como items de una wordlist. Insertar dentro de un tema depende del tipo de ataque que elijamos. Nos deja modificar en base al payload.
@@ -151,8 +142,6 @@ Para entrar
 ## POSITIONS
 
 Cuandos usamos Burp y utilizamos intruder, el primer paso es examinar las posiociones que queremos en la consulta y donde queremos insertar nuestros payloads. Estas posiciones informan al intruder las localizaciones de estos payloasd.
-
-![image](https://github.com/user-attachments/assets/e6306e17-dffb-4293-9b8c-06cde1120f58)
 
 Burp Suite automaticamente identifica las posiciones mas propables para insetar selecionandolo con (§)
 
@@ -164,8 +153,7 @@ Add § Clear § Auto §
 - Clear §: Remove una posicion definida.
 - Auto §: Automaticamente identifica las posiciones basadas en la consulta.
 
-![image](https://github.com/user-attachments/assets/4f633d5f-6dc5-43e7-bf7b-24e4a58acf68)
-
+![image](https://github.com/user-attachments/assets/b32bf696-7e71-46bf-9670-e72426c391cf)
 
 ## PAYLOADS
 
@@ -209,8 +197,6 @@ La tabla "positions" de Burp selecciona el tipo de ataque. Tenemos 4 tipos de at
 
 Este tipo de ataque es el predeterminado, particularmente fectiro para "single-position" como una fuerza bruta de contraseña.
 
-![image](https://github.com/user-attachments/assets/302822f6-5f6b-41d6-885a-8d11838da6ef)
-
 En este ejemplo, tenemos dos posiciones definidas "username" "password" 
 
 Asumiento que tenemos una wordlist 
@@ -222,8 +208,6 @@ Vemos que Intruder empieza por la primera posicion "username" y luego "password"
 ## BATTERING RAM
 
 Utiliza el mismo payload en todas las posiciones simultaneamente.
-
-![image](https://github.com/user-attachments/assets/32238d82-3f92-457d-9c8f-8fb21b49063c)
 
 ![image](https://github.com/user-attachments/assets/33a39d67-5224-4fa6-b577-1a0fbe74e329)
 
@@ -259,9 +243,7 @@ Puede generar tráfico significante en cada testeo de combinación. El numero de
 
 ### EJEMPLO PRÁCTICO
 
-Imaginamos que tenemos acceso a un portal de support en "http://10.10.143.61/support/login"
-
-![image](https://github.com/user-attachments/assets/f1542b1f-c1ee-4ac0-ad48-fc4a2fb56673)
+Imaginamos que tenemos acceso a un portal de login en el nodo 
 
 Tenemos multiples opciones de explotar, incluyendo por fuerza bruta.
 
@@ -270,12 +252,12 @@ Tenemos multiples opciones de explotar, incluyendo por fuerza bruta.
  - usernames.txt
  - passowrds.txt
  - combined.txt
-2. Navegamos a la dirección "http://10.10.143.61/support/login"
+2. Navegamos a la dirección "http://www.nodo313.net/login/login"
 3. Mandamos la captura con "Ctrl + I"
 4. En la tabla "Positions", tenemos la opcion de seleccionar "username" "pasword"
 5. Seleccionamos "Pitchfork"
 
-![image](https://github.com/user-attachments/assets/2725b44c-3ed1-427d-8f8c-3c98c82644ff)
+![image](https://github.com/user-attachments/assets/640b6fe3-4eb0-4417-99a7-d0ddca673e9e)
 
 6. Nos vamos a "payloads" y seleccionamos los set validos
 
@@ -284,6 +266,8 @@ Tenemos multiples opciones de explotar, incluyendo por fuerza bruta.
 7. En este primer payload (username) en paload options nos vamos a "load" y seleccioanmos la word list repetimos el mismo proceso para passowrd
 
 ![image](https://github.com/user-attachments/assets/4cc82df7-5a3f-4ec6-ad9c-cc1192d4c838)
+
+Simplemente iniciariamos, (no lo voy a probar porque sería un ataque por fuerza bruta)
 
 # OTROS MODULOS DE BURP SUITE
 
@@ -302,8 +286,6 @@ Este módulo da al usuario la capacidad de manipular los datos del usuario. Como
 
 ![image](https://github.com/user-attachments/assets/72278748-d0b6-4c46-8e88-ceeb21a1a0fc)
 
-![image](https://github.com/user-attachments/assets/e109f803-5f47-47f9-ae06-d5c94266e47d)
-
 ## DECODER : ENCODING/DECODING
 
 Ahora vamos a examinar los detalles
@@ -312,21 +294,11 @@ Ahora vamos a examinar los detalles
 
 - Plain: El texto antes de ninguna transformación.
 - URL: Codifical la URL utilizando un transferencia segura de datos de la web. Sustituye caracteres por ASCCI en formato hexadecimal, procede a (%) este metodo sirve para testear aplicaciones web.
-
-![image](https://github.com/user-attachments/assets/155e229c-80d8-4540-ad16-c6ad520d24d6)
-
 - HTML: Remplaza los caracteres especiales con un (&) seguido por un numero hexadecimal.
-
-![image](https://github.com/user-attachments/assets/8bb1fbc2-4f89-445f-9727-3aa8d4710e95)
-
 - BASE&$: Comunmente utilizado, convierte los datos en un formato ASCII compatible.
 - ASCII HEX: "ASCII" - "4153434949"
 - HEX, OCTAL Y BINARIO : Codifica en estas formas
 - GZIP : Descomprime los datos, reduciendo las paginas el archivo etc.
-  
-![image](https://github.com/user-attachments/assets/13e54b70-6347-4664-b6a9-0773aa68a5df)
-
-![image](https://github.com/user-attachments/assets/f5ff6a80-3ee5-44ef-8283-768bcc89d3ce)
 
 ### SMART DECODE
 
@@ -344,11 +316,8 @@ Usando el algoritmo MD5 "MD5sum" del hash "4ae1a02de5bd02a5515f583f4fca5e8c" usa
 
 ![image](https://github.com/user-attachments/assets/2793b8e0-f8af-42e7-814d-2b1b43d62d57)
 
-![image](https://github.com/user-attachments/assets/98f9625f-6b01-4e91-8d79-7bf6ee46674a)
-
 ![image](https://github.com/user-attachments/assets/d86e8317-4897-4957-a821-70cd1958840d)
 
-![image](https://github.com/user-attachments/assets/0750df1d-0a6d-403b-ad26-d99d1bab8a8a)
 
 # COMPARER : DESCRIPCIÓN
 
@@ -372,12 +341,11 @@ Valora la entropia, lo randos los "tokens" se usan para identificar o generar un
 
 ## SEQUENCER : LIVE CAPTURE
 
-Capturamos la consulta "http://10.10.217.172/admin/login/" lo enviamos al secuencer.
+Capturamos la consulta "https://www.nodo313.net/login/login" lo enviamos al secuencer.
 
-![image](https://github.com/user-attachments/assets/3a7e8360-307a-4b00-b32d-f47be415a92f)
+![image](https://github.com/user-attachments/assets/7af9626c-af88-42b7-8e33-74931338a541)
 
-![image](https://github.com/user-attachments/assets/5f32536e-b8ec-4e3f-8f16-9d195f3e7b08)
-
+Con esto podríamos probar cookies de sesión o un "logintoken"
 
 ## SEQUENCER : ANALYSIS
 
@@ -402,9 +370,6 @@ EL modulo de "Organizer" diseñado para ayudar y guardar las consultas HTTP que 
 Las consultas se guardan en la tabla, con columnas y numeros con index.
 
 ![image](https://github.com/user-attachments/assets/cb5febbe-bdba-467d-97fd-eb1337552841)
-
-![image](https://github.com/user-attachments/assets/be949a09-4540-4c80-9e5f-c01019d31858)
-
 
 # BURP SUITE: EXTENSIONES
 
