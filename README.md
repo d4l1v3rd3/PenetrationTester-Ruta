@@ -60,6 +60,7 @@ OTROS | DESCRIPCIÓN
 [Reconocimiento_Pasivo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_pasivo.md) | Shodan.io - Nslookup - Dig - DNS - Whois
 [Reconocimiento Activo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_activo.md) | Ping - Traceroute - Netcat - Telnet - NavegadorWeb
 [PROTOCOLOS Y SERVICIOS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROTOCOLOS_SERVICIOS.md) | TELNET - HTTP - FTP - SMTP - POP3 - IMAP 
+[PROTOCOLOS Y SERVICIOS 2](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROCOLOS_SERVICIOS_2.md) | HTTPS - SSH - FTPS - TLS - HYDRA 
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
 
