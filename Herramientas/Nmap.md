@@ -8,10 +8,14 @@
 
 - [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#introducción)
 - [SUBREDES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#subredes)
+- [TCP FLAGS]()
 - [ENUMERAR TARGET](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#enumerar-target)
 - [DESCUBRIR HOST ACTIVOS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#descubrir-hosts-activos)
 - [MASSCAN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#masscan)
 - [REVERSE DNS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md#usar-reverse-dns)
+- [SPOOFING Y DECOYS]()
+- [DETECCIÓN DE SERVICIOS]()
+- []()
 
 
 # INTRODUCCIÓN
@@ -40,7 +44,7 @@ Los scripts de Nmap funcionan dependienco la funcionalidad, pudiendo buscar vuln
 
 ![image](https://github.com/user-attachments/assets/c2d79b85-0668-484c-87b5-c708ff2e55a8)
 
-## SUBREDES
+# SUBREDES
 
 Vamos a ver el termino y como funcionan las redes. Simplemente es un segmento de la red, un grupo de ordenadores conectados usando un medio. Normalmente un cable Ethernet con un Switch o un AP de Wifi. 
 
@@ -75,7 +79,7 @@ Nmap soporta diferentes tipos de escaneo TCP. Para entender la diferencia entre 
 - FIN : No se envia mas datos.
 
 
-## ENUMERAR TARGET
+# ENUMERAR TARGET
 
 Antes de empezar a enumerar un target, deberemos especificar como queremos escanear. Generalmente hablando, puedes dar una lista, un rango o una subnet. Especificar el target
 
@@ -93,7 +97,7 @@ Si queremos chekear la lista de hosts que hemos escaneado, podemos usar "nmap -s
 
 Dando valiosa información al Pentester (SI queremos que no haga esto añadimos -n)
 
-## DESCUBRIR HOSTS ACTIVOS
+# DESCUBRIR HOSTS ACTIVOS
 
 Vamos a volver a ver las capas TCP/IP empezamos por como usuarlas
 
@@ -360,7 +364,50 @@ nmap -sI zombie_ip ip
 
 ![image](https://github.com/user-attachments/assets/56ffbe45-2934-4ff9-9e1d-db459f24b1a2)
 
+# DETECCIÓN DE SERVICIOS
 
+Una vez hemos descubierto los puertos por Nmap, tenemos la disponibilidad de detectar los servicios que corren.
+
+Añadiendo "-sV" en el nMap nos da información sobre la versión de los puertos abiertos. Podemos controlar la intensidad con "--version-intensity LEVEL" donde los rangos son del 0-9
+
+Lo vas completo es 
+
+```
+-sv --verison-light
+-sv --version-all
+```
+
+# DETECCIÓN SISTEMA OPERATIVO
+
+Nmap puede detectar el (OS) gracias a "-O"
+
+```
+nmap -sS -O ip
+```
+
+El sistema escanea los sistemas operativos y su kernel.
+
+## Traceroute
+
+Si queremos buscar los routers que hay entre el target y tu añadimos "--traceroute" 
+
+```
+nmap -sS --traceroute ip
+```
+## SCRIPTS
+
+Todos que tenemos nmaps, tenemos una carpeta de /scripts en el que nos encontramos con:
+
+![image](https://github.com/user-attachments/assets/93dc1730-8f56-4d0b-87d4-d14ba7d0ad77)
+
+```
+nmap --scripts=default o -sC
+```
+Si por ejemplo encontramos un ftp y queremos buscar algo de ahi 
+
+```
+--script "ftp*"
+```
 
 # ESPECIFICACIONES
 
