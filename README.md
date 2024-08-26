@@ -62,6 +62,7 @@ OTROS | DESCRIPCIÓN
 [Protocolos y servicios (No cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROTOCOLOS_SERVICIOS.md) | TELNET - HTTP - FTP - SMTP - POP3 - IMAP 
 [Protocolos y servicios (Cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROCOLOS_SERVICIOS_2.md) | HTTPS - SSH - FTPS - TLS - HYDRA 
 [Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Vulnerabilidades.md) | Entender qué es, como categorizarlas, como explotarlas y como buscarlas.
+[Shells](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Shell.md) | Qué es una Shell, RevShells, BindShells, Herramientas, Netcat, Socat |
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
 
