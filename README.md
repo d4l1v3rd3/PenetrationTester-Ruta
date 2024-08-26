@@ -61,6 +61,7 @@ OTROS | DESCRIPCIÓN
 [Reconocimiento Activo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_activo.md) | Ping - Traceroute - Netcat - Telnet - NavegadorWeb
 [Protocolos y servicios (No cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROTOCOLOS_SERVICIOS.md) | TELNET - HTTP - FTP - SMTP - POP3 - IMAP 
 [Protocolos y servicios (Cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROCOLOS_SERVICIOS_2.md) | HTTPS - SSH - FTPS - TLS - HYDRA 
+[Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Vulnerabilidades.md) | Entender qué es, como categorizarlas, como explotarlas y como buscarlas.
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
 
