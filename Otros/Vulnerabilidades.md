@@ -83,4 +83,46 @@ Exploit-Db es un recurso, para hacekers, que ayuda a entender todo un poco más.
 
 ![image](https://github.com/user-attachments/assets/05a9e51b-cde3-4fb1-a1de-30e7a8bd218c)
 
+# EXPLOTAR VULNERABILIDADES
+
+## AUTOMATICOS VS MANUAL
+
+Hay unas cuantas herramientas y servicios disponibles cara la el escaneo de vulnerabilidades. En rango comercial o open-source.
+
+Veremos Nessus
+
+![image](https://github.com/user-attachments/assets/8139f766-6308-43ae-b4d8-8b1b32d296af)
+
+Por ejemplo, un escaner de vulnerabilidades "Nessus" es gratis pero tenemos una edición comercial. La version cuests y se usa para organizaciones que son penetration testers.
+
+![image](https://github.com/user-attachments/assets/47f3cd76-0315-4396-ac82-7196678c86b9)
+
+Utiliza frameworks como Metasploit para escaneres o exploits utilziando sus modulos
+
+Los escaneos manuales aveces son una gran arma pra los PT para testear aplicaciones o programas individuales. Un escaneo manual puede buscar las mismas vulnerabilidades que uno automatico.
+
+![image](https://github.com/user-attachments/assets/26c49def-9f7c-40d7-be08-d8ae1d0149db)
+
+
+## BUSCAR EXPLOITS MANUALMENTE
+
+### RAPID 7
+
+Otros servicios que da Exploit DB y NVD es un buscador en la base de datos.
+
+![image](https://github.com/user-attachments/assets/f77d9ab0-8dbe-4c7b-be3d-cd551ef3eb25)
+
+Adicionalmente la base de datos contiene instrucciones de como usarla.
+
+### GITHUB
+
+Es un sitio web muy popular que utilizan desarrolladores para diseñar software. Se usa para hostear o guardar codigo de aplicaciones. Para nostros esto nos viene increible y muchos vienen con PoC's (Proof of concept)
+
+![image](https://github.com/user-attachments/assets/c3e5032d-e6b8-41d0-bf6d-5d4730d7f6f2)
+
+### Serachsploit
+
+Es una herramienta disponible en sistemas Linux.
+
+![image](https://github.com/user-attachments/assets/720dbfc1-4c89-4d8d-9a1c-ddf06096c849)
 
