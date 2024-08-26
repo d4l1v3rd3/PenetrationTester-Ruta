@@ -26,25 +26,25 @@ Siempre que utilice cualquier contenido que sea de otra persona será citado.
 VULNERABILIDAD | DESCRIPCIÓN
 ---- | ----
 [Clickjacking](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Clickjacking.md) | Engaña al usuario para hacer clic en un elemento de la página web que es invisible o disfrazado. 
-[COMMAND EXECUTION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Command_Execution.md) |  Ejecutar código arbitrario en los sevidores. 
-[Cross-site scripting (XSS)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md) | Permite al usuario malicioso ejecutar codigo arbitrario JavaScript.
-[FILE TRANSFER](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md) | Transferencia de archivos en Windows y Linux.
-[SQL INJECTION FUNDAMENTALS](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md) | Ocurre cuando un atacante malicioso intenta pasar el input y cambiar la consulta final de SQL de la aplicación web.
-[FILE INCLUSION](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md) | Un atacante puede manipular  parametros para ver contenido de archivos locales del servidor.
-[IDOR](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/IDOR.md) | Inputs inseguros por parte del usuario al servidor.
-[SSRF](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/SSRF.md) | Server-Side Request Forgery
-[COMMAND INJECTION](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/COMMAND_INJECTION.md) | Posibilidad de injección de comandos dentro de una aplicación.
+[Command Execution](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Command_Execution.md) |  Ejecutar código arbitrario en los sevidores. 
+[Cross-Site Scripting (XSS)](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Cross-Site%20Scripting.md) | Permite al usuario malicioso ejecutar codigo arbitrario JavaScript.
+[File Transfer](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/File-Transfer.md) | Transferencia de archivos en Windows y Linux.
+[Sql Injection](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Fundamentos_SQL_Injection.md) | Ocurre cuando un atacante malicioso intenta pasar el input y cambiar la consulta final de SQL de la aplicación web.
+[File Inclusion](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Vulnerabilidades/FILE%20INCLUSION.md) | Un atacante puede manipular  parametros para ver contenido de archivos locales del servidor.
+[Idor](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/IDOR.md) | Inputs inseguros por parte del usuario al servidor.
+[Server-Side Request Forgery](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/SSRF.md) | Acceder o manipular el servidor y o tener acceso a el.
+[Command Injection](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/COMMAND_INJECTION.md) | Posibilidad de injección de comandos dentro de una aplicación.
 
 <h1 align="center"> 🧰 HERRAMIENTAS 🧰 </h1>
 
 HERRAMIENTAS | DESCRIPCIÓN
 ---- | -----
-[METASPLOIT](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Metasploit.md) | Plataforma para pentester o herramienta, en la que podras testear y ejecutar codigo exploit.
-[FFUF](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md) | Escanear directorios, extensiones, vhosts, php, valores, etc.
-[NMAP](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md) | Escaner de host y servicios en un red o subred.
-[HYDRA](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Hydra.md) | Programa para reventar contraseñas por fuerza bruta.
-[AUTORECON](https://github.com/Tib3rius/AutoRecon/tree/main) | Herramienta que automatiza el primer paso de una CTF.
-[BURPSUITE](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md) | Captura y manipulación de trafico HTTP/HTTPS estre navegador y servidor.
+[Metasploit](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Metasploit.md) | Plataforma para pentester o herramienta, en la que podras testear y ejecutar codigo exploit.
+[Ffuf](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/FFUF.md) | Escanear directorios, extensiones, vhosts, php, valores, etc.
+[Nmap](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Nmap.md) | Escaner de host y servicios en un red o subred.
+[Hydra](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Hydra.md) | Programa para reventar contraseñas por fuerza bruta.
+[Autorecon](https://github.com/Tib3rius/AutoRecon/tree/main) | Herramienta que automatiza el primer paso de una CTF.
+[Burpsuite](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md) | Captura y manipulación de trafico HTTP/HTTPS estre navegador y servidor.
 
 <h1 align="center"> :atom: OTROS :atom: </h1>
 
@@ -59,8 +59,8 @@ OTROS | DESCRIPCIÓN
 [Windows](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Windows.md) | Cosas muy básicas de Windows.
 [Reconocimiento_Pasivo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_pasivo.md) | Shodan.io - Nslookup - Dig - DNS - Whois
 [Reconocimiento Activo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_activo.md) | Ping - Traceroute - Netcat - Telnet - NavegadorWeb
-[PROTOCOLOS Y SERVICIOS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROTOCOLOS_SERVICIOS.md) | TELNET - HTTP - FTP - SMTP - POP3 - IMAP 
-[PROTOCOLOS Y SERVICIOS 2](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROCOLOS_SERVICIOS_2.md) | HTTPS - SSH - FTPS - TLS - HYDRA 
+[Protocolos y servicios (No cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROTOCOLOS_SERVICIOS.md) | TELNET - HTTP - FTP - SMTP - POP3 - IMAP 
+[Protocolos y servicios (Cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROCOLOS_SERVICIOS_2.md) | HTTPS - SSH - FTPS - TLS - HYDRA 
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
 
