@@ -129,6 +129,93 @@ Ahora que sabemos como funciona, vamos a poner simplemente nuestro comando
 - uname -a
 - ps -ef
 
+# DISEÑO INSEGURO
+
+Esta vulnerabilidad se refiere a la arquitectura de la aplicación. Noy hay vulnerabilidad si no hubiera malas implementaciones o configuraciones, pero la idea detras de esto es por donde empezar. 
+
+## CONTRASEÑAS INSEGURAS RESET
+
+Un buen ejemplo de esto fue Instagra. Deajaba resetear la contraseña si enviabas un codig ode 6 digitos al numero para validar. Si el atacante quiere acceso a la cuenta de la victima, solamente intenta fuerza bruta de esos 6 codigos. (Solo te dejaba 250 intentos) que ya son.
+
+![image](https://github.com/user-attachments/assets/c642888e-95cd-4bc9-b122-f991a70c1327)
+
+Sin embargo, puuedes hacer lo mismo aplicacindo codig desde la misma IP. Si el atacante tiene diferentes IP y manda consultar. Puede intentar 250 codigos por IP osea que necesitaria 4000 ordenadores. JAJA
+
+![image](https://github.com/user-attachments/assets/1768584d-384f-4253-932f-5f05c52ea544)
+
+
+# MALA CONFIGURACIÓN
+
+La mala configuración esta en el Top 10 de las mayores vulnerabilidades:
+
+- Mala configuración de permisos
+- Tener permisos innecesarios, o herramientas, como servicios, páginas
+- Cuentas por defecto sin cambiar contraseñas
+- Mensajes de error que te detalles como el atacante puede buscar información sobre el sistema.
+- No usar headers de seguridad HTTp
+
+## DEBUGGING INTERFACES
+
+Una vulnerabilidad comun es la exposición al software de producción. Normalmente estan disponibles como frameworks para los programadores. Los atacantes abusan de esto debugeando funciones.
+
+
+# COMPONENTES VULNERABLES O DESACTUALIZADOS
+
+Ocasionalmente, las compañias tienes que usar programas con vulnerabilidades conocidas.
+
+Por ejemplo, versiones de WordPress desactualizadas (tenemos herramientas "WPScan" o "Exploit-db")
+
+Por ejemplo vemos una version "nostromo 1.9.6" la buscamos y vemos un exploit
+
+![image](https://github.com/user-attachments/assets/4d8bb2df-de28-43a8-a45f-6a5296bbed17)
+
+descargamos el exploit y lo probamos
+
+# FALLOS DE IDENTIFICACION Y AUTENTICACION
+
+La autenticacion y sesion constituye un componente muy importante en las aplicaciones modernas. La autentacción da al usuario y garantiza acceso a la aplicación web verificando la identidad. Las formas más comunes de autenticación se usan con usuario y contraseña. El usuario da las credenciales y el servidor verifica.
+
+EL servidor da tambien una cookie de sesión muy iportante.
+
+- Ataques por fuerza bruta a usuarios y contraseñas
+- Malas credenciales o politicas malas
+- Malas cookies de sesion
+
+# INTEGRIDAD DE LOS DATOS DEL SOFTWARE
+
+Cuando hablamos de integridad, nos referimos a la capacidad que nostros tenemos para modificar datos. La integridad es esencial en ciberseguridad porque nos asegura no ha habido modificaciones maliciosas.
+
+Para ello esta el "hash" un algoritmo que provee el archivo descargado y si se cambia un linea de codigo se cambia todo entero.
+
+![image](https://github.com/user-attachments/assets/8501e79e-64dd-4a16-8c00-72480c80e536)
+
+![image](https://github.com/user-attachments/assets/ea09c8e1-6f36-486d-8cac-d1645f4ad2e2)
+
+# FALLO EN INTEGRIDAD DE DATOS
+
+VAmos a ver como las aplicaciones web mantienen la sesión. Usualmente, cuando un usuario logea en la aplciacion se le asigna un token de sesion que se guarda en el navegador para las siguiente ssesiones. Este token te lo da la aplicacion web y te dicen quien eres. Asigando via cookies
+
+Por ejemplo si queremos crear un email, nos asignan una cookie para cuando luego nos logeemos o solo nos salga el usuario. 
+
+Una solucion para este mecanismo es validar el token y la implementacion de el. con JWT
+
+JWL son tokens simples que se guardan de una forma para dar la integridad y que no puedan cambiar
+
+![image](https://github.com/user-attachments/assets/5e511379-b76f-42d5-b4e6-5b88accf3c4b)
+
+El header contiene la metadata que indica JWT y asigna el algoritmo el payload contiene los valore de key y los datos que quiere el cliente y luego la firma que es similar al hash.
+
+[DECODER](https://appdevtools.com/base64-encoder-decoder)
+
+## SSRF
+
+Este tipo de vulnerabilidad ocurre cuando un atacante manda consultas a una web arbitrariamente mientras tiene el control del contenido de la consulta.
+
+Esto por ejemplo en la aplicacion web mandas un sms a un cliente. El email necesita mandar una consulta al proveedor de servicios y el un mensaje y añadir una key si tenemos el control podemos hacer lo que queramos.
+
+![image](https://github.com/user-attachments/assets/43ba9779-d257-4c5f-8b26-161053ce5737)
+
+El servidor parametra al usuario, define el nombre del servidor el servicio SMS. El atacante espera el valor servidor nos lo dan, la aplciacion web manda el SMS y el atacante coge el SMS.
 
 
 
