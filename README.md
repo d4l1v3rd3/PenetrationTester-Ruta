@@ -50,17 +50,9 @@ HERRAMIENTAS | DESCRIPCIÓN
 
 OTROS | DESCRIPCIÓN
 ---- | -----
-[Puertos-Servicios](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Puertos_Servicios.md) | Servicios que corren predefinidamente en los puertos respectivos.
 [Comandos-Básicos-Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Comandos-Básicos-linux.md) | Comandos básicos de Linux
-[Comandos-CTF](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Comandos_CTF.md) | Comandos que vendran bien para una CTF
-[ModeloOSI](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/ModeloOSI.md) | Como no te puedes saber el modelo OSI tio.
-[Introducción_HackingWeb](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Introducción_Hacking_Web.md) | Importantisimo para saber como funciona una aplicación web.
 [Principios-Seguridad](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Principios_Seguridad.md) | Conocer como funciona la seguridad realmente.
 [Windows](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Windows.md) | Cosas muy básicas de Windows.
-[Reconocimiento_Pasivo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_pasivo.md) | Shodan.io - Nslookup - Dig - DNS - Whois
-[Reconocimiento Activo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Reconocimiento_activo.md) | Ping - Traceroute - Netcat - Telnet - NavegadorWeb
-[Protocolos y servicios (No cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROTOCOLOS_SERVICIOS.md) | TELNET - HTTP - FTP - SMTP - POP3 - IMAP 
-[Protocolos y servicios (Cifrados)](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/PROCOLOS_SERVICIOS_2.md) | HTTPS - SSH - FTPS - TLS - HYDRA 
 [Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Vulnerabilidades.md) | Entender qué es, como categorizarlas, como explotarlas y como buscarlas.
 [Shells](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Shell.md) | Qué es una Shell, RevShells, BindShells, Herramientas, Netcat, Socat |
 [Linux Privilegios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Linux_Escala_Privilegios.md) | Herramientas automatizadas, enumeración, SUID, sudo, kernet, etc. 
@@ -71,6 +63,8 @@ OTROS | DESCRIPCIÓN
 UTILIDADES | DESCRIPCIÓN
 ------ | ------
 [BusquedaExploits](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/BusquedaExploit) | Como encontrar exploits fácilmente.
+[Comandos Básicos Linux](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Utilidades/Comandos-Básicos-linux.md) | Comandos más utilizados en Linux
+[Comandos CTF](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Utilidades/Comandos_CTF.md) | Comandos utilizados en CTFS
 [Enumeración](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/Enumeracion) | Enumerar servicios.
 [EscalaPrivilegios Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/EscalaPrivilegiosLinux) | Formas de escalar privilegios en Linux.
 [Shells](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Utilidades/Shells) | Formas de upgradear la shell.
@@ -80,3 +74,19 @@ UTILIDADES | DESCRIPCIÓN
 [Otra-Ruta-OSCP](https://johnjhacking.com/blog/oscp-reborn-2023/) | Otro recurso de ruta
 [Comandos-SQL.md](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Utilidades/Comandos_SQL.md) | Comandos básicos de SQL
 
+<h1 align="center"> ⏺️ RECONOCIMIENTO ⏺️ </h1>
+
+RECONOCIMIENTO | DECRIPCIÓN
+--- | ---
+[Hacking Web](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Introducción_Hacking_Web.md) | Como reconocer una web.
+[Reconocimiento Activo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Reconocimiento_activo.md) | Reconocimiento activo y herramientas.
+[Reconocimiento Pasivo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Reconocimiento_pasivo.md) | Reconocimiento pasivo y herramientas.
+
+<h1 align="center"> 🎲 REDES 🎲 </h1>
+
+REDES | DESCRIPCIÓN
+--- | ---
+[Modelo OSI](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/ModeloOSI.md) | Capas OSI y teoria
+[Procolos y Servicios 2](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/PROCOLOS_SERVICIOS_2.md) | Segunda parte de los protocolos y servicios.
+[Protocolos y Servicios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/Protocolos_Servicios.md) | Primera parte de los protocolos y servicios.
+[Puertos y Servicios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/Puertos_Servicios.md) | Todos los puertos donde corren los servicios.
