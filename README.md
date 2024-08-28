@@ -7,11 +7,13 @@
 
 # ÍNDICE
 
-- [INTRODUCCIÓN](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#accessibility--introducción--accessibility)
-- [VULNERABILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--vulnerabilidades--)
-- [HERRAMIENTAS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--herramientas--)
-- [OTROS](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#-atom-otros-atom-)
-- [UTILIDADES](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--utilidades--)
+- [Introducción](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#accessibility--introducción--accessibility)
+- [Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--vulnerabilidades--)
+- [Herramientas](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--herramientas--)
+- [Otros](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#-atom-otros-atom-)
+- [Utilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--utilidades--)
+- [Reconocimiento](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/tree/main?tab=readme-ov-file#-%EF%B8%8F-reconocimiento-%EF%B8%8F-)
+- [Redes](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/tree/main?tab=readme-ov-file#--redes--)
 
  <h1 align="center">:accessibility:  INTRODUCCIÓN  :accessibility:</h1> 
 
@@ -50,7 +52,6 @@ HERRAMIENTAS | DESCRIPCIÓN
 
 OTROS | DESCRIPCIÓN
 ---- | -----
-[Comandos-Básicos-Linux](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Comandos-Básicos-linux.md) | Comandos básicos de Linux
 [Principios-Seguridad](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Principios_Seguridad.md) | Conocer como funciona la seguridad realmente.
 [Windows](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Windows.md) | Cosas muy básicas de Windows.
 [Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Vulnerabilidades.md) | Entender qué es, como categorizarlas, como explotarlas y como buscarlas.
