@@ -36,6 +36,7 @@ VULNERABILIDAD | DESCRIPCIÓN
 [Idor](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/IDOR.md) | Inputs inseguros por parte del usuario al servidor.
 [Server-Side Request Forgery](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/SSRF.md) | Acceder o manipular el servidor y o tener acceso a el.
 [Command Injection](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/COMMAND_INJECTION.md) | Posibilidad de injección de comandos dentro de una aplicación.
+[Owasp Top 10](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/OWASP%20Top%2010.md) | Vulnerabilidades importantes como funcionan y explotarlas
 
 <h1 align="center"> 🧰 HERRAMIENTAS 🧰 </h1>
 
