@@ -109,4 +109,55 @@ Las fronteras de dominio por ejemplo, usan Cloudfare para las conexiones HTTP.
 ![image](https://github.com/user-attachments/assets/d7df9f0a-e3c3-44eb-a913-2256689426f9)
 
 
+# FRAMEWORKS COMUNES DE C2
+
+Como todo en la vida
+
+- Gratis
+- De pago
+
+Porque usariamos frameworks de pago? Normalente son porque son más dificiles de identificar para los vendedores de Anti-Virus. No es imposible, pero date cuenta que un open source es fácil de entender pero uno de pago no lo tiene todo el mundo.
+
+Usualmente, los frameworks premiums generan exploits modulos más avanzados, pivoting o consultas que los opn-source pues no van a estar ahi. Por ejemplo Cobalt Strike ofrece frameworks que no tienen la capacidad de abrir un tunel VPN. 
+
+## METASPLOIT
+
+Por ejemplo este de Rapid7.
+
+## ARMITAGE
+
+Es una extension de metasploit, añade una interfaz gráfica escrita en Java, increiblemente similar a Cobalt Strike. Porque su desarrollador es Raphael Mudge.
+
+## PORWERSHELL EMPIRE
+
+## COVENANT
+
+## SLIVER
+
+# DE PAGO
+
+## COBALT STRIKE
+
+## BRUTE RATEL
+
+# INICIAR UN SERVIDOR C2 FRAMEWORK
+
+## DESCARGAR
+
+```
+git clone https://gitlab.com/kalilinux/packages/armitage.git && cd armitage
+bash package.sh
+cd ./release/unix/ && ls -la
+systemctl start postgresql && systemctl status postgresql
+msfdb --use-defaults delete
+msfdb --use-defaults init
+cd /opt/armitage/release/unix && ./teamserver YourIP P@ssw0rd123
+cd /opt/armitage/release/unix && ./armitage
+```
+Siempre la interfaz normalmente esta en local por el puerto 55553 (127.0.0.1)
+
+
+
+
+
 
