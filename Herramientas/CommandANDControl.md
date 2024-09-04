@@ -156,6 +156,27 @@ cd /opt/armitage/release/unix && ./armitage
 ```
 Siempre la interfaz normalmente esta en local por el puerto 55553 (127.0.0.1)
 
+# ACCESO Y MANEJO DE UNA INFRAESTRUCTURA
+
+Ahora que tenemos una idea de como funciona todo esto, vamos a ver operaciones básicas que tenemos que hacer cuando accedemos.
+
+## OPERACIONES BÁSICAS DE SEGURIDAD
+
+Para empezar nunca tiene que estar directamente accesible el C2, Esto es lo primero en seguridad, por ejemplo tambíen este tipo de frameworks son capaces de detectar codigo hexadecimal codificado dentro de un archivo.
+
+![image](https://github.com/user-attachments/assets/38f77516-57ad-47af-bc9e-8dbe5f08449b)
+
+## ACCEDER REMOTAMENTE AL SERVIDOR QUE ESTA LOCAL
+
+Esta seccion es para acceder via SSH, 
+
+![image](https://github.com/user-attachments/assets/b90d043c-54ad-48f1-ab83-709e247d3da7)
+
+![image](https://github.com/user-attachments/assets/44d89975-f596-42d2-84ca-ab267fe21560)
+
+![image](https://github.com/user-attachments/assets/31e3d9ab-40b3-4d9b-98b6-d15e48290395)
+
+Desde el portforwarding podemos ir directamente al servidor C2 que esta escuchando en el puerto que le hayamos dicha
 
 
 
