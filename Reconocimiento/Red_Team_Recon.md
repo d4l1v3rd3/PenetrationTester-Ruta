@@ -301,6 +301,34 @@ option set name value
 run
 ```
 
+# MALTEGO
+
+Maltego es una aplicación que nos da un mapa con OSINT. En general, empezamos con un nombre de dominio, nombre de compañia, nombre de persona, dirección de correo. Con cada poca información va aumentando.
+
+La información recolectada en maltego se usa para posterior. 
+
+Cada bloque de maltego es una entidad gráfica, con valores descriptibos, en teminos de Maltego, es transformas en una pieza de codigo cual te da información relevante de cada entidad.
+
+![image](https://github.com/user-attachments/assets/1c24eda3-5f4e-4119-939f-44c6638a32ab)
+
+Es crucial mencionar que cada transformación disponible en Maltego conecta activamente el sistema. Es mejor transformar antes de limitarnos a simplemente hacer un reconocimiento pasivo.
+
+Cada transformación nos cambiar y nos da nuevos alores, por ejemplo empezamos con un "nodo313.net" experamos que nos de la ip que tiene.
+
+![image](https://github.com/user-attachments/assets/2aec203a-ec94-4705-95ae-24cf0dfee35e)
+
+![image](https://github.com/user-attachments/assets/be66d925-79b9-4a9a-ba84-8b17e7107bdf)
+
+Esto sería una simple idea de como se vería
+
+![image](https://github.com/user-attachments/assets/db38c8d3-b106-429e-be9d-166f2414b9d0)
+
+Ahora que vemos en lo que puede llegar y como funciona logicamente. 
+
+
+
+
+
 
 
 
