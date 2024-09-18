@@ -69,3 +69,25 @@ Imagina que queremos mas de una wordlist. Esto es muy simple:
 cat fichero1.txt fichero2.txt fichero3.txt > listacombinada.txt
 ```
 
+Y dirás pero entonces hay duplicados, tranquilo:
+
+```
+sort listacombinada.txt | uniq -u > listalimpia.txt
+```
+
+## WORDLISTS PERSONALIZADOS
+
+Personalizar listas de contraseñas es la mejor forma para incrementar las posibilidades de encontrar credenciales validas. Podemos crear listar personalizadas para una web o compañia, incluyendo emails o nombres de empleados, con herramientas como "Cewl" que se utiliza para extraer palabras o cosas importantes de una web.
+
+```
+cewl -w list.txt -d 5 -m5 http://www.nodo313.net
+```
+
+- -w escribe el contenido del fichero que le hemos puestro
+- -m 5 busca palabras de no mas de 5 caracteres
+- -d 5 el nivel que queremos de ataque el básico es el 2
+- la url
+
+Como resultado nos dara bastantes buenas wordlist con nombres localizaciones etc.
+
+
