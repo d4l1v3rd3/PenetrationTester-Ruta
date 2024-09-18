@@ -90,4 +90,40 @@ cewl -w list.txt -d 5 -m5 http://www.nodo313.net
 
 Como resultado nos dara bastantes buenas wordlist con nombres localizaciones etc.
 
+## WORDLIST POR USUARIOS
+
+Buscar información por ejemplo de empleados enumerando es algo mu bueno.
+
+Asumiendo por ejemplo el apellido, nombre, segundo nombre etc.
+
+Hay una herramienta muy buena para todo esto
+
+```
+git clone https://github.com/therodri2/username_generator.git
+cd username_generator
+python3 username_generatoy.py -h
+usage: username_generator.py [-h] -w wordlist [-u]
+
+Python script to generate user lists for bruteforcing!
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -w wordlist, --wordlist wordlist
+                        Specify path to the wordlist
+  -u, --uppercase       Also produce uppercase permutations. Disabled by default
+echo "John Smith" > usuarios.lst
+python3 username_generator.py -w user.lst
+usage: username_generator.py [-h] -w wordlist [-u]
+john
+smith
+j.smith
+j-smith
+j_smith
+j+smith
+jsmith
+smithjohn
+```
+
+
+
 
