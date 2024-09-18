@@ -93,3 +93,7 @@ REDES | DESCRIPCIÓN
 [Procolos y Servicios 2](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/PROCOLOS_SERVICIOS_2.md) | Segunda parte de los protocolos y servicios.
 [Protocolos y Servicios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/Protocolos_Servicios.md) | Primera parte de los protocolos y servicios.
 [Puertos y Servicios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Redes/Puertos_Servicios.md) | Todos los puertos donde corren los servicios.
+
+TÉCNICAS | DESCRIPCIÓN
+--- | ---
+[Weaponization](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Weaponization_RedTeam.md) | Herramientas que se usan en red team
