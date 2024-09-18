@@ -225,6 +225,20 @@ hashcat -a 3 -m 0 05A5CF06982BA7892ED2A6D38FE832D6 ?d?d?d?d
 05a5cf06982ba7892ed2a6d38fe832d6:2021
 ```
 
+## ATAQUES BASADOS EN REGLAS
+
+Estos ataques se denominan hibridos. Se asume que el atacante tiene conocimiento de las politicas de contraseñas
+
+Utilizaremos "haschat" o "John"
+
+```
+john --wordlist=/tmp/single-password-list.txt --rules=best64 --stdout | wc -l
+```
+
+- --wordlist= especificamos la wordlis
+- --rules Especificamos las reglas a seguir
+- --stdout printeamos el terminal
+- | wc -l: cuenta cuantas lineas produce john
 
 
 
