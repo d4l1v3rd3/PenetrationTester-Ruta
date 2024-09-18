@@ -14,6 +14,7 @@
 - [Utilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta?tab=readme-ov-file#--utilidades--)
 - [Reconocimiento](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/tree/main?tab=readme-ov-file#-%EF%B8%8F-reconocimiento-%EF%B8%8F-)
 - [Redes](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/tree/main?tab=readme-ov-file#--redes--)
+- [Técnicas](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/README.md#-%EF%B8%8F-técnicas-%EF%B8%8F-)
 
  <h1 align="center">:accessibility:  INTRODUCCIÓN  :accessibility:</h1> 
 
