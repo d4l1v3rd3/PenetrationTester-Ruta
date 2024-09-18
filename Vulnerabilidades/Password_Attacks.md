@@ -124,6 +124,109 @@ jsmith
 smithjohn
 ```
 
+## Técnica de espacio de teclas
+
+Otra forma de crear wordlist es usando este tipo de tecnicas y utilizando la herramienta "crunch"
+
+```
+crunch -h
+crunch 2 2 01234abcd -o crunch.txt
+```
+Crea una wordlist conteniendo todas las posibles combinaciones con 2 letras, incluyendo 0-4 a-d usando el argumento -o
+```
+cat crunch.txt
+00
+01
+02
+03
+04
+0a
+0b
+0c
+0d
+10
+.
+.
+.
+cb
+cc
+cd
+d0
+d1
+d2
+d3
+d4
+da
+db
+dc
+dd
+```
+
+Esto es rentable para cuando generamos largos textos y queremos especificar combinaciones, por ejemplo si quisieramos crear caracteres minimos y maximos de 0-9 y a-f
+
+```
+crunch 8 8 01234589abcdefABCDEF -o crunch.txt
+crunch 6 6 -t pass%%
+```
+
+## CUPP 
+
+Cupp es una herramienta interactiva de python para crear wordlists, con nombre etc.
+
+```
+git clone https://github.com/Mebus/cupp.git
+python 3 cupp.py
+python3 cupp.py -i
+python3 cupp.py -l
+python3 cupp.py -a
+```
+
+# ATAQUES OFFLINE
+
+## ATAQUES POR DICCIONARIO
+
+EN este caso usaremos hascat y para dar un ejemplo utilizaremos el hash "f806fc5a2a0d5ba2471600758452799c"
+
+1- Que tipo de hash es
+2- Que wordlist vamos a usar o que tipo de ataque debo usar.
+
+Para identificar el hash utilizaremos "hashid o hash-identifier" En este caso es md5
+
+```
+hashcat -a 0 -m 0 f806fc5a2a0d5ba2471600758452799c /usr/share/wordlists/rockyou.txt
+```
+
+- -a 0: Pone en modo diccionario
+- -m 0: Pone el modo hash crackeo md5 para mas info "hashcat -h"
+
+```
+hashcat -a 0 -m 0 F806FC5A2A0D5BA2471600758452799C /usr/share/wordlists/rockyou.txt --show
+f806fc5a2a0d5ba2471600758452799c:rockyou
+```
+
+## ATAQUES DE FUERZA BRUTA
+
+Este ataque es el mas usado para entrar en lugares o persnoal no autorizado.
+
+```
+hashcat --help
+```
+
+```
+hascat -a 3 ?d?d?d?d --stdout
+```
+
+- -a 3 : pone el modo de ataque a fuerza bruta
+- ?d?d?d? : Pone un digito en cada caso empezando de 0000 a 9999
+- --stdout: Nos printea el resultado en terminal
+
+```
+hashcat -a 3 -m 0 05A5CF06982BA7892ED2A6D38FE832D6 ?d?d?d?d
+05a5cf06982ba7892ed2a6d38fe832d6:2021
+```
+
+
+
 
 
 
