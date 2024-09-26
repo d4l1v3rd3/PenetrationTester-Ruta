@@ -101,3 +101,4 @@ REDES | DESCRIPCIÓN
 TÉCNICAS | DESCRIPCIÓN
 --- | ---
 [Weaponization](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Weaponization_RedTeam.md) | Herramientas que se usan en red team
+[Window Local Persistence](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/WindowsLocalPesistence.md) | Persistencia con Windows en máquina víctima
