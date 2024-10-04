@@ -1,0 +1,118 @@
+# Introducción
+
+Whireshark es un open-source, una cross-platform de red teniendo la capacidad de leer paquetes de red teniendo la capacidad de snifear y investigar trafico real y inspectar paquetes de red (PCAP).
+
+Es comunmente usado siendo uno de los mejores paquetes de analisis. Veremos lo básico de Wireshark y como se usa como paquete fundamental de analisis.
+
+# Descripción General
+
+Whireshar es un potente analista de trafico. Tiene multiples propositos:
+
+- Detectando problemas de red, como una red tiene fallos de carga puntos y congestión.
+- Detectando anomalias de seguridad, como rango de host, usos anormales de puertos, trafico sospechoso.
+- Investigar protocolos y aprender detalles, Ver codigos de respuesta y datos de payload.
+
+Wirehsar no es un IDS (intrusion detection System). Nos deja a nosotros como analistar descubrir e investigar paquetes. No podemos modificar.
+
+## Interfaz y datos
+
+Nombre | Descripción
+--- | ---
+Barra de herramientas |La barra de tareas contiene los menus y atajos de teclado para el snifeo de paquetes, procesamiento, filtrado, etc.
+Archivos recientes | Lista de los arhicvos listando o investigados anteiromente
+Captura por filtros y interfaces | Caputa de filtros y puntos por los que puedes sniffear (interfaces de red) (eth0 ens33)
+Barra de tareas | estado, perfil, paquetes de informacion
+
+![image](https://github.com/user-attachments/assets/609b9af9-4cd7-44b8-a67e-28feb978f374)
+
+## Cargar archivos PCAP
+
+```
+File - dropping file
+```
+
+Cuando metemos un archivo en mi caso el hhp1.pcapng
+
+![image](https://github.com/user-attachments/assets/9ae8fbd6-b266-4bbe-b856-85630437f8c4)
+
+Podemos ver numeros, paquetes, detalles etc. Vamos ver formatos:
+
+- Lista de paquetes : Es el sumario de todos los paquetes (soruce and destination, protocol y packet info) si vemos o clickamos en la lista podemos investigar en cada paquete
+- Destalles panel : Detalles del protocolo usado para mandar el paquete
+- Bytes : Los paquetes se manda en bytes para ello wireshark los representa en código ASCII.
+
+## Color de los paquetes
+
+Whireshar, utiliza paquetes de colores para ordenar o condicionar diferentes protocolos y anomalias en cada caputr.
+
+Esto nos ayuda sobre lo que esta pasando por e analisis. Podemos crear reglas de color o eventos dependiendo de los filtros usados.
+
+Whireshar tiene dos tipos de paquetes o metodos de color: Reglas temporales que solo duren para la sesion en cuestión o reglas permanentes.
+
+```
+menu - view - coloring rules - create
+```
+
+![image](https://github.com/user-attachments/assets/060d8515-8d80-44e5-a2d2-4053db018eed)
+
+## Sniffeo de tráfico
+
+Podemos pulsar en el boton de "shark" ![image](https://github.com/user-attachments/assets/daef7b55-7e9e-4658-ad99-bccfcaa597af)
+
+Para empezar con la busqueda de paquetes y pulsar en el boton de "stop" para parar hay empezaremos a recolectar paquetes de red.
+
+## Unir paquetes de red
+
+Whireshar tiene la capacidad de unir dos paquetes "pcap" en uno solo 
+
+```
+file - merge
+```
+
+## Ver detalles de un fichero
+
+Conocer los detalles es muy necesario, especialmente cuando trabajamos con muchos archivos "pcap" aveces nos da información de detalles (como hash, tiempo de captura, comentarios, inferfaz y estadisticas
+
+```
+statistics - Capture File properties - pcap icon located on the left bottom
+```
+
+# Disección de paquetes
+
+La disección de paquetes es investigar los detalles y decodificaciones posibles de los protocolos de los archivos. Hay una larga lista de protocolos.
+
+## Detalles de paquetes
+
+Puedes clicar en un paquete en la lista y abrir los deatlles
+
+![image](https://github.com/user-attachments/assets/a80d9962-d6c6-4027-9496-bdc8ff4622bf)
+
+Los paquetes consisten en 5 a 7 capas basados en el modelo OSI. Vamos aver un paquete HTTP
+
+![image](https://github.com/user-attachments/assets/cd820cbb-3280-4b0a-90f7-b7a8e5590f09)
+
+Podemos ver todas las capatas 
+
+- Frame (capa 1): Nos enseña todos los detalles de un paquete en la capa física del modelo OSI
+
+![image](https://github.com/user-attachments/assets/7a3c2543-3e78-469e-86bd-29e782e2e19e)
+
+- Source [MAC] (Capa 2): Nos enseña el codigo y la destinación de la MAC.
+
+![image](https://github.com/user-attachments/assets/1c20554e-f71a-495b-9b3b-91ff20764a3f)
+
+- Source [IP] (Capa 3): Nos dive el destino de la Ipv4 de la capa de red
+
+![image](https://github.com/user-attachments/assets/8963d5b8-06d9-44d8-96cd-da145ce5770d)
+
+- Protocol (Capa 4): Nos dice los detalles del protocolo (UDP/TCP) y los puertos de destino, capa transporte
+
+ ![image](https://github.com/user-attachments/assets/466e15e2-515c-423d-bf4b-3a890f356dcd)
+
+- Protocol errors
+- Application Protocol (capa 5): No enseña el protocollo usado, HTTP, FTP, SMB, capa aplicación
+
+![image](https://github.com/user-attachments/assets/92c24b24-596e-4f81-b1b6-0577cffc3335)
+
+
+
