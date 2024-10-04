@@ -114,5 +114,53 @@ Podemos ver todas las capatas
 
 ![image](https://github.com/user-attachments/assets/92c24b24-596e-4f81-b1b6-0577cffc3335)
 
+# Navegación entre paquetes
+
+Whireshark calcula el numero de los paquetes investigados asumiento un único numero por paquete. Esto ayuda a los analistas a procesar grandes capturas de paquetes y volviendo fácilmente a cualqueir punto
+
+## Ir al paquete
+
+Si nos dirigimos a 
+
+```
+go - go to packet
+```
+
+Podemos dirigirnos exactamente al paquete o frame en cuestión
+
+## Buscar paquetes
+
+Otro apratado es 
+```
+edit - find packet
+```
+
+Nos aseguramos de encontra dicho paquete obbuscar por un paquete particular por ejemplo que ponga "download"
+
+## Marcar paquetes
+
+Marcar paquete nos ayuda a buscar un punto especifico
+
+```
+edit - mark/unmark packets
+```
+
+![image](https://github.com/user-attachments/assets/8581a189-4618-497c-8b12-4e04a3d28b61)
+
+## Comentario de paquetes
+
+Similar al marking de antes
+
+![image](https://github.com/user-attachments/assets/bb13cd94-d1a0-4fe1-b652-7e9609cd9d8d)
+
+## Exportar paquetes
+
+Los archivos que contienen miles de paquetes en un simple archivo, lo podemos exportar o exportar paquetes especificos
+
+```
+file - export
+```
+
+![image](https://github.com/user-attachments/assets/77abd405-beed-4724-8183-28022cd7c044)
 
 
