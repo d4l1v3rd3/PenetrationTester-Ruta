@@ -50,6 +50,7 @@ HERRAMIENTAS | DESCRIPCIÓN
 [Hydra](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Herramientas/Hydra.md) | Programa para reventar contraseñas por fuerza bruta.
 [Autorecon](https://github.com/Tib3rius/AutoRecon/tree/main) | Herramienta que automatiza el primer paso de una CTF.
 [Burpsuite](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md) | Captura y manipulación de trafico HTTP/HTTPS estre navegador y servidor.
+[WireShark](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Wireshark.md) | Captura de paquetes, tráfico de red.
 
 <h1 align="center"> :atom: OTROS :atom: </h1>
 
