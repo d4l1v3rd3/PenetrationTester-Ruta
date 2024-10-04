@@ -163,4 +163,29 @@ file - export
 
 ![image](https://github.com/user-attachments/assets/77abd405-beed-4724-8183-28022cd7c044)
 
+## Exportar objetcos (archivos)
 
+Wireshar extrae archivos para analisis de seguridad, es vital descubrir archivos que hemos guardado para una investigación
+
+## Formato de tiempo
+
+Wireshar lista paquetes que estan capturados, esa investigación es una bunea opción
+
+```
+view - time display format
+```
+
+![image](https://github.com/user-attachments/assets/d5519c45-d139-441a-9545-d85446f252b4)
+
+## Información adicional
+
+Wireshark detecta dependiendo que protocolos y anomalias o problemas. Pudiendo ser falsos positivos o negativos
+
+![image](https://github.com/user-attachments/assets/ba241543-6453-4860-96aa-529a8b34a651)
+
+Go to packet number 39765
+Look at the "packet details pane". Right-click on the JPEG section and "Export packet bytes". This is an alternative way of extracting data from a capture file. What is the MD5 hash value of extracted image?
+
+# Filtrado de paquetes
+
+Whir
