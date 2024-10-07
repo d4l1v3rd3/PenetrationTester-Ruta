@@ -188,4 +188,4 @@ Look at the "packet details pane". Right-click on the JPEG section and "Export p
 
 # Filtrado de paquetes
 
-Whir
+Whireshark tiene un un motor de filteros
