@@ -188,4 +188,60 @@ Look at the "packet details pane". Right-click on the JPEG section and "Export p
 
 # Filtrado de paquetes
 
-Whireshark tiene un un motor de filteros
+Whireshark tiene un  motor de filtrado cual te ayuda a analizar el trafico y centrarte en eventos interesantes. 
+
+## Aplicas un filtro
+
+Es la forma más bascia de filtrar tráfico. Mientras investigamos un archivo capturado
+
+```
+analyse - Apply as filter
+```
+
+![image](https://github.com/user-attachments/assets/6cd13bd0-8fb7-42b1-a322-e443618d5cd6)
+
+## Filtro de convesion
+
+CUando utilizamos el anterior filtro podemos filtrar paquetes unicos o investigar otros valores del paquete
+
+```
+anaylse - Conversation Filter
+```
+
+![image](https://github.com/user-attachments/assets/45b9fb44-130f-4051-90b8-cf19f16af3bc)
+
+## Conversion de color
+
+Esta es la opción similitar a la anterior, esta opción funciona conreglas de color
+
+```
+view - Colourise Conversation - Reset Colourisation
+```
+
+![image](https://github.com/user-attachments/assets/4215b26d-6875-4d21-8d44-b7c7d76792ef)
+
+## Preparar el filtro
+
+Similar al primero de todos nos ayuda a crear filtros 
+
+![image](https://github.com/user-attachments/assets/62bc596c-86d7-48a2-8b15-55f986d5668b)
+
+## Aplicar una columna
+
+Por edefecto el paquete nosda información abajo
+
+```
+analyse - apply as column
+```
+
+![image](https://github.com/user-attachments/assets/45e1648e-00f3-4422-b321-7140aff6b608)
+
+## Seguir
+
+```
+Analyse --> Follow TCP/UDP/HTTP Stream
+```
+
+![image](https://github.com/user-attachments/assets/91d98408-60ab-4119-8c0c-1b4fb5cdd389)
+
+
