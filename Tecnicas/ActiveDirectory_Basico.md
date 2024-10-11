@@ -86,7 +86,23 @@ Esto hara que podamos ver las propiedades de los contenedores
 
 ## Delegar
 
-Otra cosa importante son 
+Otra cosa importante es dar especificos control sobre usuarios o OUs. El proceso de delegacion garantiza privilegios especificos.
+
+Lo mas comun de todo esque los privilegios lo den el grupo "IT support". 
+
+Por ejemplo queremos delegar el control de sales
+
+![image](https://github.com/user-attachments/assets/29353d48-bfff-40ae-91fb-d33b24a8f851)
+
+Nos abrira una nueva ventana y podremos chekear los nombres a lo que quermeos delegar
+
+![image](https://github.com/user-attachments/assets/f87b6516-4ced-4e85-8369-e28ff6fef0c7)
+
+Clicakmos ok
+
+![image](https://github.com/user-attachments/assets/243ef73c-ba58-4934-ac70-18c946a83b8f)
+
+
 
 
 
