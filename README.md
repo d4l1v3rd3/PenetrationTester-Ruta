@@ -101,6 +101,7 @@ REDES | DESCRIPCIÓN
 
 TÉCNICAS | DESCRIPCIÓN
 --- | ---
+[Romper_AD](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Romper_AD.md) | Técnicas y conocimiento teorico para encontrar vectores en AD
 [Active_Directory_Básico](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/edit/main/Tecnicas/ActiveDirectory_Basico.md) | Qué es active directory y un poco funcionamiento, configuraciones y servicios
 [Movimiento Lateral y Pivoting](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/MovimientoLateral_Pivoting.md) | Movimiento entre dispositivos de la misma red
 [Weaponization](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Weaponization_RedTeam.md) | Herramientas que se usan en red team
