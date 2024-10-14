@@ -133,7 +133,22 @@ MDT (microsfot deployment toolkit" es un servicio de Microsfot que lo que hace e
 
 Normalmente ya viene integrado con el SCCM (microsoft System Center Configuration Manager), controla todas las actualizaciones, aplicaciones de microsoft, servicios y operaciones de los sistemas. 
 
-Para los desarrolladores esto se puede usar para preconfigurar imanges de boteo o si queremos configurar una nueva maquina, 
+Para los desarrolladores esto se puede usar para preconfigurar imanges de boteo o si queremos configurar una nueva maquina, podemos instalar por ejemplo el office365 en la organizacion un anti virus, etc
+
+SCCM es una expansión como si fuera el hermano mayor de MDT.
+
+## PXE Boot
+
+Las organizaciones grandes usan PXE boot para los nuevos dispositivos que son conectados a la red se cargan y instalan en el sistema operativo directmaente a la red. MDT se usa para crear, modificar y hostear imagenes.
+
+Una vez ha terminado el proceso, el cliente usa conexiones TFTP para decsargar imagenes de booteo PXE. Y podemos explotar esto
+
+- Inyectar un escala de privilegios, como una cuenta del administrador accesdes al OS boot
+- Un spaying attack para sacar credenciales AD
+
+## PXE Boot Image Retrieval
+
+
 
 
 
