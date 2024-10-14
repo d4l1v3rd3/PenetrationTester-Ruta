@@ -57,3 +57,84 @@ Dado que la mayoría de los entornos de AD tienen configurado el bloqueo de cuen
 
 Podemos usar una contraseña probar a autentificarnos con todos los usuarios que hemos cogido y asi ir probando
 
+# LDAP Bind Credentials
+
+Otro metodo que usa AD como autenticación es LDAP. Es similar al NTLM sin embarco verifica directamnete las credenciales. Primero manda una consulta y luego se verifican
+
+LDAP es una autenticación muy popular que usan aplicaciones como:
+
+- Gitalb
+- Jenkins
+- Printers
+- VPNs
+
+En estas aplicaciones los servicios tienen que estar en internet, este tipo de ataques son muy parecidos a los que hariamos en NTLM, sin embargo necesitamos que el servicio de LDAP autentifique con las credenciales, con lo cual necesitamos un paso mas.
+
+![image](https://github.com/user-attachments/assets/25f23549-597c-406d-badb-fcb7547956b5)
+
+## LDAP Pass-Back Attacks
+
+Sin embargo, un ataque muy interesante, normalmente se hace contra las impresaoras.
+
+Se gana acceso por la configuración del dispositivo. Por ejemplo un admin:admin o admin:password 
+
+imagina una ruta como
+
+http://dominio.com/settings.aspx
+
+Por ejemplo gracias a eso podriamos sacar un usuario, eh intentar buscar vulnerabilidades o explotar la máquina en si.
+
+# Authenticacion Relays
+
+Continuando con este tipo de ataques, hay muchisimos servicios que hablan entre ellos y son necesarios en la red
+
+Estos servicios tienen multiples formas de autenticación para verificar las conexiones pendientes. 
+
+## SMB
+
+El server message block o SMB es un protocolo para cliente que se comuniquen con el servidor (un archivo compartido). En las redes de Microsoft AD, SMB gobierna toda la red interna y los arhivos como si fuera un adminsitrador remoto. 
+
+Sin embargo, la seguridad en las primeras versiones eran insuficientes. Muchas vulnerabilidades y exploits que se descubrieron.
+
+- Una vez que el reto de NTLM es interceptado hay tecnicas en local para descraquear y sacar la contraseña.
+- Podemos utilizar un dispositivo como Middle attack y interceptar la comunicación entre el cliente y el servidor.
+
+## LLMNR, NBT-NS y WPAD
+
+- LLMNR = Link-Local Multicast Name Resolution
+- NBT-NS (NetBIOS Name Service)
+- WPAD (Web Proxy auto-Discovery)
+
+Estos protocolos usan como DNS su misma red local, determinando si el host pertenece a la misma red.
+
+Estos protocolos mandan consultar a su misma red local, se reciben y luego ya s asocian.
+
+## Interceptar Reto de NetNTLM
+
+El Responder es una herramientas muy buena porque podemos envenenar conexiones e interceptar conexión. Imagina que estas conectado via VPN a una red tu estas activo a poder envenar todas las autenticaciones que ocurren a la red VPN, podemos simultar que cada consulta que corra cada 30 minutos sea envenada e interceptada.
+
+[Responder](https://github.com/lgandx/Responder)
+
+```
+sudo responder -i breachad
+```
+
+En caso de poder coger un hash tenemos haschat
+
+```
+hashcat -m 5600 hash.txt pass.txt --force
+```
+
+# Microsoft Deployment Toolkit
+
+## MTD Y SCCM
+
+MDT (microsfot deployment toolkit" es un servicio de Microsfot que lo que hace es automatizar servicios del Sistema operativo. Las organizaciones grandes necesitan estos servicios para que todo sea mas eficiente como por ejemplo imagentes.
+
+Normalmente ya viene integrado con el SCCM (microsoft System Center Configuration Manager), controla todas las actualizaciones, aplicaciones de microsoft, servicios y operaciones de los sistemas. 
+
+Para los desarrolladores esto se puede usar para preconfigurar imanges de boteo o si queremos configurar una nueva maquina, 
+
+
+
+
