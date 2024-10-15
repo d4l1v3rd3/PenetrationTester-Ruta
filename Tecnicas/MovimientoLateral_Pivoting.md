@@ -116,5 +116,9 @@ schtasks /s TARGET /run /TN "THMtask1"
 schtasks /S TARGET /TN "THMtask1" /DELETE /F
 ```
 
+# Movimiento lateras usando WMI
+
+
+
 
 
