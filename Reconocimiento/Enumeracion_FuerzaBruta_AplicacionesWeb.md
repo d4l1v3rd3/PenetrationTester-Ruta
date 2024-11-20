@@ -66,9 +66,13 @@ Durante un intento de logeo nos puede devolver mucha información. Cuando estos 
 ## Provocar Errores verbose
 
 1- Intentos de logeo invalidos: Esto es como tocar a cada puerta y ver si esta abierto. Promptear intencionalmente usuarios y contraseñas incorrectos.
+
 2- SQL Injection: Esta teqnica da comandos maliciosos SQL como meter una sola ' y ver que erorr lanza
+
 3- File Inclusion/Path Traversal: Manipulando rutas, los atacantes pueden encontrar ficheros restringidos o errores en rutas internas. "../../"
+
 4- Manipulación de formulario: Cogiendo formularios e intentando enseñar errores de logica de backend y información e usuarios sensible.
+
 5- Fuzzing de aplicación: Inputear o mandar inputs de varias partes de aplicaciones y ver como reacciona identificando puntos vulnerables (Bupr Suite)
 
 ![image](https://github.com/user-attachments/assets/014228eb-e8d5-4013-9dab-3f94687109fd)
