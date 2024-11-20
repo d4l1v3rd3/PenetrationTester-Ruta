@@ -75,3 +75,37 @@ Durante un intento de logeo nos puede devolver mucha información. Cuando estos 
 
 Repositorio para usuarios y correos defaults [Github](https://github.com/nyxgeek/username-lists/blob/master/usernames-top100/usernames_gmail.com.txt)
 
+# Explotar Vulnerabilidad a la hora de resetear contraseña
+
+- Basado en email: Cuando el usuario quiere resetear la contraseña, la aplicación manda al email un link reseteo o un token del email registrado. Si el usuario clicka el link, directamnete le lleva a una página que puede meter la nueva contraseña y confirmarla, o el sistem automáticamente genera una nueva contraseña.
+- Basado en preguntas: Esto envuele al usuario porque pregunta cosas de seguridad ya "pre-configuradas" a la hora de crear la la cuenta. Con este metodo nos puede dar información.
+- SMB: Esta función es imiliar al email pero mandando al usuario. El usuario recibe el codigo y lo pone para acceder a la página.
+
+### Metodos
+
+- Tokens predecibles
+- Expiración de tokens
+- Validación insuficiente
+- Información privada
+- Transporte inseguro
+
+## Explotar tokens predecibles
+
+```
+$token = mt_rand(100, 200);
+$query = $conn->prepare("UPDATE users SET reset_token = ? WHERE email = ?");
+$query->bind_param("ss", $token, $email);
+$query->execute();
+```
+
+Simples, predecibles, expiran en un tiempo particularmente si se intenta fuerza bruta.
+
+## Explotar Autentificación Básica por HTTP
+
+La enumeración básica esta compuesta simplemente con usuario y contraseña. Como Routers o elementos de lared. 
+
+![image](https://github.com/user-attachments/assets/0749f6b7-29f4-4cb5-b950-044a5099e5f0)
+
+
+
+
