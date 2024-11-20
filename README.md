@@ -18,11 +18,13 @@
 
  <h1 align="center">:accessibility:  INTRODUCCIÓN  :accessibility:</h1> 
 
-Este repositorio es enfocado para conocer Vulnerabilidades, herramientas, información para un PenetrationTester.
+Este repositorio es enfocado para conocer Vulnerabilidades, herramientas, información para un Pentester.
 
-Utilizo herramientas de mi trabajo, herramientas e información de HTB o de otras personas en GitHub.
+Utilizo herramientas de mi trabajo, herramientas e información de CTF o de otras personas en GitHub.
 
-Siempre que utilice cualquier contenido que sea de otra persona será citado.
+INTRODUCCIÓN | DESCRIPCIÓN
+--- | ---
+[Windows Básico](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Introduccion/Windows.md) | Entender como funciona Windows y como esta compuesto
 
 <h1 align="center">🤯  VULNERABILIDADES  🤯</h1>
 
@@ -59,8 +61,8 @@ CTF | DESCRIPCIÓN
 ---- | -----
 [Linux Escala Privilegios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Linux_Escala_Privilegios.md) | Comandos para enumerar Linux y encontrar vulnerabilidades o material importante
 [TCPDump](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/TcpDump.md) | Herramienta para capturar paquetes (Linux)
-[]()
-[]()
+[Shell](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Shell.md) | Qué es una Shell y formas de generarlas
+[Windows Escala Privilegios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Windows_Escala_Privilegios.md) | Comandos para enumerar Windows y encontrar vulnerabilidades o material importante
 []()
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
@@ -114,3 +116,4 @@ TÉCNICAS | DESCRIPCIÓN
 SEGURIDAD | DESCRIPCIÓN
 --- | ---
 [Principios Seguridad](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Principios_Seguridad.md) | Modelo de seguridad y historia de la seguridad de la información
+[Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Vulnerabilidades.md) | Entender que es una vulnerabilidad y como puntuarla
