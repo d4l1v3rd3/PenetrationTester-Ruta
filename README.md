@@ -51,17 +51,17 @@ HERRAMIENTAS | DESCRIPCIÓN
 [Autorecon](https://github.com/Tib3rius/AutoRecon/tree/main) | Herramienta que automatiza el primer paso de una CTF.
 [Burpsuite](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/BurpSuite.md) | Captura y manipulación de trafico HTTP/HTTPS estre navegador y servidor.
 [WireShark](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Wireshark.md) | Captura de paquetes, tráfico de red.
+[Command And Control](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Herramientas/Command_Control.md) | Framework para hacer más fácil el manejo de los dispositivos controlados
 
-<h1 align="center"> :atom: OTROS :atom: </h1>
+<h1 align="center"> :atom: CTF :atom: </h1>
 
-OTROS | DESCRIPCIÓN
+CTF | DESCRIPCIÓN
 ---- | -----
-[Principios-Seguridad](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Principios_Seguridad.md) | Conocer como funciona la seguridad realmente.
-[Windows](https://github.com/D4l1-web/PenetrationTester-Ruta/blob/main/Otros/Windows.md) | Cosas muy básicas de Windows.
-[Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Vulnerabilidades.md) | Entender qué es, como categorizarlas, como explotarlas y como buscarlas.
-[Shells](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Shell.md) | Qué es una Shell, RevShells, BindShells, Herramientas, Netcat, Socat |
-[Linux Privilegios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Linux_Escala_Privilegios.md) | Herramientas automatizadas, enumeración, SUID, sudo, kernet, etc. 
-[Windows Privilegios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Otros/Windows_Escala_Privilegios.md) | Escala privilegios Windows 
+[Linux Escala Privilegios](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Linux_Escala_Privilegios.md) | Comandos para enumerar Linux y encontrar vulnerabilidades o material importante
+[TCPDump](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/TcpDump.md) | Herramienta para capturar paquetes (Linux)
+[]()
+[]()
+[]()
 
 <h1 align="center"> 🧑‍🚀 UTILIDADES 🧑‍🚀 </h1>
 
@@ -107,3 +107,10 @@ TÉCNICAS | DESCRIPCIÓN
 [Weaponization](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Weaponization_RedTeam.md) | Herramientas que se usan en red team
 [Window Local Persistence](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/WindowsLocalPesistence.md) | Persistencia con Windows en máquina víctima
 [AD_persistencia](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Persistencia_AD.md) | Persistencia en AD (sin acabar del todo)
+
+
+<h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
+
+SEGURIDAD | DESCRIPCIÓN
+--- | ---
+[Principios Seguridad](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Principios_Seguridad.md) | Modelo de seguridad y historia de la seguridad de la información
