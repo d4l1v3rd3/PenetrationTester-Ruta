@@ -73,3 +73,5 @@ Durante un intento de logeo nos puede devolver mucha información. Cuando estos 
 
 ![image](https://github.com/user-attachments/assets/014228eb-e8d5-4013-9dab-3f94687109fd)
 
+Repositorio para usuarios y correos defaults [Github](https://github.com/nyxgeek/username-lists/blob/master/usernames-top100/usernames_gmail.com.txt)
+
