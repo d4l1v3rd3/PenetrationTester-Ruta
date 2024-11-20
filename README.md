@@ -89,6 +89,7 @@ RECONOCIMIENTO | DECRIPCIÓN
 [Reconocimiento Activo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Reconocimiento_activo.md) | Reconocimiento activo y herramientas.
 [Reconocimiento Pasivo](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Reconocimiento_pasivo.md) | Reconocimiento pasivo y herramientas.
 [Red Team Reconocimiento](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Red_Team_Recon.md) | Herramientas de reconocimiento usador por Red Teamers.
+[Enumeración y Fuerza Bruta](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Reconocimiento/Enumeracion_FuerzaBruta_AplicacionesWeb.md) | Enumeración y ... en aplicaciones web
 
 <h1 align="center"> 🎲 REDES 🎲 </h1>
 
