@@ -1,8 +1,15 @@
 <h1 align="center"> Linux Escala Privilegios </h1>
 
+# ÍNDICE
+
+- [Introducción](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Linux_Escala_Privilegios.md#introducción)
+- [Enumeración](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Linux_Escala_Privilegios.md#enumeración)
+- [Herramientas automatizadas](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/CTF/Linux_Escala_Privilegios.md#herramientas-automatizadas-para-enumerar)
+
 # INTRODUCCIÓN
 
-Todo depende de la configuración específica del target. Versión del kernel, aplicaciones instaladas, programas que soporten lenguajes de programación, contraseñas de usuarios y cosas que puedan generar una shell root.
+- Enumeración configuración específica del target. 
+- Versión del kernel, aplicaciones instaladas, programas que soporten lenguajes de programación, contraseñas de usuarios y cosas que puedan generar una shell root.
 
 # ¿Qué es la escala de privilegios?
 
