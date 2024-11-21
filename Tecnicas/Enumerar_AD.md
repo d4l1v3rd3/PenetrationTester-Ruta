@@ -17,3 +17,5 @@ Durante un analisis de red team, es normal que se utilice una escala de privileg
 systemd-resolve --interface enumad --set-dns $THMDCIP --set-domain za.tryhackme.com
 ```
 
+# Injección de credenciales
+
