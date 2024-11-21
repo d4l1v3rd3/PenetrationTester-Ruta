@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b4a40264-fed5-48da-8181-5ce1e368f44b)# Active Directory Basics
+# Active Directory Basics
 
 - Que es Active Directory
 - Que es un dominio de active directory
@@ -9,9 +9,9 @@
 
 Imaginemos que tenemos que administrar una pequeña empresa de una red con solo 5 ordenadores y 5 empleados. Una pequeña red. Podriamos sin ningún problema configurar cada ordenador por seaprado. Manualmente, crear usuarios, configuraciones...
 
-Pero imagina, que tienes 157 ordensdores y 300 usuarios locales en diferentes oficinas. 
+Pero ahora imagina... que tienes 157 ordensdores y 300 usuarios locales en diferentes oficinas. 
 
-Esto es una gran limitacion, para eso existen los dominios de Windows. Simplemente un dominio de windows es un grupo de usuarios y ordeandores bajo la adminsitración de la empresa. La idea del dominio y centraliuzar todo se llama Active Directory (AD) el servidor se ejectura y sirve como Domain Controller (DC)
+Esto es una gran limitacion, para eso existen los dominios de Windows. Simplemente un dominio de windows es un grupo de usuarios y ordeandores bajo la adminsitración de la empresa. La idea del dominio y centralizar todo se llama Active Directory (AD) el servidor se ejectura y sirve como Domain Controller (DC)
 
 ![image](https://github.com/user-attachments/assets/9df6e7df-3af8-4817-bf93-a03dcfb2b93c)
 
