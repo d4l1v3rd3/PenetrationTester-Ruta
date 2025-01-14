@@ -111,6 +111,7 @@ TÉCNICAS | DESCRIPCIÓN
 [Weaponization](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Weaponization_RedTeam.md) | Herramientas que se usan en red team
 [Window Local Persistence](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/WindowsLocalPesistence.md) | Persistencia con Windows en máquina víctima
 [AD_persistencia](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Persistencia_AD.md) | Persistencia en AD (sin acabar del todo)
+[Hacking Powershell](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Hacking_PowerShell.md) | Enumeración Windows
 
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
