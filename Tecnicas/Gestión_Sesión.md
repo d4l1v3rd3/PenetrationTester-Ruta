@@ -98,3 +98,48 @@ Token: Se usa en el header de una consulta, no tienen seguridad automatica, se a
 
 # Seguridad de sesión Ciclo de vida
 
+Es momento de ver la seguridad de gestión de sesiones
+
+## Creación de sesion
+
+Es el valor donde ma svulnerabilidades podemos encontrar
+
+### Sesiones vulnerables
+
+Es muy común tener sesiones vulnerables en estos momentos y con los frameworks que se usa. Sin embargo, es muy fácil quitar estas vulnerabilidades con LLms o AI
+
+Si una sesión personalizada se screa, hay una opción de que esta sesión pueda ser modificada. Un ejemplo es imagina que el valor de sesión esta codificado en base64. El actor simplemente crea un proceso, genera una sesión y recoge el valor de cualquier cuenta de otro usuario
+
+### Controlar sesiones
+
+En ciertos tokes, JWTs, tiene información relevante de la creación y validación. Si no hay mcha seguridad, se puede crear un token verificado o firmado tu mismo, un actor puede generar su propio token.
+
+### Arreglar sesión
+
+Recordemos que la aplicación recoge la sesión antes de la autentifcación, estas web son muy vulnerables. Si la sesión no rota cuando te autentificas, es muy fácil envenenar a eses dicho usuario
+
+### Transmisión insegura
+
+EN momentos modernos esto no suele pasar.
+
+## Trackeo de Sesión
+
+Esto es donde encontraremos también muchas vulnerabilidades
+
+## Bypass de autorización
+
+Esto ocurre cuando no hay suficientes chekeos a lahora de hacer la consulta de autentificación
+
+- Vertical Bypass: HAciendolo para usuarios con privilegios
+- Horizontal Bypass: Haciendo acciones que puedes y conjuntos que no
+
+## Logueo insuficiente
+
+Incidente junto al ataque
+
+## Sesión Expiración
+
+Simplemente recolectar el tocket
+
+# Práctica
+
