@@ -143,3 +143,34 @@ Simplemente recolectar el tocket
 
 # Práctica
 
+# Enumeración
+
+Para explotar efectivamente dicha vulnerabilidad, primero necesitaremos hacer un mapa de lavida del trackeo para nmosotros y capturarlo en notas. SI nosotros endendemos su ciclo de vida, podemos empezar a vulnerar. Usaremos el navegador para demostrar. Vamos a una web
+
+![image](https://github.com/user-attachments/assets/2472f972-0732-4ee0-82a6-1277c39b9f5a)
+
+Primero veremos que no hay ninguna cookie cuando visitamos dicha web. Esto nos dice que las sesiones desautentificadas no son trackeadas. Si clickamos con Sign-Up , veremos
+
+![image](https://github.com/user-attachments/assets/29ad7429-f99e-4bde-8f9c-505561d9c5e4)
+
+Vemos que después de crear dicha cuenta, se crear un trafico de red
+
+![image](https://github.com/user-attachments/assets/6cc602f2-7055-4c27-9803-620b71269419)
+
+Esto nos dice información
+
+- Cookies usadas
+- La flag de HTTPOnly para coger el valor JS
+- La expiración de la cookie
+
+![image](https://github.com/user-attachments/assets/be9944ec-fbf3-4be9-82fe-a0431e545936)
+
+![image](https://github.com/user-attachments/assets/689679b4-314a-4780-acc7-e309a3db9f14)
+
+![image](https://github.com/user-attachments/assets/6f507941-d821-4f33-9dad-5a328eb0f2c7)
+
+ ![image](https://github.com/user-attachments/assets/c53915c0-0905-4995-aac9-0df13c190a71)
+
+
+
+
