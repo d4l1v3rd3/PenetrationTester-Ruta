@@ -112,6 +112,7 @@ TÉCNICAS | DESCRIPCIÓN
 [Window Local Persistence](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/WindowsLocalPesistence.md) | Persistencia con Windows en máquina víctima
 [AD_persistencia](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Persistencia_AD.md) | Persistencia en AD (sin acabar del todo)
 [Hacking Powershell](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Hacking_PowerShell.md) | Enumeración Windows
+[Gestión Sesiones](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Gestión_Sesión.md) | Cookies y Tokens
 
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
