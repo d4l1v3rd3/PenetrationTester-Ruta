@@ -94,4 +94,37 @@ flag = self.db_lookup(username, "flag")
 
 Que se guarden en variables del server
 
+# Fallos Validad Firmas
+
+### No verificar las firmas
+
+EL primer falo es no verificar las firmas cuando hay firmas de validacion. Si el servidor no verifica la firma del JWT, es posible modifical el JWF como queramos. Mientras no sea comun encontrar APis sin calidacion.
+
+### Ejemplo practivco
+
+```
+curl -H 'Content-Type: application/json' -X POST -d '{ "username" : "user", "password" : "password2" }' http://10.10.48.144/api/v1.0/example2
+```
+
+```
+curl -H 'Authorization: Bearer [JWT Token]' http://10.10.48.144/api/v1.0/example2?username=user
+```
+
+No verificada
+
+```
+payload = jwt.decode(token, options={'verify_signature': False})
+```
+
+Si verificada
+
+```
+payload = jwt.decode(token, self.secret, algorithms="HS256")
+```
+
+### Ejemplo practico
+
+t
+
+
 
