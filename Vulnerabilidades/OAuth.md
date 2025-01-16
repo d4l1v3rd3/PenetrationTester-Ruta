@@ -90,6 +90,14 @@ Usado pde servidor a servidor interactua. El cliente usa sus credenciales para a
 
 # Como funciona OAuth (flujo)
 
+![image](https://github.com/user-attachments/assets/177f2a8f-9cda-42c5-b249-3eceb86e8b0d)
+
+# Prática 
+
+Victim: victim:victim123
+Attacker: attacker:tesla@123
+
+
 
 
 
