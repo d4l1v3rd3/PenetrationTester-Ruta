@@ -10,3 +10,14 @@ En aplicaciones modernas, las vulnerabilidades OAuth son serias y fecuentes, hab
 
 # Conceptos Clave
 
+Discutiremos los conectpos clave para enteder esta vulnearbilidad, estos conecptos son para entender los frameworks donde eta construido. 
+
+## Recursos de Jefe
+
+El recurso jefe es una persona o un sistema que controla los datos y la autorizacion a la aplicacion y acceso a dicho datos. Este conecpto es fundamentar porque se centra alrededor del consentimiento y el control.
+
+## Cliente
+
+El cliente es la aplicación movil o la aplicacion web. Esto son intermediarios, consultas y recursos dependiendo las acciones que permite el jefe. 
+
+## Servidor
