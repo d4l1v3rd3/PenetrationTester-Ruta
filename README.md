@@ -114,6 +114,7 @@ TÉCNICAS | DESCRIPCIÓN
 [AD_persistencia](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Persistencia_AD.md) | Persistencia en AD (sin acabar del todo)
 [Hacking Powershell](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Hacking_PowerShell.md) | Enumeración Windows
 [Gestión Sesiones](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Gestión_Sesión.md) | Cookies y Tokens
+[MFA](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/MFA.md) | Doble autentificación o más
 
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
