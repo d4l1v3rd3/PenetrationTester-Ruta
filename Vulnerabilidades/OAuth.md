@@ -64,3 +64,32 @@ El final es cuando el cliente intercambia la autorización para el acceso al tok
 
 # Tipos de Concesión OAuth
 
+## Concesión de código de autentificación
+
+Esta es muy común usada en la 2.0 situado en el servidor de la aplicaicón, el cliente redirige al usuario la autorización del servidor, cuando el usuario se autentifica y garantiza la autorización. El servidor autoritativo redirige al usuario al cliente con el código. El cliente cambia la autorización del codigo por un token.
+
+![image](https://github.com/user-attachments/assets/f639f066-a695-4b3e-8c31-beb148e530ec)
+
+## Concesión Ímplicita
+
+La concesión ímplicita es un diseño primario de movil y aplicación web donde los clientes aseguran guardar secretos. Directamente con tokens de acceso al cliente sin requerir código de autorización. Este paso, el cliente redirigue al usuario al servidor de autorización. DEspués se autentifica y lo garantiza, este servidor devuelve un token en un fragmento URL
+
+![image](https://github.com/user-attachments/assets/e200a63c-3d63-426a-844d-4a6ce4e5d293)
+
+## Recurso jefe y credenciales
+
+Garantiza que se usen cuando el cliente de alta fiabilidad necesita un recurso,. El cliente recogue las credencailes del usuario y da acceso por token
+
+![image](https://github.com/user-attachments/assets/fd59fde3-0d76-4d00-9f18-f764adafecea)
+
+## Concesión de cliente
+
+Usado pde servidor a servidor interactua. El cliente usa sus credenciales para autentificarse con la autorixzación de lservidor se obtiene un token de acceso, el cliente con la autorización de lservidor usa sus credenciales y se conecta
+
+![image](https://github.com/user-attachments/assets/e164aa5e-0edc-4c82-a827-7c62b674a297)
+
+# Como funciona OAuth
+
+
+
+
