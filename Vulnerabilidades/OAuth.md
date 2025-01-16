@@ -88,7 +88,10 @@ Usado pde servidor a servidor interactua. El cliente usa sus credenciales para a
 
 ![image](https://github.com/user-attachments/assets/e164aa5e-0edc-4c82-a827-7c62b674a297)
 
-# Como funciona OAuth
+# Como funciona OAuth (flujo)
+
+
+
 
 
 
