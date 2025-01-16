@@ -41,6 +41,7 @@ VULNERABILIDAD | DESCRIPCIÓN
 [Command Injection](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/COMMAND_INJECTION.md) | Posibilidad de injección de comandos dentro de una aplicación.
 [Owasp Top 10](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/OWASP%20Top%2010.md) | Vulnerabilidades importantes como funcionan y explotarlas
 [Password Attacks](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/Password_Attacks.md) | Todos los tipos de ataques y como hacerlos, diccionarios, etc 
+[OAuth](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Vulnerabilidades/OAuth.md) | Explotar autentificaciones, sacar tokens, etc
 
 <h1 align="center"> 🧰 HERRAMIENTAS 🧰 </h1>
 
