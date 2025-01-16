@@ -196,6 +196,20 @@ Cyberchief y cambiamos el alg=none
 
 ## Vida de un Token
 
+Antes de entrar en las firmas del toke, la vida del token debee ser calculada para que no expire, normalmente se lee como exp.
+
+# Práctica
+
+Cogemos por ejemplo el token
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIiLCJhZG1pbiI6MX0.ko7EQiATQQzrQPwRO8ZTY37pQWGLPZWEvdWH0tVDNPU
+```
+
+Debemos añadir el valor exp, dentro del payload
+
+# Cross Service Attacks
+
 
 
 
