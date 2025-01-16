@@ -124,7 +124,42 @@ payload = jwt.decode(token, self.secret, algorithms="HS256")
 
 ### Ejemplo practico
 
-t
+La aplicación autentificada recibe el JWT verificado por el usuario. Podemos usar CybertChedf para hacer Url-Encodeadas en Base64. 
 
+```
+header = jwt.get_unverified_header(token)
+
+signature_algorithm = header['alg']
+
+payload = jwt.decode(token, self.secret, algorithms=signature_algorithm)
+```
+
+Arreglado
+
+```
+payload = jwt.decode(token, self.secret, algorithms=["HS256", "HS384", "HS512"])
+
+username = payload['username']
+flag = self.db_lookup(username, "flag")
+```
+
+### Ejemplo practico
+
+Usaremos para generar JWT haschat para crackear el sectro
+
+1- Guadra el JWF en jwt.txt
+Descargar ljwt secre list
+
+```
+ wget https://raw.githubusercontent.com/wallarm/jwt-secrets/master/jwt.secrets.list
+```
+
+3- Usar hashcat 
+
+```
+hashcat -m 16500 -a 0 jwt.txt jwt.secrets.list
+```
+
+### Práctica
 
 
