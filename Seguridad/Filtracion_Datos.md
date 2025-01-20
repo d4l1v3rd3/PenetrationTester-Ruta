@@ -342,6 +342,9 @@ Podemos capturar si queremos el trafico y ver como funciona realmente
 
 ![image](https://github.com/user-attachments/assets/03f5a463-d881-47ef-a704-26b2aeb0b0af)
 
+# Configuración DNS
+
+Para hacer una exfiltración via DNS, necesitamos control del nombre de dominio y activas los records, incluyendo NS, A o TXT. 
 
 
 
