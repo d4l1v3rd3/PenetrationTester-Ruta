@@ -123,3 +123,4 @@ SEGURIDAD | DESCRIPCIÓN
 --- | ---
 [Principios Seguridad](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Principios_Seguridad.md) | Modelo de seguridad y historia de la seguridad de la información
 [Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Vulnerabilidades.md) | Entender que es una vulnerabilidad y como puntuarla
+[Filtración Datos](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Filtracion_Datos.md) | Modos de filtrar datos, Vias SSH, ICMP, DNS
