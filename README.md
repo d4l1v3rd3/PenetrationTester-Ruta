@@ -125,3 +125,4 @@ SEGURIDAD | DESCRIPCIÓN
 [Vulnerabilidades](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Vulnerabilidades.md) | Entender que es una vulnerabilidad y como puntuarla
 [Filtración Datos](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Filtracion_Datos.md) | Modos de filtrar datos, Vias SSH, ICMP, DNS
 [Windows Internals](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Windows_Internals.md) | Como funciona Windows por dentro
+[Windows API](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Seguridad/Windows_API.md) | Como funcionan las API de Windows
