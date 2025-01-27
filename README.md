@@ -115,7 +115,7 @@ TÉCNICAS | DESCRIPCIÓN
 [Hacking Powershell](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Hacking_PowerShell.md) | Enumeración Windows
 [Gestión Sesiones](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Gestión_Sesión.md) | Cookies y Tokens
 [MFA](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/MFA.md) | Doble autentificación o más
-
+[Evadir AV](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Evadir_AV.md) | Métodos y Formás para Evadir AV
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
 
