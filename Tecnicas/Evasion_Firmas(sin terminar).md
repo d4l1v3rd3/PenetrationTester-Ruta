@@ -13,3 +13,4 @@
  Cuando identificamos firmas, ya sea automatico o manual, debemos saber en que byte empieza dcha firma. Recursivamente vemos el binario completo y lo testemos, nosotros estimamos el rango de bytes.
 
  Nosotros usamos utilizaes nativas como "head", "dd" o "split" a un binario compilado.
+
