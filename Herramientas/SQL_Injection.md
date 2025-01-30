@@ -224,6 +224,22 @@ Podemos usar cyberchief para codificar muy fácil la consulta
 
 Esta injección usa filtros singulares o doblues quotas o escapes
 
-- Usar Valores Numericos: 
+- Usar Valores Numericos: Una forma de usar valores numericos o tros datos no tiene porque llevar quota. Por ejemplo ' OR '1'='1, el atacante puede hacer perfectmanet eO 1=1 en el contexto cuando las quotas no son necesarias
+- Usan comentarios SQL: Otro es por ejemplo admin'-- a admin--,
+- Usar CONCAT(): Los atacante spueden contstruir strings sin quitas por ejemplo CONCAT(0x61, 0x64, 0x6d, 0x69, 0x6e)
+
+## Sin espacios
+
+- Comentarios que remplazan los espacios: Un metodo comuen es usar los comentarios /**/ replazando espacios. por ejemplo SELECT * FROM users WHERE name = 'admin', el atacante usa SELECT/**//*FROM/**/users/**/WHERE/**/name/**/='admin'. Los comentarios SQL remplzaran los esptacios de la consulta
+- Tab o nuevos caracteres: Se puede usar \t para tabular o \n para substituir espacios SELECT\t*\tFROM\tusers\tWHERE\tname\t=\t'admin'
+- Caracteres Alternativos: Uno de los metodos efectivos se usan alternatios Url-Encoders como %09 o %OA
+
+![image](https://github.com/user-attachments/assets/843790aa-542e-4993-8ab2-26cdc56e93e1)
+
+
+# Out-of-band SQL Injection
+
+Este tipo de tecnica lo usan los red teamers para filtrar datos o ejecutar codigo malicioso cuando directamente nos metodos tradicionales no funcionan. 
+
 
 
