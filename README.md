@@ -116,6 +116,7 @@ TÉCNICAS | DESCRIPCIÓN
 [Gestión Sesiones](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Gestión_Sesión.md) | Cookies y Tokens
 [MFA](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/MFA.md) | Doble autentificación o más
 [Evadir AV](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Evadir_AV.md) | Métodos y Formás para Evadir AV
+[No SQL](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/NoSQL_Injection.md) | Técnicas para explotar una BD no relacional
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
 
