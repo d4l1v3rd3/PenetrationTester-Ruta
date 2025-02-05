@@ -119,6 +119,7 @@ TÉCNICAS | DESCRIPCIÓN
 [No SQL](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/NoSQL_Injection.md) | Técnicas para explotar una BD no relacional
 [XXE Injection](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/XXE_Injection.md) | Técnicas de XXE (XML)
 [SSTI](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Server-Side_TI.md) | Técnicas de explotación con tempalates
+[LDAP Injection](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/LDAP_Injection.md) | Técnicas de injección de LDAP
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
 
