@@ -118,6 +118,7 @@ TÉCNICAS | DESCRIPCIÓN
 [Evadir AV](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Evadir_AV.md) | Métodos y Formás para Evadir AV
 [No SQL](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/NoSQL_Injection.md) | Técnicas para explotar una BD no relacional
 [XXE Injection](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/XXE_Injection.md) | Técnicas de XXE (XML)
+[SSTI](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Server-Side_TI.md) | Técnicas de explotación con tempalates
 
 <h1 align="center"> 🉑 SEGURIDAD 🉑 </h1>
 
