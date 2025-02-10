@@ -10,6 +10,8 @@ Voy a explicar paso a paso mi proceso de instalación, errores que me han salido
 
 Esta parte no la voy a explicar porque realmente nos vamos a centrar en lo posterior pero simplemente montarte una máquina en VM e instalarlo, empezamos con el sistema ya instalado.
 
+!!IMPORTANTE SI ESTAMOS EN VIRTUAL BOX NECESITAREMOS CASI OBLIGATORIAMENTE LAS GUEST ADITTIONS!!!
+
 # Configurar parrot
 
 ## Actualizar sistema
@@ -272,6 +274,8 @@ Los he instalado manualmente y todo ha ido bien una vez podemos seguir
 
 Elegimos como principal el gdm3
 
+![image](https://github.com/user-attachments/assets/c03fc1a5-ae90-439d-8938-c1b4b333e5bb)
+
 y reiniciamos el sistema reboot
 
 Una vez entreis os vais a rallar porque no vais a ver ningún icono de escritorio y vais a decir guauuu bueno buscaos la vida para encontrar de nuevo la terminal que no es complicado (Ctrl + Alt + T)
@@ -320,7 +324,6 @@ sudo apt install gnome-shell-extensions chrome-gnome-shell -y
 ```
 
 extensions.gnome.org
-
 
 
 
