@@ -33,3 +33,118 @@ Limpiar y actualizar paquetes
 sudo apt clean && sudo apt update && sudo apt upgrade -y
 ```
 
+Crear la estructura de configuración
+
+```
+mkdir -p ~/.config/bspwm
+mkdir -p ~/.config/sxhkd
+```
+
+```
+nano ~/.config/bspwm/bspwmrc
+```
+```
+#!/bin/bash
+sxhkd &   # Habilita los atajos de teclado
+nitrogen --restore &   # Configura el fondo de pantalla (cambia por feh si prefieres)
+picom -b &   # Agrega transparencias y mejora gráficos
+exec bspwm   # Inicia BSPWM
+```
+
+```
+chmod +x ~/.config/bspwm/bspwmrc
+```
+Configurar sxhkd (atajos de teclado básicos)
+
+```
+nano ~/.config/sxhkd/sxhkdrc
+```
+```
+# Reiniciar bspwm
+super + Escape
+    bspc wm -r
+
+# Abrir terminal
+super + Return
+    alacritty
+
+# Cerrar ventana activa
+super + q
+    bspc node -c
+
+# Moverse entre ventanas
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# Cambiar de escritorio
+super + {1-9}
+    bspc desktop -f {1-9}
+
+# Mover ventana a otro escritorio
+super + shift + {1-9}
+    bspc node -d {1-9}
+
+# Alternar modo flotante
+super + space
+    bspc node -t floating
+```
+
+```
+pkill -USR1 -x sxhkd
+sxhkd &
+```
+
+Super = Windows o Cmd
+
+Probar bspwm
+
+Simplemente nos salimos y elegimos la opción de bspwm a la hora de poner la contraseña
+
+![image](https://github.com/user-attachments/assets/05efc0cc-6562-4604-9164-8af303dbd396)
+
+```
+sudo apt install alacritty polybar feh picom rofi -y
+```
+
+Fallo:
+
+```
+sudo apt --fix-broken install
+sudo apt update --fix-missing
+sudo dpkg --configure -a
+```
+
+```
+sudo apt install alacritty polybar feh rofi -y
+```
+
+```
+sudo apt install aptitude -y
+sudo aptitude install picom
+```
+
+Si no pues compilarlo vosotros mismos
+
+```
+sudo apt install meson ninja-build cmake libxext-dev libxcb1-dev libxcb-damage0-dev \
+libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev \
+libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev \
+libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev \
+libconfig-dev libegl-dev libpcre2-dev libev-dev uthash-dev libx11-xcb-dev -y
+```
+
+```
+git clone https://github.com/yshui/picom.git
+cd picom
+meson setup --buildtype=release build
+ninja -C build
+sudo ninja -C build install
+```
+
+Es muy probable que haya problemas con dependencias recomiendo utilizar chat gptp (me ha dado muchisimos problemas picom)
+
+
+
+
+
+
