@@ -35,6 +35,25 @@ sudo apt clean && sudo apt update && sudo apt upgrade -y
 
 Crear la estructura de configuración
 
+0.1 bspwm
+¿Qué es?
+
+Es un gestor de ventanas en mosaico (tiling window manager) que delega la asignación de teclas a sxhkd.
+Permite un control muy fino del posicionamiento de ventanas y una personalización extrema.
+0.2 sxhkd
+¿Qué es?
+
+Es un daemon para gestionar atajos (hotkeys) en X.
+Se usa junto con bspwm para asignar funciones a combinaciones de teclas (por ejemplo, abrir una terminal, mover ventanas, etc.).
+0.3 picom
+¿Qué es?
+
+Es un compositor para Xorg (antes se conocía como Compton).
+¿Para qué sirve?
+Proporciona efectos visuales como transparencias, sombras y animaciones suaves.
+Es útil para emular la apariencia “suave” de macOS.
+
+
 ```
 mkdir -p ~/.config/bspwm
 mkdir -p ~/.config/sxhkd
@@ -142,6 +161,28 @@ sudo ninja -C build install
 ```
 
 Es muy probable que haya problemas con dependencias recomiendo utilizar chat gptp (me ha dado muchisimos problemas picom)
+
+0.4 Polybar
+¿Qué es?
+
+Es una barra de estado altamente configurable que puede mostrar información del sistema, el estado de la batería, red, etc.
+La configuraremos con un tema que se asemeje a macOS.
+0.5 zsh
+¿Qué es?
+
+Es una shell avanzada y muy configurable.
+¿Por qué zsh?
+Ofrece autocompletado avanzado, templatización y personalizaciones (por ejemplo, con Oh My Zsh o powerlevel10k).
+¿Cómo asegurarte de usarla en bspwm?
+bspwm no “abre” una shell de forma predeterminada, sino que tú inicias terminales. Configurando zsh como shell por defecto, cada terminal que abras (por ejemplo, con Alacritty, Kitty o cualquier emulador de terminal) arrancará con zsh.
+
+Fondo de pantalla
+Para evitar ver una pantalla negra, usaremos un programa como feh o nitrogen para asignar un fondo de pantalla.
+Instalación (usando feh):
+bash
+Copiar
+
+sudo apt install feh
 
 
 
