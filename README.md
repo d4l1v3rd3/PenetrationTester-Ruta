@@ -106,6 +106,9 @@ REDES | DESCRIPCIÓN
 TÉCNICAS | DESCRIPCIÓN
 --- | ---
 [Enumeración_AD](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Enumerar_AD.md) | Enumerar AD 
+[Windows Internals](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Abusar_WindowsInternals.md) | Windows Internals
+[Enumerar AD](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Abusar_WindowsInternals.md) | Enumeración en AD
+[Robo credenciales](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/RoboCredenciales.md)
 [Romper_AD](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/Romper_AD.md) | Técnicas y conocimiento teorico para encontrar vectores en AD
 [Active_Directory_Básico](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/edit/main/Tecnicas/ActiveDirectory_Basico.md) | Qué es active directory y un poco funcionamiento, configuraciones y servicios
 [Movimiento Lateral y Pivoting](https://github.com/d4l1v3rd3/PenetrationTester-Ruta/blob/main/Tecnicas/MovimientoLateral_Pivoting.md) | Movimiento entre dispositivos de la misma red
