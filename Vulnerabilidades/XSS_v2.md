@@ -31,5 +31,11 @@ Por ejemplo si nos vamos a las herramientas del navegador, podemos probar cosita
 
 # Causas de un XSS
 
-Hay muchas razones porque se encuentran este tipo de vulnerabilidades en la web
+Hay muchas razones porque se encuentran este tipo de vulnerabilidades en la web, abajo un lista
+
+### Validación y sanitazción
+
+Las aplicaciones que aceptan datos de usuario como formularios, o páginas dinamicas de HTML, pueden contener script malicioso y para ello hay que sanitizar y validar el input bien
+
+### 
 
